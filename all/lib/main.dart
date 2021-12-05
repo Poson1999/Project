@@ -27,6 +27,8 @@ class BottomNavigationController extends StatefulWidget {
 class _BottomNavigationControllerState extends State<BottomNavigationController> {
   int _currentIndex = 0;
   final pages = [const TestPage(), const CommunityPage()];
+  String name = 'Poson Lu';
+  String mail = 'poson1005@gmail.com';
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -35,9 +37,16 @@ class _BottomNavigationControllerState extends State<BottomNavigationController>
           padding: const EdgeInsets.only(),
           children: <Widget>[
             UserAccountsDrawerHeader(
-              accountName: const Text('Poson Lu'),
-              accountEmail: const Text('poson1005@gmail'),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/tree.png'),
+                  fit: BoxFit.cover
+                )
+              ),
+              accountName: Text(name),
+              accountEmail: Text(mail),
               currentAccountPicture: CircleAvatar(
+                backgroundImage: const AssetImage('assets/images/tree.png'),
                 child: ClipOval(
                     child: Image.asset('assets/images/dog.png', fit: BoxFit.cover)
                 )
