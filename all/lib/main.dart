@@ -100,6 +100,8 @@ class _BottomNavigationControllerState extends State<BottomNavigationController>
             BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Test'),
             BottomNavigationBarItem(icon: Icon(Icons.groups), label: 'Community')
           ],
+          iconSize: 20,
+          unselectedFontSize: 8,
           selectedFontSize: 16,
           currentIndex: _currentIndex,
           fixedColor: Colors.green,
