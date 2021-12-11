@@ -15,12 +15,19 @@ class HomePage extends StatelessWidget {
                   width: double.infinity,
                   height: 150,
                   child: PageView(children: <Widget>[
-                    Image.asset('assets/images/ark.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/tree.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/3.jpg', fit: BoxFit.cover)
+                    Image.asset('assets/images/vp.jpg', fit: BoxFit.cover),
+                    Image.asset('assets/images/vp1.png', fit: BoxFit.cover),
+                    Image.asset('assets/images/vp2.png', fit: BoxFit.cover)
                   ]))),
           Container(
-              margin: const EdgeInsets.only(left: 30, top: 30, right: 30),
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: const Divider(color: Colors.black)),
+          Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: const Text("Categories",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold))),
+          Container(
+              margin: const EdgeInsets.only(left: 30, top: 10, right: 30),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -30,7 +37,7 @@ class HomePage extends StatelessWidget {
                         child: TextButton(
                             onPressed: () {},
                             child: const Image(
-                                image: AssetImage('assets/images/1.jpg'),
+                                image: AssetImage('assets/images/1.png'),
                                 fit: BoxFit.fill))),
                     SizedBox(
                         width: 75,
@@ -38,7 +45,7 @@ class HomePage extends StatelessWidget {
                         child: TextButton(
                             onPressed: () {},
                             child: const Image(
-                                image: AssetImage('assets/images/2.jpg'),
+                                image: AssetImage('assets/images/2.png'),
                                 fit: BoxFit.fill))),
                     SizedBox(
                         width: 75,
@@ -46,7 +53,7 @@ class HomePage extends StatelessWidget {
                         child: TextButton(
                             onPressed: () {},
                             child: const Image(
-                                image: AssetImage('assets/images/3.jpg'),
+                                image: AssetImage('assets/images/3.png'),
                                 fit: BoxFit.fill)))
                   ])),
           Container(
@@ -77,7 +84,7 @@ class HomePage extends StatelessWidget {
                         child: TextButton(
                             onPressed: () {},
                             child: const Image(
-                                image: AssetImage('assets/images/4.jpg'),
+                                image: AssetImage('assets/images/4.png'),
                                 fit: BoxFit.fill))),
                     SizedBox(
                         width: 75,
@@ -85,7 +92,7 @@ class HomePage extends StatelessWidget {
                         child: TextButton(
                             onPressed: () {},
                             child: const Image(
-                                image: AssetImage('assets/images/5.jpg'),
+                                image: AssetImage('assets/images/5.png'),
                                 fit: BoxFit.fill))),
                     SizedBox(
                         width: 75,
@@ -93,7 +100,7 @@ class HomePage extends StatelessWidget {
                         child: TextButton(
                             onPressed: () {},
                             child: const Image(
-                                image: AssetImage('assets/images/6.jpg'),
+                                image: AssetImage('assets/images/6.png'),
                                 fit: BoxFit.fill)))
                   ])),
           Container(
@@ -123,7 +130,7 @@ class HomePage extends StatelessWidget {
                         child: TextButton(
                             onPressed: () {},
                             child: const Image(
-                                image: AssetImage('assets/images/7.jpg'),
+                                image: AssetImage('assets/images/7.png'),
                                 fit: BoxFit.fill))),
                     SizedBox(
                         width: 75,
@@ -143,7 +150,7 @@ class HomePage extends StatelessWidget {
                                 fit: BoxFit.fill)))
                   ])),
           Container(
-              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
+              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 10),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: const <Widget>[
@@ -161,11 +168,17 @@ class HomePage extends StatelessWidget {
                             textAlign: TextAlign.center))
                   ])),
           Container(
-              margin: const EdgeInsets.only(
-                  left: 10, top: 10, right: 10, bottom: 10),
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: const Divider(color: Colors.black)),
+          Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: const Text("DIY",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold))),
+          Container(
+              margin: const EdgeInsets.only(top: 10, bottom: 10),
               child: SizedBox(
                   width: double.infinity,
-                  height: 300,
+                  height: 200,
                   child: TextButton(
                       child: const Image(
                         image: AssetImage('assets/images/diy.jpg'),
