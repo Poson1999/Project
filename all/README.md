@@ -1,16 +1,9 @@
-# all
+#BamCommunity
 
-A new Flutter project.
+There are a lot of knowledge about bamboo in bamtech app, and this project is mainly provide a platform which users can test what did they learn from bamtech, and also a community for bamboo sellers to post their product to promote bamboo goods.
 
-## Getting Started
+Here are some resources I used:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Flutter icons](https://fonts.google.com/icons?selected=Material+Icons)
+- [Flutter catalog](https://x-wei.github.io/flutter_catalog/#/)
+- [Flutter development](https://docs.flutter.dev/development/packages-and-plugins/favorites)

@@ -53,45 +53,53 @@ class _BottomNavigationControllerState
                           fit: BoxFit.cover))),
             ),
             ListTile(
-              contentPadding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              title: const Text('Edit Profile', style: TextStyle(fontSize: 20)),
-              leading: const Icon(Icons.edit_outlined,
-                  size: 30, color: Colors.green),
+              title: const Text('About us'),
+              leading: const Icon(Icons.help_outline, color: Colors.green),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Reference link'),
+              leading: const Icon(Icons.link, color: Colors.green),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Q&A'),
+              leading: const Icon(Icons.people_outline, color: Colors.green),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Bookmark'),
+              leading: const Icon(Icons.bookmark_outline, color: Colors.green),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Reading List'),
+              leading: const Icon(Icons.list, color: Colors.green),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Liked Shops'),
+              leading: const Icon(Icons.storefront, color: Colors.green),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Liked Article'),
+              leading: const Icon(Icons.thumb_up_off_alt, color: Colors.green),
+              onTap: () {},
+            ),
+            ListTile(
+                title: const Text('My Certificate'),
+                leading: const Icon(Icons.school_outlined, color: Colors.green),
+                onTap: () {}),
+            ListTile(
+              title: const Text('Edit Profile'),
+              leading: const Icon(Icons.edit_outlined, color: Colors.green),
               onTap: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const EditProfile())),
             ),
             ListTile(
-              contentPadding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              title: const Text('Liked Shops', style: TextStyle(fontSize: 20)),
-              leading:
-                  const Icon(Icons.storefront, size: 30, color: Colors.green),
-              onTap: () {},
-            ),
-            ListTile(
-              contentPadding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              title:
-                  const Text('Liked Article', style: TextStyle(fontSize: 20)),
-              leading: const Icon(Icons.thumb_up_outlined,
-                  size: 30, color: Colors.green),
-              onTap: () {},
-            ),
-            ListTile(
-              contentPadding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              title:
-                  const Text('My Certificate', style: TextStyle(fontSize: 20)),
-              leading: const Icon(Icons.school_outlined,
-                  size: 30, color: Colors.green),
-              onTap: () {},
-            ),
-            ListTile(
-              contentPadding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              title: const Text('Logout', style: TextStyle(fontSize: 20)),
-              leading: const Icon(Icons.logout, size: 30, color: Colors.green),
+              title: const Text('Logout'),
+              leading: const Icon(Icons.logout, color: Colors.green),
               onTap: () {},
             )
           ],

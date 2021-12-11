@@ -185,6 +185,61 @@ class HomePage extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                       onPressed: () {}))),
+          Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: const Divider(color: Colors.black)),
+          Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: const Text("WEBINAR",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold))),
+          Container(
+              margin: const EdgeInsets.only(top: 10, bottom: 10),
+              child: SizedBox(
+                  width: double.infinity,
+                  height: 200,
+                  child: TextButton(
+                      child: const Image(
+                        image: AssetImage('assets/images/webinar.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      onPressed: () {}))),
+          Container(
+              margin: const EdgeInsets.only(left: 30, right: 30),
+              child: const Divider(color: Colors.black)),
+          Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: const Text("SPONSORS",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold))),
+          Container(
+              margin: const EdgeInsets.only(left: 30, top: 10, right: 30, bottom: 10),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: TextButton(
+                            onPressed: () {},
+                            child: const Image(
+                                image: AssetImage('assets/images/nid_logo.jpg'),
+                                fit: BoxFit.cover))),
+                    SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: TextButton(
+                            onPressed: () {},
+                            child: const Image(
+                                image: AssetImage('assets/images/sabf_logo.jpg'),
+                                fit: BoxFit.cover))),
+                    SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: TextButton(
+                            onPressed: () {},
+                            child: const Image(
+                                image: AssetImage('assets/images/ccu_logo.png'),
+                                fit: BoxFit.cover)))
+                  ])),
         ]),
       ));
 }
