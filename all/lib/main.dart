@@ -1,11 +1,25 @@
+import 'package:all/pages/auth/auth_page.dart';
 import 'package:flutter/material.dart';
 import 'package:all/pages/test_page.dart';
 import 'package:all/pages/community_page.dart';
 import 'package:all/pages/chat_page.dart';
 import 'package:all/pages/edit_profile.dart';
 import 'package:all/pages/home_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() => runApp(const MyApp());
+// 用來檢查是否已登入
+bool isLoggedIn = false;
+
+void main() async {
+  // 在main用到async要加這行
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  // 檢查isLoggedIn的值，若為null 則指定為false
+  isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,7 +27,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         theme: ThemeData(primarySwatch: Colors.green),
-        home: const Scaffold(body: BottomNavigationController()),
+        home: isLoggedIn ? const Scaffold(body: BottomNavigationController()) : const AuthPage(),
+        // 命名每個畫面的代號，可使用代號轉跳，書籤轉跳的功能可能會用到
+        routes: <String, WidgetBuilder> {
+          '/main' : (BuildContext context) => const Scaffold(body: BottomNavigationController()),
+          '/auth': (BuildContext context) => const AuthPage(),
+        },
         debugShowCheckedModeBanner: false,
       );
 }
@@ -32,6 +51,12 @@ class _BottomNavigationControllerState
   final pages = [const HomePage(), const TestPage(), const CommunityPage()];
   String name = 'Poson Lu';
   String mail = 'poson1005@gmail.com';
+
+  // 登出時將登入狀態清空
+  void signOut() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.clear();
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -100,7 +125,10 @@ class _BottomNavigationControllerState
             ListTile(
               title: const Text('Logout'),
               leading: const Icon(Icons.logout, color: Colors.green),
-              onTap: () {},
+              onTap: () {
+                signOut();
+                Navigator.of(context).pushNamedAndRemoveUntil('/auth', (Route<dynamic> route) => false);
+              },
             )
           ],
         ),
