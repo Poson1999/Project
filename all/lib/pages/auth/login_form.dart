@@ -11,11 +11,9 @@ class LoginForm extends StatefulWidget {
 
   @override
   _LoginFormState createState() => _LoginFormState();
-
 }
 
-class _LoginFormState extends State<LoginForm>{
-
+class _LoginFormState extends State<LoginForm> {
   // 判斷是否載入中
   bool isLoading = true;
 
@@ -23,7 +21,7 @@ class _LoginFormState extends State<LoginForm>{
   TextEditingController passController = TextEditingController();
 
   //登入方法
-  void login() async{
+  void login() async {
     // 顯示載入資料中
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
@@ -31,21 +29,23 @@ class _LoginFormState extends State<LoginForm>{
       ),
     );
 
-    var url = "https://project-ccu-2021.000webhostapp.com/phpformobile/login.php";
+    var url =
+        "https://project-ccu-2021.000webhostapp.com/phpformobile/login.php";
     var data = {
       "email": emailController.text,
       "password": passController.text,
     };
 
-    try{
+    try {
       var res = await http.post(Uri.parse(url), body: data);
       var jsonData = convert.jsonDecode(res.body);
-      if(jsonData == "false"){
+      if (jsonData == "false") {
         // 查無帳號
         ScaffoldMessenger.of(context).removeCurrentSnackBar();
         Fluttertoast.showToast(
-          msg: "No account exist!",);
-      }else{
+          msg: "No account exist!",
+        );
+      } else {
         // 存入使用者資料
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setBool('isLoggedIn', true);
@@ -56,34 +56,32 @@ class _LoginFormState extends State<LoginForm>{
         prefs.setString('UserEmail', newUser.email);
         prefs.setString('UserPassword', newUser.password);
 
-        String result = "獲得資料: " + newUser.id +", "+ newUser.name +", "+ newUser.email;
+        String result =
+            "獲得資料: " + newUser.id + ", " + newUser.name + ", " + newUser.email;
         debugPrint(result);
 
         // 檢查密碼是否一致
-        if(newUser.password == passController.text){
+        if (newUser.password == passController.text) {
           ScaffoldMessenger.of(context).removeCurrentSnackBar();
-          Navigator.of(context).pushNamedAndRemoveUntil('/main', (Route<dynamic> route) => false);
-        }else{
+          Navigator.of(context).pushNamedAndRemoveUntil(
+              '/main', (Route<dynamic> route) => false);
+        } else {
           ScaffoldMessenger.of(context).removeCurrentSnackBar();
           Fluttertoast.showToast(
             msg: "password incorrect!",
           );
         }
-
       }
-    }catch(e){
+    } catch (e) {
       ScaffoldMessenger.of(context).removeCurrentSnackBar();
       Fluttertoast.showToast(
         msg: e.toString(),
       );
     }
-
   }
 
   @override
   Widget build(BuildContext context) {
-
-
     final widget = Padding(
       padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * 0.13),
@@ -133,7 +131,8 @@ class _LoginFormState extends State<LoginForm>{
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/main', (Route<dynamic> route) => false);
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                        '/main', (Route<dynamic> route) => false);
                   },
                   child: const Text(
                     "直接轉跳",
@@ -147,9 +146,6 @@ class _LoginFormState extends State<LoginForm>{
         ),
       ),
     );
-
     return widget;
   }
-
-
 }
