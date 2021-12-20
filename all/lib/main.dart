@@ -54,15 +54,15 @@ class _BottomNavigationControllerState
   final pages = [const HomePage(), const TestPage(), const CommunityPage()];
   String userName = "";
   String userEmail = "";
+  String userPhoto = "";
 
-  void getUserName() async {
+  void getProfile() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     userName = prefs.getString('UserName')!;
-  }
-
-  void getUserEmail() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
     userEmail = prefs.getString('UserEmail')!;
+    if (prefs.getString('UserPhoto') == null) {
+    } else {
+    }
   }
 
   // 登出時將登入狀態清空
@@ -73,8 +73,7 @@ class _BottomNavigationControllerState
 
   @override
   Widget build(BuildContext context) {
-    getUserName();
-    getUserEmail();
+    if (userName == "") getProfile();
     return Scaffold(
         drawer: Drawer(
           child: ListView(
@@ -147,9 +146,20 @@ class _BottomNavigationControllerState
                 title: const Text('Logout'),
                 leading: const Icon(Icons.logout, color: Colors.green),
                 onTap: () {
-                  signOut();
-                  Navigator.of(context).pushNamedAndRemoveUntil(
-                      '/auth', (Route<dynamic> route) => false);
+                  showDialog(context: context, builder: (BuildContext context) => AlertDialog(
+                    title: const Text('Are you sure to logout?'),
+                    content: const Text('This action can not be canceled.'),
+                    actions: <Widget>[
+                      TextButton(onPressed: () => Navigator.pop(context, 'Cancel'),
+                          child: const Text('Cancel')),
+                      TextButton(onPressed: () {
+                        signOut();
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            '/auth', (Route<dynamic> route) => false);
+                      },
+                          child: const Text('Logout'))
+                    ],
+                  ));
                 },
               )
             ],
