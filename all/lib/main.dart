@@ -54,117 +54,105 @@ class _BottomNavigationControllerState
   final pages = [const HomePage(), const TestPage(), const CommunityPage()];
   String userName = "";
   String userEmail = "";
-  String userPhoto = "";
-
-  void getProfile() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    userName = prefs.getString('UserName')!;
-    userEmail = prefs.getString('UserEmail')!;
-    if (prefs.getString('UserPhoto') == null) {
-    } else {
-    }
-  }
+  String photoUrl = "";
 
   // 登出時將登入狀態清空
-  void signOut() async {
+  void logout() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.clear();
+    Navigator.of(context)
+        .pushNamedAndRemoveUntil('/auth', (Route<dynamic> route) => false);
+  }
+
+  void getProfile() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      userName = prefs.getString("UserName") ?? "1";
+      userEmail = prefs.getString("UserEmail") ?? "";
+    });
   }
 
   @override
-  Widget build(BuildContext context) {
-    if (userName == "") getProfile();
-    return Scaffold(
+  void initState() {
+    super.initState();
+    getProfile();
+  }
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
         drawer: Drawer(
-          child: ListView(
-            padding: const EdgeInsets.only(),
-            children: <Widget>[
-              UserAccountsDrawerHeader(
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/tree.png'),
-                        fit: BoxFit.cover)),
-                accountName: Text(userName),
-                accountEmail: Text(userEmail),
-                currentAccountPicture: CircleAvatar(
-                    backgroundImage: const AssetImage('assets/images/tree.png'),
-                    child: ClipOval(
-                        child: Image.asset('assets/images/dog.png',
-                            fit: BoxFit.cover))),
-              ),
-              ListTile(
-                title: const Text('About us'),
-                leading: const Icon(Icons.help_outline, color: Colors.green),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text('Reference link'),
-                leading: const Icon(Icons.link, color: Colors.green),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text('Q&A'),
-                leading: const Icon(Icons.people_outline, color: Colors.green),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text('Bookmark'),
-                leading:
-                    const Icon(Icons.bookmark_outline, color: Colors.green),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text('Reading List'),
-                leading: const Icon(Icons.list, color: Colors.green),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text('Liked Shops'),
-                leading: const Icon(Icons.storefront, color: Colors.green),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text('Liked Article'),
-                leading:
-                    const Icon(Icons.thumb_up_off_alt, color: Colors.green),
-                onTap: () {},
-              ),
-              ListTile(
-                  title: const Text('My Certificate'),
-                  leading:
-                      const Icon(Icons.school_outlined, color: Colors.green),
-                  onTap: () {}),
-              ListTile(
-                title: const Text('Edit Profile'),
-                leading: const Icon(Icons.edit_outlined, color: Colors.green),
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const EditProfile())),
-              ),
-              ListTile(
-                title: const Text('Logout'),
-                leading: const Icon(Icons.logout, color: Colors.green),
-                onTap: () {
-                  showDialog(context: context, builder: (BuildContext context) => AlertDialog(
-                    title: const Text('Are you sure to logout?'),
-                    content: const Text('This action can not be canceled.'),
-                    actions: <Widget>[
-                      TextButton(onPressed: () => Navigator.pop(context, 'Cancel'),
-                          child: const Text('Cancel')),
-                      TextButton(onPressed: () {
-                        signOut();
-                        Navigator.of(context).pushNamedAndRemoveUntil(
-                            '/auth', (Route<dynamic> route) => false);
-                      },
-                          child: const Text('Logout'))
-                    ],
-                  ));
-                },
-              )
-            ],
-          ),
-        ),
+            child:
+                ListView(padding: const EdgeInsets.only(), children: <Widget>[
+          UserAccountsDrawerHeader(
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/tree.png'),
+                      fit: BoxFit.cover)),
+              accountName: Text(userName),
+              accountEmail: Text(userEmail),
+              currentAccountPicture: CircleAvatar(
+                  backgroundImage: const AssetImage('assets/images/tree.png'),
+                  child: ClipOval(
+                      child: Image.asset('assets/images/dog.png',
+                          fit: BoxFit.cover)))),
+          ListTile(
+              title: const Text('About us'),
+              leading: const Icon(Icons.help_outline, color: Colors.green),
+              onTap: () {}),
+          ListTile(
+              title: const Text('Reference link'),
+              leading: const Icon(Icons.link, color: Colors.green),
+              onTap: () {}),
+          ListTile(
+              title: const Text('Q&A'),
+              leading: const Icon(Icons.people_outline, color: Colors.green),
+              onTap: () {}),
+          ListTile(
+              title: const Text('Bookmark'),
+              leading: const Icon(Icons.bookmark_outline, color: Colors.green),
+              onTap: () {}),
+          ListTile(
+              title: const Text('Reading List'),
+              leading: const Icon(Icons.list, color: Colors.green),
+              onTap: () {}),
+          ListTile(
+              title: const Text('Liked Shops'),
+              leading: const Icon(Icons.storefront, color: Colors.green),
+              onTap: () {}),
+          ListTile(
+              title: const Text('Liked Article'),
+              leading: const Icon(Icons.thumb_up_off_alt, color: Colors.green),
+              onTap: () {}),
+          ListTile(
+              title: const Text('My Certificate'),
+              leading: const Icon(Icons.school_outlined, color: Colors.green),
+              onTap: () {}),
+          ListTile(
+              title: const Text('Edit Profile'),
+              leading: const Icon(Icons.edit_outlined, color: Colors.green),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const EditProfile()))),
+          ListTile(
+              title: const Text('Logout'),
+              leading: const Icon(Icons.logout, color: Colors.green),
+              onTap: () => showDialog(
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                          title: const Text('Are you sure to logout?'),
+                          content:
+                              const Text('This action can not be canceled.'),
+                          actions: <Widget>[
+                            TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(context, 'Cancel'),
+                                child: const Text('Cancel')),
+                            TextButton(
+                                onPressed: () => logout(),
+                                child: const Text('Logout'))
+                          ])))
+        ])),
         appBar: AppBar(
             title: const Text('BamCommunity'),
             centerTitle: true,
@@ -180,23 +168,11 @@ class _BottomNavigationControllerState
         bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.school,
-                    size: 30,
-                  ),
-                  label: 'Knowledge'),
+                  icon: Icon(Icons.school, size: 30), label: 'Knowledge'),
               BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.menu_book,
-                    size: 30,
-                  ),
-                  label: 'Test'),
+                  icon: Icon(Icons.menu_book, size: 30), label: 'Test'),
               BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.groups,
-                    size: 35,
-                  ),
-                  label: 'Community')
+                  icon: Icon(Icons.groups, size: 30), label: 'Community')
             ],
             iconSize: 20,
             unselectedFontSize: 12,
@@ -204,7 +180,6 @@ class _BottomNavigationControllerState
             currentIndex: _currentIndex,
             fixedColor: Colors.green,
             onTap: _onItemClick));
-  }
 
   void _onItemClick(int index) => setState(() => _currentIndex = index);
 }

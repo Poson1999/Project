@@ -24,17 +24,12 @@ class _LoginFormState extends State<LoginForm> {
   void login() async {
     // 顯示載入資料中
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Loading...'),
-      ),
+      const SnackBar(content: Text('Loading...')),
     );
 
     var url =
         "https://project-ccu-2021.000webhostapp.com/phpformobile/login.php";
-    var data = {
-      "email": emailController.text,
-      "password": passController.text,
-    };
+    var data = {"email": emailController.text, "password": passController.text};
 
     try {
       var res = await http.post(Uri.parse(url), body: data);
@@ -67,9 +62,7 @@ class _LoginFormState extends State<LoginForm> {
               '/main', (Route<dynamic> route) => false);
         } else {
           ScaffoldMessenger.of(context).removeCurrentSnackBar();
-          Fluttertoast.showToast(
-            msg: "password incorrect!",
-          );
+          Fluttertoast.showToast(msg: "password incorrect!");
         }
       }
     } catch (e) {
@@ -81,71 +74,41 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    final widget = Padding(
+  Widget build(BuildContext context) => Padding(
       padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * 0.13),
       child: Form(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Spacer(flex: 2),
-            TextFormField(
-              controller: emailController,
-              decoration: const InputDecoration(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        const Spacer(flex: 1),
+        TextFormField(
+            controller: emailController,
+            decoration: const InputDecoration(
                 filled: true,
                 fillColor: Colors.white38,
                 labelText: 'Email Address',
-                labelStyle: TextStyle(fontSize: 20),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: defpaultPadding),
-              child: TextFormField(
+                labelStyle: TextStyle(fontSize: 20))),
+        Padding(
+            padding: const EdgeInsets.symmetric(vertical: defpaultPadding),
+            child: TextFormField(
                 controller: passController,
                 obscureText: true,
                 decoration: const InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white38,
-                  labelText: 'Password',
-                  labelStyle: TextStyle(fontSize: 20),
-                ),
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                TextButton(
-                  onPressed: login,
-                  child: const Text(
-                    "登入",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "獲取資料",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil(
-                        '/main', (Route<dynamic> route) => false);
-                  },
-                  child: const Text(
-                    "直接轉跳",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ],
-            ),
-            const Spacer(flex: 2),
-          ],
-        ),
-      ),
-    );
-    return widget;
-  }
+                    filled: true,
+                    fillColor: Colors.white38,
+                    labelText: 'Password',
+                    labelStyle: TextStyle(fontSize: 20)))),
+        Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          TextButton(
+              onPressed: login,
+              child: const Text("登入", style: TextStyle(color: Colors.white))),
+          TextButton(
+              onPressed: () {},
+              child: const Text("獲取資料", style: TextStyle(color: Colors.white))),
+          TextButton(
+              onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/main', (Route<dynamic> route) => false),
+              child: const Text("直接轉跳", style: TextStyle(color: Colors.white)))
+        ]),
+        const Spacer(flex: 1)
+      ])));
 }
