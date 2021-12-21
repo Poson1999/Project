@@ -18,7 +18,7 @@ class EditProfile extends StatelessWidget {
     if (file == null) {
       // 如果沒有選中的圖片
       Fluttertoast.showToast(
-        msg: "CanCelled",
+        msg: "Canceled",
       );
       return;
     } else {
