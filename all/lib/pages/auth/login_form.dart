@@ -50,6 +50,7 @@ class _LoginFormState extends State<LoginForm> {
         prefs.setString('UserName', newUser.name);
         prefs.setString('UserEmail', newUser.email);
         prefs.setString('UserPassword', newUser.password);
+        prefs.setString('PhotoUrl', newUser.photoUrl);
 
         String result =
             "獲得資料: " + newUser.id + ", " + newUser.name + ", " + newUser.email;
@@ -68,7 +69,7 @@ class _LoginFormState extends State<LoginForm> {
     } catch (e) {
       ScaffoldMessenger.of(context).removeCurrentSnackBar();
       Fluttertoast.showToast(
-        msg: e.toString(),
+        msg: "Error: " + e.toString(),
       );
     }
   }
