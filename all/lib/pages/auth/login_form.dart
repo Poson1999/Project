@@ -50,7 +50,7 @@ class _LoginFormState extends State<LoginForm> {
         prefs.setString('UserName', newUser.name);
         prefs.setString('UserEmail', newUser.email);
         prefs.setString('UserPassword', newUser.password);
-        prefs.setString('PhotoUrl', newUser.photoUrl);
+        prefs.setString('PhotoUrl', 'https://project-ccu-2021.000webhostapp.com/pic/user/default.png');
 
         String result =
             "獲得資料: " + newUser.id + ", " + newUser.name + ", " + newUser.email;
