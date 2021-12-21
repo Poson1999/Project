@@ -54,7 +54,8 @@ class _BottomNavigationControllerState
   final pages = [const HomePage(), const TestPage(), const CommunityPage()];
   String userName = "";
   String userEmail = "";
-  String photoUrl = "";
+  // 用String 會無法載入, 不知道為啥
+  var photoUrl = "";
 
   // 登出時將登入狀態清空
   void logout() async {
@@ -69,6 +70,8 @@ class _BottomNavigationControllerState
     setState(() {
       userName = prefs.getString("UserName") ?? "1";
       userEmail = prefs.getString("UserEmail") ?? "";
+      var photo = prefs.getString("PhotoUrl") ?? "default.png";
+      photoUrl = 'https://project-ccu-2021.000webhostapp.com/pic/user/' + photo;
     });
   }
 
@@ -93,8 +96,7 @@ class _BottomNavigationControllerState
               currentAccountPicture: CircleAvatar(
                   backgroundImage: const AssetImage('assets/images/tree.png'),
                   child: ClipOval(
-                      child: Image.asset('assets/images/dog.png',
-                          fit: BoxFit.cover)))),
+                      child: Image.network(photoUrl, fit: BoxFit.cover)))),
           ListTile(
               title: const Text('About us'),
               leading: const Icon(Icons.help_outline, color: Colors.green),
