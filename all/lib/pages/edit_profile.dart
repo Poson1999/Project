@@ -29,7 +29,7 @@ class EditProfile extends StatelessWidget {
     }
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String userId = prefs.getString('UserId') ?? "null";
+    String userId = prefs.getString('UserId')!;
 
     var url =
         "https://project-ccu-2021.000webhostapp.com/phpformobile/uploadpic.php";
@@ -43,7 +43,7 @@ class EditProfile extends StatelessWidget {
       var res = await http.post(Uri.parse(url), body: data);
       var result = jsonDecode(res.body);
 
-      prefs.setString("PhotoFlag", "1");
+      prefs.setString('PhotoFlag', "1");
 
       Fluttertoast.showToast(
         msg: result.toString(),
