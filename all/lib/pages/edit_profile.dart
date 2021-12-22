@@ -34,14 +34,17 @@ class EditProfile extends StatelessWidget {
     var url =
         "https://project-ccu-2021.000webhostapp.com/phpformobile/uploadpic.php";
     var data = {
+      "userId": userId,
       "image": base64Image,
-      "name": userId + ".png",
     };
 
     // 上傳並等待結果
     try {
       var res = await http.post(Uri.parse(url), body: data);
       var result = jsonDecode(res.body);
+
+      prefs.setString("PhotoFlag", "1");
+
       Fluttertoast.showToast(
         msg: result.toString(),
       );
