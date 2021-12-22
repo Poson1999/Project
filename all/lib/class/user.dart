@@ -1,6 +1,6 @@
 // 設定使用者資料的類別，隨時會改;)
 class User {
-  String id, name, email, password, identificationCode, photoUrl;
+  String id, name, email, password, identificationCode, photoFlag;
 
   User(
     this.id,
@@ -8,7 +8,7 @@ class User {
     this.email,
     this.password,
     this.identificationCode,
-    this.photoUrl,
+    this.photoFlag,
   ); //轉換Json的格式
 
   User.fromJson(Map<String, dynamic> json)
@@ -17,7 +17,7 @@ class User {
         email = json['email'],
         password = json['password'],
         identificationCode = json['identification_code'],
-        photoUrl = json['photo_url'];
+        photoFlag = json['photo_flag'];
 
   Map<String, dynamic> toJson() => <String, dynamic>{
         'id': id,
@@ -25,6 +25,6 @@ class User {
         'email': email,
         'password': password,
         'identification_code': identificationCode,
-        'photo_url': photoUrl,
+        'photo_flag': photoFlag,
       };
 }

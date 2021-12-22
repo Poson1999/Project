@@ -69,10 +69,11 @@ class _BottomNavigationControllerState
     setState(() {
       userName = prefs.getString("UserName") ?? "1";
       userEmail = prefs.getString("UserEmail") ?? "";
-      if (prefs.getString("PhotoUrl")! == "https://project-ccu-2021.000webhostapp.com/pic/user/default.png") {
-        photoUrl = prefs.getString("PhotoUrl")!;
+      if (prefs.getString("PhotoFlag")! == '0') {
+        photoUrl = "https://project-ccu-2021.000webhostapp.com/pic/user/default.png";
       } else {
-        photoUrl = "https://project-ccu-2021.000webhostapp.com/pic/user/" + prefs.getString("PhotoUrl")!;
+        photoUrl = "https://project-ccu-2021.000webhostapp.com/pic/user/"
+            + prefs.getString("UserId")! + ".png";
       }
     });
   }
