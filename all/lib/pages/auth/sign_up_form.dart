@@ -15,7 +15,7 @@ class _SignUpFormState extends State<SignUpForm> {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
-  TextEditingController confirmpassController = TextEditingController();
+  TextEditingController confirmPassController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class _SignUpFormState extends State<SignUpForm> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: defpaultPadding),
               child: TextFormField(
-                controller: confirmpassController,
+                controller: confirmPassController,
                 decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white38,

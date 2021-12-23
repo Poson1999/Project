@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,7 +12,7 @@ class HomePage extends StatelessWidget {
                   left: 10, top: 10, right: 10, bottom: 10),
               child: SizedBox(
                   width: double.infinity,
-                  height: 150,
+                  height: MediaQuery.of(context).size.width / 2,
                   child: PageView(children: <Widget>[
                     Image.asset('assets/images/vp.jpg', fit: BoxFit.cover),
                     Image.asset('assets/images/vp1.png', fit: BoxFit.cover),
@@ -178,11 +177,13 @@ class HomePage extends StatelessWidget {
               margin: const EdgeInsets.only(top: 10, bottom: 10),
               child: SizedBox(
                   width: double.infinity,
-                  height: 200,
+                  height: MediaQuery.of(context).size.width / 2,
                   child: TextButton(
                       child: const Image(
-                        image: AssetImage('assets/images/diy.jpg'),
+                        image: AssetImage('assets/images/diy.png'),
                         fit: BoxFit.cover,
+                        width: double.infinity,
+                        height: double.infinity,
                       ),
                       onPressed: () {}))),
           Container(
@@ -196,11 +197,13 @@ class HomePage extends StatelessWidget {
               margin: const EdgeInsets.only(top: 10, bottom: 10),
               child: SizedBox(
                   width: double.infinity,
-                  height: 200,
+                  height: MediaQuery.of(context).size.width / 2,
                   child: TextButton(
                       child: const Image(
                         image: AssetImage('assets/images/webinar.jpg'),
                         fit: BoxFit.cover,
+                        width: double.infinity,
+                        height: double.infinity,
                       ),
                       onPressed: () {}))),
           Container(
@@ -211,7 +214,8 @@ class HomePage extends StatelessWidget {
               child: const Text("SPONSORS",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold))),
           Container(
-              margin: const EdgeInsets.only(left: 30, top: 10, right: 30, bottom: 10),
+              margin: const EdgeInsets.only(
+                  left: 30, top: 10, right: 30, bottom: 10),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -222,15 +226,18 @@ class HomePage extends StatelessWidget {
                             onPressed: () {},
                             child: const Image(
                                 image: AssetImage('assets/images/nid_logo.jpg'),
-                                fit: BoxFit.cover))),
+                                fit: BoxFit.cover,
+                                width: double.infinity))),
                     SizedBox(
                         width: 100,
                         height: 100,
                         child: TextButton(
                             onPressed: () {},
                             child: const Image(
-                                image: AssetImage('assets/images/sabf_logo.jpg'),
-                                fit: BoxFit.cover))),
+                                image:
+                                    AssetImage('assets/images/sabf_logo.jpg'),
+                                fit: BoxFit.cover,
+                                width: double.infinity))),
                     SizedBox(
                         width: 100,
                         height: 100,
@@ -238,7 +245,8 @@ class HomePage extends StatelessWidget {
                             onPressed: () {},
                             child: const Image(
                                 image: AssetImage('assets/images/ccu_logo.png'),
-                                fit: BoxFit.cover)))
+                                fit: BoxFit.cover,
+                                width: double.infinity)))
                   ])),
         ]),
       ));

@@ -51,7 +51,7 @@ class BottomNavigationController extends StatefulWidget {
 class _BottomNavigationControllerState
     extends State<BottomNavigationController> {
   int _currentIndex = 0;
-  final pages = [const HomePage(), const TestPage(), const CommunityPage()];
+  static const pages = [HomePage(), TestPage(), CommunityPage()];
   String userName = "";
   String userEmail = "";
   String photoUrl = "";
@@ -175,7 +175,7 @@ class _BottomNavigationControllerState
               BottomNavigationBarItem(
                   icon: Icon(Icons.school, size: 30), label: 'Knowledge'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.menu_book, size: 30), label: 'Test'),
+                  icon: Icon(Icons.menu_book, size: 30), label: 'Exam'),
               BottomNavigationBarItem(
                   icon: Icon(Icons.groups, size: 30), label: 'Community')
             ],
