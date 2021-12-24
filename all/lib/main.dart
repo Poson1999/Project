@@ -1,6 +1,8 @@
+import 'dart:async';
+
 import 'package:all/pages/auth/auth_page.dart';
 import 'package:flutter/material.dart';
-import 'package:all/pages/test_page.dart';
+import 'package:all/pages/exams/test_page.dart';
 import 'package:all/pages/community_page.dart';
 import 'package:all/pages/chat_page.dart';
 import 'package:all/pages/edit_profile.dart';
@@ -55,6 +57,7 @@ class _BottomNavigationControllerState
   String userName = "";
   String userEmail = "";
   String photoUrl = "";
+  late Timer _timer;
 
   // 登出時將登入狀態清空
   void logout() async {
@@ -80,8 +83,9 @@ class _BottomNavigationControllerState
 
   @override
   void initState() {
-    super.initState();
     getProfile();
+    _timer = Timer.periodic(const Duration(seconds: 5), (timer) => getProfile());
+    super.initState();
   }
 
   @override
