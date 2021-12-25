@@ -9,10 +9,10 @@ class HomePage extends StatelessWidget {
         child: Column(children: <Widget>[
           Container(
               margin: const EdgeInsets.only(
-                  left: 10, top: 10, right: 10, bottom: 10),
+                  left: 10, top: 10, right: 10),
               child: SizedBox(
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.width / 2,
+                  height: (MediaQuery.of(context).size.width - 20) * 203/390,
                   child: PageView(children: <Widget>[
                     Image.asset('assets/images/vp.jpg', fit: BoxFit.cover),
                     Image.asset('assets/images/vp1.png', fit: BoxFit.cover),

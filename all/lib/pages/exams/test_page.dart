@@ -20,7 +20,7 @@ class TestPage extends StatelessWidget {
                       context: context,
                       builder: (BuildContext context) => const AlertDialog(
                             title: Text('Exam information'),
-                            content: Text('info info'),
+                            content: Text('info\n\n\n\n\n\n\n\n\n\n\ninfo'),
                           )),
                   icon: const Icon(Icons.info_outline, color: Colors.green))
             ]),

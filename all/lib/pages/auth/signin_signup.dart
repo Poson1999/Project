@@ -6,14 +6,14 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:all/pages/constant.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({Key? key}) : super(key: key);
+class SignInUp extends StatefulWidget {
+  const SignInUp({Key? key}) : super(key: key);
 
   @override
-  _LoginFormState createState() => _LoginFormState();
+  _SignState createState() => _SignState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _SignState extends State<SignInUp> {
   // 判斷是否載入中
   bool isLoading = true;
 
@@ -87,6 +87,7 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     final _tapPages = <Widget>[
+      //Sign in
       Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.13),
@@ -116,16 +117,17 @@ class _LoginFormState extends State<LoginForm> {
                 Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      TextButton(onPressed: login, child: const Text("登入")),
+                      TextButton(onPressed: login, child: const Text("Sign up"))/*,
                       TextButton(onPressed: () {}, child: const Text("獲取資料")),
                       TextButton(
                           onPressed: () => Navigator.of(context)
                               .pushNamedAndRemoveUntil(
                                   '/main', (Route<dynamic> route) => false),
-                          child: const Text("直接轉跳"))
+                          child: const Text("直接轉跳"))*/
                     ]),
                 const Spacer(flex: 1)
               ]))),
+      //Sign up
       Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.13),
@@ -172,8 +174,8 @@ class _LoginFormState extends State<LoginForm> {
                     children: [
                       TextButton(
                           onPressed: () {},
-                          child: const Text("註冊",
-                              style: TextStyle(color: Colors.white)))
+                          child: const Text("Sign up",
+                              style: TextStyle(color: Colors.green)))
                     ])
               ])))
     ];
@@ -184,52 +186,7 @@ class _LoginFormState extends State<LoginForm> {
     return DefaultTabController(
         length: _tabs.length,
         child: Scaffold(
-            appBar: AppBar(
-              title: /*const Text('Sign in / Sign up'),
-            bottom: */
-                  const TabBar(
-                tabs: _tabs,
-              ),
-            ),
-            body: TabBarView(
-              children: _tapPages,
-            )));
+            appBar: AppBar(title: const TabBar(tabs: _tabs)),
+            body: TabBarView(children: _tapPages)));
   }
-/*Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width * 0.13),
-      child: Form(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        const Spacer(flex: 1),
-        TextFormField(
-            controller: emailController,
-            decoration: const InputDecoration(
-                filled: true,
-                fillColor: Colors.white38,
-                labelText: 'Email Address',
-                labelStyle: TextStyle(fontSize: 20))),
-        Padding(
-            padding: const EdgeInsets.symmetric(vertical: defaultPadding),
-            child: TextFormField(
-                controller: passController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white38,
-                    labelText: 'Password',
-                    labelStyle: TextStyle(fontSize: 20)))),
-        Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-          TextButton(
-              onPressed: login,
-              child: const Text("登入", style: TextStyle(color: Colors.white))),
-          TextButton(
-              onPressed: () {},
-              child: const Text("獲取資料", style: TextStyle(color: Colors.white))),
-          TextButton(
-              onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(
-                  '/main', (Route<dynamic> route) => false),
-              child: const Text("直接轉跳", style: TextStyle(color: Colors.white)))
-        ]),
-        const Spacer(flex: 1)
-      ])));*/
 }

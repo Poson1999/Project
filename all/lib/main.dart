@@ -1,6 +1,4 @@
-import 'dart:async';
-
-import 'package:all/pages/auth/auth_page.dart';
+import 'package:all/pages/auth/signin_signup.dart';
 import 'package:flutter/material.dart';
 import 'package:all/pages/exams/test_page.dart';
 import 'package:all/pages/community_page.dart';
@@ -31,12 +29,12 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(primarySwatch: Colors.green),
         home: isLoggedIn
             ? const Scaffold(body: BottomNavigationController())
-            : const AuthPage(),
+            : const SignInUp(),
         // 命名每個畫面的代號，可使用代號轉跳，書籤轉跳的功能可能會用到
         routes: <String, WidgetBuilder>{
           '/main': (BuildContext context) =>
               const Scaffold(body: BottomNavigationController()),
-          '/auth': (BuildContext context) => const AuthPage(),
+          '/auth': (BuildContext context) => const SignInUp(),
         },
         debugShowCheckedModeBanner: false,
       );
@@ -57,7 +55,6 @@ class _BottomNavigationControllerState
   String userName = "";
   String userEmail = "";
   String photoUrl = "";
-  late Timer _timer;
 
   // 登出時將登入狀態清空
   void logout() async {
@@ -84,7 +81,6 @@ class _BottomNavigationControllerState
   @override
   void initState() {
     getProfile();
-    _timer = Timer.periodic(const Duration(seconds: 5), (timer) => getProfile());
     super.initState();
   }
 
