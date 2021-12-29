@@ -117,7 +117,10 @@ class _SignState extends State<SignInUp> {
                 Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      TextButton(onPressed: login, child: const Text("Sign up"))/*,
+                      TextButton(
+                          onPressed: login,
+                          child: const Text(
+                              "Sign up")) /*,
                       TextButton(onPressed: () {}, child: const Text("獲取資料")),
                       TextButton(
                           onPressed: () => Navigator.of(context)
@@ -131,53 +134,53 @@ class _SignState extends State<SignInUp> {
       Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.13),
-          child: Form(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                TextFormField(
-                    controller: nameController,
-                    decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white38,
-                        labelText: 'Name',
-                        labelStyle: TextStyle(fontSize: 20))),
-                Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: TextFormField(
-                        controller: emailController,
-                        decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white38,
-                            labelText: 'Email Address',
-                            labelStyle: TextStyle(fontSize: 20)))),
-                TextFormField(
-                    controller: passController,
-                    decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white38,
-                        labelText: 'Password',
-                        labelStyle: TextStyle(fontSize: 20))),
-                Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: TextFormField(
-                        controller: confirmPassController,
-                        decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white38,
-                            labelText: 'Confirm Password',
-                            labelStyle: TextStyle(fontSize: 20)))),
-                Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+          child: Column(children: <Widget>[
+            const Spacer(flex: 1),
+            SingleChildScrollView(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      TextButton(
-                          onPressed: () {},
-                          child: const Text("Sign up",
-                              style: TextStyle(color: Colors.green)))
-                    ])
-              ])))
+                  TextFormField(
+                      controller: nameController,
+                      decoration: const InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white38,
+                          labelText: 'Name',
+                          labelStyle: TextStyle(fontSize: 20))),
+                  Padding(
+                      padding:
+                          const EdgeInsets.symmetric(vertical: defaultPadding),
+                      child: TextFormField(
+                          controller: emailController,
+                          decoration: const InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white38,
+                              labelText: 'Email Address',
+                              labelStyle: TextStyle(fontSize: 20)))),
+                  TextFormField(
+                      controller: passController,
+                      decoration: const InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white38,
+                          labelText: 'Password',
+                          labelStyle: TextStyle(fontSize: 20))),
+                  Padding(
+                      padding:
+                          const EdgeInsets.symmetric(vertical: defaultPadding),
+                      child: TextFormField(
+                          controller: confirmPassController,
+                          decoration: const InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white38,
+                              labelText: 'Confirm Password',
+                              labelStyle: TextStyle(fontSize: 20)))),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text("Sign up",
+                          style: TextStyle(color: Colors.green))),
+                ])),
+            const Spacer(flex: 1)
+          ]))
     ];
     const _tabs = <Tab>[
       Tab(icon: Icon(Icons.login), text: 'Sign in'),
