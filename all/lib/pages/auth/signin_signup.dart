@@ -135,7 +135,7 @@ class _SignState extends State<SignInUp> {
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.13),
           child: SingleChildScrollView(
-              padding: EdgeInsets.only(top: 50),
+              padding: const EdgeInsets.only(top: 50),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
