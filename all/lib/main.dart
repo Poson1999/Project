@@ -1,4 +1,5 @@
 import 'package:all/pages/auth/signin_signup.dart';
+import 'package:all/pages/bookmark/bookmark_page.dart';
 import 'package:flutter/material.dart';
 import 'package:all/pages/exams/test_page.dart';
 import 'package:all/pages/community_page.dart';
@@ -115,7 +116,10 @@ class _BottomNavigationControllerState
           ListTile(
               title: const Text('Bookmark'),
               leading: const Icon(Icons.bookmark_outline, color: Colors.green),
-              onTap: () {}),
+              onTap: ()=> Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const BookMarkPage()))),
           ListTile(
               title: const Text('Reading List'),
               leading: const Icon(Icons.list, color: Colors.green),
