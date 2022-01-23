@@ -1,5 +1,6 @@
 import 'dart:convert' as convert;
 import 'package:all/class/bookmark_item.dart';
+import 'package:all/pages/category/selection/selection_of_bamboo.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -52,6 +53,17 @@ class _BookMarkPageState extends State<BookMarkPage> {
         msg: "Error: " + e.toString(),
       );
     }
+  }
+
+  // 轉跳至該頁面，這裡用每個頁面的pageName判斷
+  void goToPage(String pageName){
+    switch(pageName){
+      case "SELECTION OF BAMBOO":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const SelectionOfBamboo()));
+        break;
+    }
+    
   }
 
 
@@ -136,9 +148,7 @@ class _BookMarkPageState extends State<BookMarkPage> {
 
               },
             ),
-            onTap: () => Fluttertoast.showToast(
-              msg: "id = " + bookmarkList[index].id,
-            ),
+            onTap: () => goToPage(bookmarkList[index].pageName),
           );
         }, separatorBuilder: (BuildContext context, int index) => const Divider(),
       )

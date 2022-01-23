@@ -1,3 +1,4 @@
+import 'package:all/pages/category/selection/selection.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,7 +35,10 @@ class HomePage extends StatelessWidget {
                         width: 75,
                         height: 75,
                         child: TextButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Selection())),
                             child: const Image(
                                 image: AssetImage('assets/images/1.png'),
                                 fit: BoxFit.fill))),
