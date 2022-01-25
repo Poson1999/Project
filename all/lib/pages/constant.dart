@@ -16,7 +16,13 @@ const Duration defaultDuration = Duration(milliseconds: 300);
 const TextStyle titleStyle = TextStyle(
   color: Color(0xFF306F33),
   fontWeight: FontWeight.bold,
-  fontSize: 18,
+  fontSize: 20,
+);
+
+const TextStyle subStyle = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.bold,
+  fontSize: 18
 );
 
 const TextStyle textStyle = TextStyle(

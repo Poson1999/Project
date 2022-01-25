@@ -35,10 +35,9 @@ class Selection extends StatelessWidget {
               },
               trailing: const Icon(Icons.keyboard_arrow_right),
             ),
+            const Divider(color: Colors.black45)
           ],
       ),
     );
   }
-
-
 }

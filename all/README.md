@@ -7,3 +7,4 @@ Here are some resources I used:
 - [Flutter icons](https://fonts.google.com/icons?selected=Material+Icons)
 - [Flutter catalog](https://x-wei.github.io/flutter_catalog/#/)
 - [Flutter development](https://docs.flutter.dev/development/packages-and-plugins/favorites)
+- [App safety](https://www.mas.org.tw/spaw2/uploads/files/1050811-1.pdf)
