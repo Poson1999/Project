@@ -1,5 +1,6 @@
 import 'dart:convert' as convert;
 import 'package:all/class/bookmark_item.dart';
+import 'package:all/pages/category/selection/commercial_bamboo_species.dart';
 import 'package:all/pages/category/selection/selection_of_bamboo.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -61,6 +62,10 @@ class _BookMarkPageState extends State<BookMarkPage> {
       case "SELECTION OF BAMBOO":
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const SelectionOfBamboo()));
+        break;
+      case "COMMERCIAL BAMBOO SPECIES":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const CommericalBambooSpecies()));
         break;
     }
     

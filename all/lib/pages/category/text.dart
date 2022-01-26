@@ -3,9 +3,10 @@
 // Selection
 
 const String selectionTitle = "Selection";
-
 const String sob = "SELECTION OF BAMBOO";
+const String cbs = "COMMERCIAL BAMBOO SPECIES";
 
+// Selection-sob
 const String sobTitle1 = "SELECTION OF BAMBOO FOR CONSTRUCTION";
 const String sob1 = "A prerequisite for any good bamboo construction is the selection of mature and de–starched bamboo. The mature Bamboo in 3–4 years old and a dry bamboo means the starch content is considerably decreased when the felled bamboo are kept under water. A good source of such bamboo is the riverside market where the bamboos have been transported along the waterway. This sets a natural preservation process in motion whereby the bamboo becomes less prone to borer attack.";
 const String sob2 = "• Selection of mature and straight bamboo pieces.\n• Use of bamboo having thick walls (8mm - 10 mm or more) and outer diameter 80mm - 100 mm or more is preferred for Columns, Beams and Truss.\n• Use of bamboo having thin walls (4mm - 8 mm) and outer diameter 50mm - 75mm is preferred for Purlins.\n• Inter nodal distance less is preferable.\n• Bamboo should be free from any defects\n• Smooth cover should not be peeled off.";
@@ -13,6 +14,61 @@ const String sobTitle2 = "FACTORS AFFECTING STRENGTH OF BAMBOO";
 const String sob3 = "• Locality\n• Age of culm\n• Position within culm\n• External Diameter\n• Wall thickness\n• Position of node\n• Moisture content";
 const String sobTitle3 = "WEATHER PROTECTION";
 const String sob4 = "When exposed to water for long periods, bamboo will decay. `The structures are planned such that, it is protected from rain and moisture. Usually the bamboo works start from above the plinth and away from any rain splashing. The roof overhangs are large to protect the structure from rain and extreme weather.";
+
+// Selection-cbs
+const String cbsTitle1 = "COMMERCIAL BAMBOO SPECIES";
+const String cbs1 = "Bamboo species recommended under NBM";
+const String cbs2 = "•Bambusa tulda ( Jati)\n•Bambusa balcooa ( Bhaluka)\n•Bambusa nutans (Mokal)\n•Bambusa bambos (Kota Bah)\n•Dendrocalamus hamiltoni  (kako)";
+
+const String cbs3 = "Bambusa tulda";
+const String cbs4 = "Local name: JATI";
+const String cbs5 = "Height:\n16m-23m";
+const String cbs6 = "Diameter:\n5cm-19cm";
+const String cbs7 = "Wall thickness:\n8mm-12mm";
+const String cbs8 = "Flowering Cycle:\n30-60 years";
+const String cbs9 = "Yield:\n15 ton/ha";
+const String cbs10 = "Average Culm\nWt. (air dried):\n15 kg";
+const String cbs11 = "Uses:\nConstruction, paper industry, handicrafts";
+
+const String cbs12 = "Bambusa balcooa";
+const String cbs13 = "Local name: BHALUKA";
+const String cbs14 = "Height:\n25m-30m";
+const String cbs15 = "Diameter:\n8cm-15cm";
+const String cbs16 = "Wall thickness:\n14mm-22mm";
+const String cbs17 = "Flowering Cycle:\n35-45 years";
+const String cbs18 = "Yield:\n20 ton/ha";
+const String cbs19 = "Average Culm\nWt. (air dried):\n20 kg";
+const String cbs20 = "Uses:\nConstruction, paper industry, Furniture, edible shoot";
+
+const String cbs21 = "Bambusa nutans";
+const String cbs22 = "Local name: MOKAL";
+const String cbs23 = "Height:\n15m-20m";
+const String cbs24 = "Diameter:\n5cm-10cm";
+const String cbs25 = "Wall thickness:\n8mm-12mm";
+const String cbs26 = "Flowering Cycle:\n35 years";
+const String cbs27 = "Yield:\n15 ton/ha";
+const String cbs28 = "Average Culm\nWt. (air dried):\n15 kg";
+const String cbs29 = "Uses:\nConstruction, Mat, Paper, Furniture, Post scaffolding";
+
+const String cbs30 = "Bambusa bambos";
+const String cbs31 = "Local name: KOTA BAH";
+const String cbs32 = "Height:\n20m-25m";
+const String cbs33 = "Diameter:\n15cm-18cm";
+const String cbs34 = "Wall thickness:\n10mm-15mm";
+const String cbs35 = "Flowering Cycle:\n40-60 years";
+const String cbs36 = "Yield:\n10 ton/ha";
+const String cbs37 = "Average Culm\nWt. (air dried):\n12 kg";
+const String cbs38 = "Uses:\nConstruction, Paper, Fencing";
+
+const String cbs39 = "Dendrocalamus hamiltoni";
+const String cbs40 = "Local name: KAKO";
+const String cbs41 = "Height:\n12m-25m";
+const String cbs42 = "Diameter:\n10cm-20cm";
+const String cbs43 = "Wall thickness:\n8mm-13mm";
+const String cbs44 = "Flowering Cycle:\n30-40 years";
+const String cbs45 = "Yield:\n24 ton/ha";
+const String cbs46 = "Average Culm\nWt. (air dried):\n24 kg";
+const String cbs47 = "Uses:\nPaper, Poles, Construction, Utensils , Handicrafts";
 
 //Plantation
 const String pt = 'PLANTATION';
@@ -148,3 +204,4 @@ const String mai8 = 'Mulching is absolutely necessary for the production of good
 const String mai9 = 'RHIZOME EXPOSURES';
 const String mai10 = 'It has been reported from some of the ASEAN countries that during the summer, the soil covering the rhizome of clumps may be removed in such a way that no rhizome or buds are injured and exposed to the sun for about a week or so and than covered with soil mixed with some fertilizer.';
 const String mai11 = 'This ensures activation of the buds and the rate of burgeoning of shoots increases.';
+
