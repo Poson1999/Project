@@ -120,7 +120,7 @@ class _SignState extends State<SignInUp> {
                       TextButton(
                           onPressed: login,
                           child: const Text(
-                              "Sign up")) /*,
+                              "Sign in")) /*,
                       TextButton(onPressed: () {}, child: const Text("獲取資料")),
                       TextButton(
                           onPressed: () => Navigator.of(context)
