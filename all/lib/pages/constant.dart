@@ -25,6 +25,11 @@ const TextStyle subStyle = TextStyle(
   fontSize: 18
 );
 
+const TextStyle imgText = TextStyle(
+  color: Color(0xFF306F33),
+  fontSize: 17,
+);
+
 const TextStyle textStyle = TextStyle(
   color: Colors.black54,
   fontSize: 17,

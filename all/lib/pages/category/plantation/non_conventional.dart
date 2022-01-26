@@ -14,7 +14,8 @@ class NonConventional extends StatelessWidget {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+          padding:
+              const EdgeInsets.only(top: 16, bottom: 16, left: 20, right: 20),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,16 +29,16 @@ class NonConventional extends StatelessWidget {
                 Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const <Widget>[
-                          Image(
-                              image: AssetImage(
-                                  "assets/images/category/plantation/non.png")),
-                          SizedBox(width: 10),
-                          Image(
-                              image: AssetImage(
-                                  "assets/images/category/plantation/non1.png"))
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/non.png"))),
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/non1.png"))),
                         ])),
                 const Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
@@ -49,7 +50,6 @@ class NonConventional extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: const <Widget>[
                           Image(
                               image: AssetImage(
@@ -59,27 +59,19 @@ class NonConventional extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 5),
                     child: SelectableText(non4, style: textStyle)),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const <Widget>[
-                      Expanded(
-                          child: Image(
-                            image: AssetImage(
-                                "assets/images/category/plantation/non3.png"),
-                          ),
-                      ),
-                      SizedBox(width: 10),
-                      Expanded(
-                        child: Image(
-                          image: AssetImage(
-                              "assets/images/category/plantation/non4.png"),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: const <Widget>[
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/non3.png"))),
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/non4.png"))),
+                        ])),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 5),
                   child: SelectableText(non5, style: textStyle),
@@ -101,26 +93,26 @@ class NonConventional extends StatelessWidget {
                   child: SelectableText(non9, style: textStyle),
                 ),
                 Padding(
-                    padding: const EdgeInsets.only(top: 5),
+                    padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const <Widget>[
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/plantation/non5.png")),
-                          ),
-                          SizedBox(width: 10),
+                                      "assets/images/category/plantation/non5.png"))),
                           Expanded(
-                            child: Image(
-                                image: AssetImage(
-                                    "assets/images/category/plantation/non6.png"))
-                          ),
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/non6.png"))),
                         ])),
-                const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5),
-                    child: SelectableText(non10, style: textStyle)),
+                Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const <Widget>[
+                          SelectableText(non10, style: imgText)
+                        ])),
                 const Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
                     child: SelectableText(non11, style: textStyle)),
@@ -131,7 +123,6 @@ class NonConventional extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: const <Widget>[
                           Image(
                               image: AssetImage(
@@ -140,16 +131,16 @@ class NonConventional extends StatelessWidget {
                 Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const <Widget>[
-                          Image(
-                              image: AssetImage(
-                                  "assets/images/category/plantation/non8.png")),
-                          SizedBox(width: 10),
-                          Image(
-                              image: AssetImage(
-                                  "assets/images/category/plantation/non9.png"))
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/non8.png"))),
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/non9.png"))),
                         ])),
                 const Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
@@ -167,7 +158,6 @@ class NonConventional extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: const <Widget>[
                           Image(
                               image: AssetImage(
@@ -195,7 +185,6 @@ class NonConventional extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: const <Widget>[
                           Image(
                               image: AssetImage(
@@ -216,20 +205,16 @@ class NonConventional extends StatelessWidget {
                 Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const <Widget>[
-                          Expanded(
-                            child: Image(
-                                image: AssetImage(
-                                    "assets/images/category/plantation/non5.png")),
-                          ),
-                          SizedBox(width: 10),
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/plantation/non6.png"))
-                          ),
+                                      "assets/images/category/plantation/non12.png"))),
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/non13.png"))),
                         ])),
                 const Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
