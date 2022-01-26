@@ -14,7 +14,8 @@ class Conventional extends StatelessWidget {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-          padding: const EdgeInsets.only(top: 16, bottom: 16 ,left: 20, right: 20),
+          padding:
+              const EdgeInsets.only(top: 16, bottom: 16, left: 20, right: 20),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
