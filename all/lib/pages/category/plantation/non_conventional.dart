@@ -119,29 +119,27 @@ class NonConventional extends StatelessWidget {
                 const Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
                     child: SelectableText(non12, style: textStyle)),
-                Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
-                          Image(
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const <Widget>[
+                      Image(
+                          image: AssetImage(
+                              "assets/images/category/plantation/non7.png"))
+                    ]),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const <Widget>[
+                      Expanded(
+                          flex: 3,
+                          child: Image(
                               image: AssetImage(
-                                  "assets/images/category/plantation/non7.png"))
-                        ])),
-                Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const <Widget>[
-                          Expanded(
-                              child: Image(
-                                  image: AssetImage(
-                                      "assets/images/category/plantation/non8.png"))),
-                          Expanded(
-                              child: Image(
-                                  image: AssetImage(
-                                      "assets/images/category/plantation/non9.png"))),
-                        ])),
+                                  "assets/images/category/plantation/non8.png"))),
+                      Expanded(
+                          flex: 2,
+                          child: Image(
+                              image: AssetImage(
+                                  "assets/images/category/plantation/non9.png")))
+                    ]),
                 const Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
                     child: SelectableText(non13, style: textStyle)),

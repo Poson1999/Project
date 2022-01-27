@@ -26,20 +26,20 @@ class Conventional extends StatelessWidget {
                 const Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
                     child: SelectableText(con1, style: textStyle)),
-                Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const <Widget>[
-                          Expanded(
-                              child: Image(
-                                  image: AssetImage(
-                                      "assets/images/category/plantation/con0.png"))),
-                          Expanded(
-                              child: Image(
-                                  image: AssetImage(
-                                      "assets/images/category/plantation/con1.png"))),
-                        ])),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const <Widget>[
+                      Expanded(
+                          flex: 2,
+                          child: Image(
+                              image: AssetImage(
+                                  "assets/images/category/plantation/con0.png"))),
+                      Expanded(
+                          flex: 1,
+                          child: Image(
+                              image: AssetImage(
+                                  "assets/images/category/plantation/con1.png")))
+                    ]),
                 Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
