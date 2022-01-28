@@ -1,6 +1,6 @@
+import 'package:all/pages/category/postHarvesting/post_harvesting_management.dart';
 import 'package:all/pages/category/postHarvesting/post_harvesting_processing.dart';
 import 'package:all/pages/category/text.dart';
-import 'package:all/pages/category/plantation/nursery_management.dart';
 import 'package:flutter/material.dart';
 
 class PostHarvesting extends StatelessWidget {
@@ -32,7 +32,7 @@ class PostHarvesting extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const NurseryManagement()));
+                      builder: (context) => const PostHarvestingManagement()));
             },
             trailing: const Icon(Icons.keyboard_arrow_right),
           ),
