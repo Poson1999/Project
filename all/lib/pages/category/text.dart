@@ -72,6 +72,57 @@ const String cbs45 = "Yield:\n24 ton/ha";
 const String cbs46 = "Average Culm\nWt. (air dried):\n24 kg";
 const String cbs47 = "Uses:\nPaper, Poles, Construction, Utensils , Handicrafts";
 
+const String cbs48 = "Commercial recommended Bamboo Species";
+const String cbs49 = "•Dendrocalamus giganteus (Munro)\n•Dendrocalamus asper (Malasia bamboo)\n•Dendrocalamus strictus (Lati Bah)\n•Melocanna baccifera (Muli)\n•Ochlandra travancoria (Oda/Odai)";
+
+const String cbs50 = "Dendrocalamus giganteus";
+const String cbs51 = "Local name: MUNRO";
+const String cbs52 = "Height:\n30m-40m";
+const String cbs53 = "Diameter:\n40cm-60cm";
+const String cbs54 = "Wall thickness:\n20mm-25mm";
+const String cbs55 = "Flowering Cycle:\n40-80 years";
+const String cbs56 = "Yield:\n36 ton/ha";
+const String cbs57 = "Average Culm\nWt. (air dried):\n50 kg";
+const String cbs58 = "Uses:\nContainer, Vessel, Post/scaffolding, Handicrafts";
+
+const String cbs59 = "Dendrocalamus asper";
+const String cbs60 = "Local name: MALASIA BAMBOO";
+const String cbs61 = "Height:\n20m-30m";
+const String cbs62 = "Diameter:\n10cm-20cm";
+const String cbs63 = "Wall thickness:\n11mm-36mm";
+const String cbs64 = "Flowering Cycle:\n120-130 years";
+const String cbs65 = "Yield:\n33 ton/ha";
+const String cbs66 = "Average Culm\nWt. (air dried):\n46 kg";
+const String cbs67 = "Uses:\nEdible Shoot,Construction, Post/scaffolding,Industrial";
+
+const String cbs68 = "Dendrocalamus strictus";
+const String cbs69 = "Local name: LATI BAH";
+const String cbs70 = "Height:\n10m-15m";
+const String cbs71 = "Diameter:\n2.5cm-8cm";
+const String cbs72 = "Wall thickness:\n3mm-10mm";
+const String cbs73 = "Flowering Cycle:\n25-45 years";
+const String cbs74 = "Yield:\n3 ton/ha";
+const String cbs75 = "Average Culm\nWt. (air dried):\n4 kg";
+const String cbs76 = "Uses:\nHandicraft, Furniture";
+
+const String cbs77 = "Melocanna baccifera";
+const String cbs78 = "Local name: MULI";
+const String cbs79 = "Height:\n10m-15m";
+const String cbs80 = "Diameter:\n3cm-7cm";
+const String cbs81 = "Wall thickness:\n5mm-12mm";
+const String cbs82 = "Flowering Cycle:\n40-45 years";
+const String cbs83 = "Yield:\n7 ton/ha";
+const String cbs84 = "Average Culm\nWt. (air dried):\n3 kg";
+const String cbs85 = "Uses:\nHandicraft, Paper";
+
+const String cbs86 = "Ochlandra travancoria ";
+const String cbs87 = "Local name: ODA/ODAI";
+const String cbs88 = "Height:\n2m-6m";
+const String cbs89 = "Diameter:\n2.5cm-5cm";
+const String cbs90 = "Wall thickness:\n";
+const String cbs91 = "Flowering Cycle:\n7-15 years";
+const String cbs92 = "Uses:\nMat Basket, Papers";
+
 //Plantation
 const String pt = 'PLANTATION';
 const String p = 'PLANTATION METHOD';
