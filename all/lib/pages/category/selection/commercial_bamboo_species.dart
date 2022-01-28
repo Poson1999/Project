@@ -344,6 +344,311 @@ class CommericalBambooSpecies extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child:SelectableText(cbs47, style: textStyle),
               ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs48, style: subStyle),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs49, style: textStyle),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs50, style: subStyle),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5),
+                      child: Image(
+                        image: AssetImage("assets/images/category/selection/cbs_6.png"),
+                      )
+                  ),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs51, style: textStyle),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs52, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs53, style: textStyle),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs54, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs55, style: textStyle),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs56, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs57, style: textStyle),
+                  )
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs58, style: textStyle),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs59, style: subStyle),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5),
+                      child: Image(
+                        image: AssetImage("assets/images/category/selection/cbs_7.png"),
+                      )
+                  ),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs60, style: textStyle),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs61, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs62, style: textStyle),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs63, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs64, style: textStyle),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs65, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs66, style: textStyle),
+                  )
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs67, style: textStyle),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs68, style: subStyle),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5),
+                      child: Image(
+                        image: AssetImage("assets/images/category/selection/cbs_8.png"),
+                      )
+                  ),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs69, style: textStyle),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs70, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs71, style: textStyle),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs72, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs73, style: textStyle),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs74, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs75, style: textStyle),
+                  )
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs76, style: textStyle),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs77, style: subStyle),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5),
+                      child: Image(
+                        image: AssetImage("assets/images/category/selection/cbs_9.png"),
+                      )
+                  ),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs78, style: textStyle),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs79, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs80, style: textStyle),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs81, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs82, style: textStyle),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs83, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs84, style: textStyle),
+                  )
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs85, style: textStyle),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs86, style: subStyle),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5),
+                      child: Image(
+                        image: AssetImage("assets/images/category/selection/cbs_10.png"),
+                      )
+                  ),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs87, style: textStyle),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs88, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs89, style: textStyle),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs90, style: textStyle),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child:SelectableText(cbs91, style: textStyle),
+                  )
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child:SelectableText(cbs92, style: textStyle),
+              ),
             ],
           ),
         )

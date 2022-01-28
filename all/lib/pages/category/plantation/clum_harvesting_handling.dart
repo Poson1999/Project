@@ -218,9 +218,10 @@ class ClumHarvestingHandling extends StatelessWidget {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const <Widget>[
-                          Image(
-                              image: AssetImage(
-                                  "assets/images/category/plantation/cul2.png"))
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/cul2.png")))
                         ])),
                 const Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
