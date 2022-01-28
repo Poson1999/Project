@@ -186,18 +186,20 @@ class ShootHarvestingHandling extends StatelessWidget {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const <Widget>[
-                          Image(
-                              image: AssetImage(
-                                  "assets/images/category/plantation/sho.png"))
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/sho.png")))
                         ])),
                 Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const <Widget>[
-                          Image(
-                              image: AssetImage(
-                                  "assets/images/category/plantation/sho1.png"))
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/sho1.png")))
                         ])),
               ])));
 }

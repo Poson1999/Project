@@ -128,9 +128,10 @@ class ProposedPlanning extends StatelessWidget {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const <Widget>[
-                          Image(
-                              image: AssetImage(
-                                  "assets/images/category/plantation/pro.png"))
+                          Expanded(
+                              child: Image(
+                                  image: AssetImage(
+                                      "assets/images/category/plantation/pro.png")))
                         ])),
                 const Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
