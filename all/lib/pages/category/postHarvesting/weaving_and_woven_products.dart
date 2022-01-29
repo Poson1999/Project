@@ -619,11 +619,12 @@ class WeavingAndWovenProducts extends StatelessWidget {
                     child: SelectableText(wp38, style: textStyle)),
                 Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: Row(
+                    child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const <Widget>[
-                          Expanded(
+                          SizedBox(
+                            width: double.infinity,
                               child: Image(
                                   image: AssetImage(
                                       "assets/images/category/post/wp32.png")))

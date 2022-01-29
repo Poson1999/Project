@@ -546,3 +546,83 @@ const String ma30 = 'Pressure Treatment Tank';
 const String ma31 = 'This machine is used for treating bamboo by impregnating chemicals by pressure.';
 const String ma32 = 'Silvering Machine';
 const String ma33 = 'This machine makes thin slivers for mat weaving.';
+
+//joinery
+const String j0 = 'JOINERY';
+const String j = 'BASIC PRINCIPLE';
+const String j1 = 'JOINERY TECHNIQUES';
+const String bp0 = 'BASICS';
+const String bp = '• While joining two bamboo - the joint  should act as a bridge of mechanical strength of two bamboos - by bringing structural continuity\n'
+    '• Should bear load as that of normal bamboo\n'
+    '• Joints should be done near to the nodes of bamboo as possible\n'
+    '• Damaged or ruptured parts of bamboo should be avoided\n'
+    '• Nailing can be done near to the internodes, otherwise should be avoided\n'
+    '• While joining two bamboo - the joint  should act as a bridge of mechanical strength of two   bamboos - by bringing structural continuity\n'
+    '• Should bear load as that of normal bamboo\n'
+    '• Joints should be done near to the nodes of bamboo as possible\n'
+    '• Damaged or ruptured parts of bamboo should be avoided\n'
+    '• Nailing can be done near to the internodes, otherwise should be avoided';
+const String bp1 = 'FRICTION TIGHT ROPE CONNECTION';
+const String bp2 = '• Cocos palm or other vegetable fibres.\n'
+    '• Strips of bamboo\n'
+    '• Rattans\n'
+    '• For tight connections green bamboo  strips are used, the fibres are watered before tying around the bamboo.While drying fibres shorten and the connection becomes stronger.';
+const String jt = 'SPLICED JOINTS';
+const String jt1 = 'ORTHOGONAL  JOINTS';
+const String jt2 = 'ANGLE JOINTS FOR TRUSSES JOINTS';
+const String jt3 = 'MODERN JOINING TECHNIQUES';
+const String jt4 = 'USEFUL TECHNIQUES';
+const String sj = '• Full bamboo culms are over lapped by at least one internode\n'
+    '• Tied at two or three places\n'
+    '• To increase strength bamboo or hardwood dowels can be used\n'
+    '• Quite bulky';
+const String sj1 = 'SLEEVES AND INSERT';
+const String sj2 = 'HALF-LAPPING';
+const String sj3 = '• Similar diameter culms\n'
+    '• Cut longitudinally to half depth at least one internode length';
+const String sj4 = '• Short length of bamboos of appropriate diameter are used either externally or internally to join to cu/ms together';
+const String sj5 = 'BUTT JOINTS WITH SIDE PLATES';
+const String sj6 = '• Culms of similar diameter are laid end to end.\n'
+    '• Side plates made from quarter-round culms of slightly larger diameter\n'
+    '• Side plates two or more internodes long\n';
+const String oj = '• When two or more members meet or cross at right angles. The basic configurations are: Butt joint and Crossover joint.\n'
+    '• The top of the post can be cut to form a saddle to ensure secure seating of the beam and good load transfer\n'
+    '• The saddle should be close to a node to reduce the risk of splitting';
+const String oj1 = 'VARIATION ON THE SADDLE JOINT';
+const String aj = '• Two or more members meet or cross other than at right angles\n'
+    '• The ends of the members can be shaped to fit in to the other\n'
+    '• Integral tenons might also be used but fabrication is time consuming';
+const String aj1 = 'DETAIL';
+const String mj = '• Mild Steel Bolts and Dowels\n'
+    '• M. S. Wire and Pins\n'
+    '• Plywood and BMB gussets\n'
+    '• Glued Plywood/Wood Inserts';
+const String mj1 = 'Marine grade plywood/ solid timber side\n'
+    'plates/ Bamboo mat board applied to joint\n'
+    'assemblies fixed with either bolts or bamboo\n'
+    'pegs show improved stiffness and strength\n'
+    'compared with traditional joining methods\n'
+    ' • Mild Steel Bolts and Dowels\n'
+    ' • M. S. Wire and Pins\n'
+    ' • Plywood and BMB gussets\n'
+    ' • Glued Plywood/Wood Inserts';
+const String ut = 'DO';
+const String ut1 = 'DO NOT';
+const String ut2 = 'Ties of wire in duplicate or triplicates of appropriate diameter and in good condition.';
+const String ut3 = 'Nails or tacks less than 6 cm. (2.5") long, to fix lateral bamboos of smaller iameter.';
+const String ut4 = 'DO UTILISE';
+const String ut5 = 'DO NOT UTILISE';
+const String ut6 = 'Bamboos previously dried to the air, itches of wire, nylon, vegetable ropes or of leather.';
+const String ut7 = 'Ties of wire in duplicate or triplicates of appropriate diameter and in good condition.';
+const String ut8 = 'IN COLUMNS, PARALLEL BARS OR SUPPORT OF CENTERING';
+const String ut9 = 'Columns of appropriate length, with a node at its  lower end, which  allows to work without producing splintering of the bamboo.';
+const String ut10 = 'Bamboos without a node at its lower extreme.';
+const String ut11 = 'HOW TO AVOID CRUSHING AT THE END';
+const String ut12 = 'If not possible to have a node at the ends of the girder, then a cylinder of wood of the same diameter that of the interior of the girder should be introduced at the end.';
+const String ut13 = 'The beams should carry a node in its ends.';
+const String ut14 = 'WITH EAR';
+const String ut15 = 'TO BEVEL';
+const String ut16 = 'BEAK OF FLUTE';
+const String ut17 = 'FISH MOUTH';
+const String ut18 = 'PRODUCTION';
+const String ut19 = 'CUTTING USED IN THE UNION OF BAMBOO';

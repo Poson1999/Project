@@ -1,3 +1,4 @@
+import 'package:all/pages/category/joinery/joinery.dart';
 import 'package:all/pages/category/plantation/plantation.dart';
 import 'package:all/pages/category/postHarvesting/post_harvesting.dart';
 import 'package:all/pages/category/selection/selection.dart';
@@ -104,7 +105,10 @@ class HomePage extends StatelessWidget {
                         width: 75,
                         height: 75,
                         child: TextButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Joinery())),
                             child: const Image(
                                 image: AssetImage('assets/images/5.png'),
                                 fit: BoxFit.fill))),
