@@ -1,14 +1,17 @@
 import 'package:all/pages/category/plantation/plantation.dart';
 import 'package:all/pages/category/postHarvesting/post_harvesting.dart';
 import 'package:all/pages/category/selection/selection.dart';
+import 'package:all/pages/category/text.dart';
+import 'package:all/pages/category/tools/tools.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Scaffold(
-          body: SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(children: <Widget>[
           Container(
               margin: const EdgeInsets.only(
@@ -74,14 +77,14 @@ class HomePage extends StatelessWidget {
                   children: const <Widget>[
                     SizedBox(
                         width: 90,
-                        child: Text("Selection of Bamboo",
+                        child: Text(home,
                             textAlign: TextAlign.center)),
                     SizedBox(
                         width: 90,
-                        child: Text("Plantation", textAlign: TextAlign.center)),
+                        child: Text(home1, textAlign: TextAlign.center)),
                     SizedBox(
                         width: 90,
-                        child: Text("Post Harvesting",
+                        child: Text(home2,
                             textAlign: TextAlign.center))
                   ])),
           Container(
@@ -109,7 +112,10 @@ class HomePage extends StatelessWidget {
                         width: 75,
                         height: 75,
                         child: TextButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Tools())),
                             child: const Image(
                                 image: AssetImage('assets/images/6.png'),
                                 fit: BoxFit.fill)))
@@ -121,14 +127,14 @@ class HomePage extends StatelessWidget {
                   children: const <Widget>[
                     SizedBox(
                         width: 90,
-                        child: Text("Construction Sequence",
+                        child: Text(home3,
                             textAlign: TextAlign.center)),
                     SizedBox(
                         width: 90,
-                        child: Text("Joinery", textAlign: TextAlign.center)),
+                        child: Text(home4, textAlign: TextAlign.center)),
                     SizedBox(
                         width: 90,
-                        child: Text("Tools", textAlign: TextAlign.center))
+                        child: Text(home5, textAlign: TextAlign.center))
                   ])),
           Container(
               margin: const EdgeInsets.only(left: 30, top: 10, right: 30),
@@ -155,7 +161,15 @@ class HomePage extends StatelessWidget {
                         width: 75,
                         height: 75,
                         child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => Scaffold(
+                                appBar: AppBar(
+                                  title: const Text(home8),
+                                ),
+                                  body: const WebView(
+                                    initialUrl: 'https://worldbambooday.in/'
+                                  ))));
+                            },
                             child: const Image(
                                 image: AssetImage('assets/images/9.png'),
                                 fit: BoxFit.fill)))
@@ -168,14 +182,14 @@ class HomePage extends StatelessWidget {
                     SizedBox(
                         width: 90,
                         child:
-                            Text("Value Chain", textAlign: TextAlign.center)),
+                        Text(home6, textAlign: TextAlign.center)),
                     SizedBox(
                         width: 90,
-                        child: Text("Recourse Centre",
+                        child: Text(home7,
                             textAlign: TextAlign.center)),
                     SizedBox(
                         width: 90,
-                        child: Text("World Bamboo Day",
+                        child: Text(home8,
                             textAlign: TextAlign.center))
                   ])),
           Container(
@@ -247,7 +261,7 @@ class HomePage extends StatelessWidget {
                             onPressed: () {},
                             child: const Image(
                                 image:
-                                    AssetImage('assets/images/sabf_logo.jpg'),
+                                AssetImage('assets/images/sabf_logo.jpg'),
                                 fit: BoxFit.cover,
                                 width: double.infinity))),
                     SizedBox(

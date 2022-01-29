@@ -15,7 +15,7 @@ class WeavingAndWovenProducts extends StatelessWidget {
       ),
       body: SingleChildScrollView(
           padding:
-              const EdgeInsets.only(top: 16, bottom: 16, left: 20, right: 20),
+          const EdgeInsets.only(top: 16, bottom: 16, left: 20, right: 20),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,12 +132,12 @@ class WeavingAndWovenProducts extends StatelessWidget {
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/post/ht.png"))),
+                                      "assets/images/category/tools/ht.png"))),
                           SizedBox(width: 10),
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/post/ht1.png")))
+                                      "assets/images/category/tools/ht1.png")))
                         ])),
                 Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
@@ -158,12 +158,12 @@ class WeavingAndWovenProducts extends StatelessWidget {
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/post/ht2.png"))),
+                                      "assets/images/category/tools/ht2.png"))),
                           SizedBox(width: 10),
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/post/ht3.png")))
+                                      "assets/images/category/tools/ht3.png")))
                         ])),
                 Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
@@ -185,12 +185,12 @@ class WeavingAndWovenProducts extends StatelessWidget {
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/post/ht4.png"))),
+                                      "assets/images/category/tools/ht4.png"))),
                           SizedBox(width: 10),
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/post/ht5.png")))
+                                      "assets/images/category/tools/ht5.png")))
                         ])),
                 Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
@@ -212,12 +212,12 @@ class WeavingAndWovenProducts extends StatelessWidget {
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/post/ht6.png"))),
+                                      "assets/images/category/tools/ht6.png"))),
                           SizedBox(width: 10),
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/post/ht7.png")))
+                                      "assets/images/category/tools/ht7.png")))
                         ])),
                 Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
@@ -239,7 +239,7 @@ class WeavingAndWovenProducts extends StatelessWidget {
                           Expanded(
                               child: Image(
                                   image: AssetImage(
-                                      "assets/images/category/post/ht20.png"))),
+                                      "assets/images/category/tools/ht20.png"))),
                           SizedBox(width: 10),
                           Expanded(
                               child: Image(

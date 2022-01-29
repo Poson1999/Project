@@ -2,7 +2,16 @@
 
 // Selection
 
-import 'package:all/pages/category/plantation/shoot_harvesting_handling.dart';
+//homepage
+const String home = "Selection of Bamboo";
+const String home1 = "Plantation";
+const String home2 = "Post Harvesting";
+const String home3 = "Construction Sequence";
+const String home4 = "Joinery";
+const String home5 = "Tools";
+const String home6 = "Value Chain";
+const String home7 = "Resource Centre";
+const String home8 = "World Bamboo Day";
 
 const String selectionTitle = "Selection";
 const String sob = "SELECTION OF BAMBOO";
@@ -478,6 +487,7 @@ const String fp62 = 'The assembly of the leg unit to the seat.';
 const String fp63 = 'Final Stool';
 
 //tools
+const String t0 = 'TOOLS';
 const String t = 'HAND TOOLS';
 const String t1 = 'MACHINE TOOLS';
 const String ht = 'Calipers';
@@ -502,3 +512,37 @@ const String ht18 = 'Jack planer';
 const String ht19 = 'Hand Held Grinder';
 const String ht20 = 'Hand sander';
 const String ht21 = 'Sabre Saw';
+const String ma = 'Bamboo Radial Splitter';
+const String ma1 = 'This machine is used to split the bamboo radially to various numbers as required.';
+const String ma2 = 'Bench Top Table Saw';
+const String ma3 = 'This helps to cut the bamboo and wood along the fibre in length.';
+const String ma4 = 'Bench Top Horizontal Band Saw';
+const String ma5 = 'Used for cross cutting the bamboo in any angle required.';
+const String ma6 = 'Table Saw';
+const String ma7 = 'This helps to cut the bamboo and wood along the fibre in length.';
+const String ma8 = 'Bench Top Jig Saw';
+const String ma9 = 'Used for cutting bamboo or wood material in any shapes.';
+const String ma10 = 'Surface Planar';
+const String ma11 = 'Used for levelling the surface of wood or bamboo splits.';
+const String ma12 = 'Pilar Drill';
+const String ma13 = 'Used for drilling on the surface of wood, bamboo, metal etc.';
+const String ma14 = 'Cross Cut Saw';
+const String ma15 = 'Used for cutting wood and bamboo across the grains in any angle.';
+const String ma16 = 'Vertical Sand Saw';
+const String ma17 = 'Used for cutting wood or bamboo along with grains and in any shapes.';
+const String ma18 = 'Node Removing Machine';
+const String ma19 = 'After splitting in radial splitter this machine is used to remove the nodes.';
+const String ma20 = 'Silvering Machine';
+const String ma21 = 'This machine is used to make thin slivers.';
+const String ma22 = 'Silvering Machine';
+const String ma23 = 'This machine makes thick sliver suitable for making furniture and lifestyle products.';
+const String ma24 = 'Cross Cut Saw';
+const String ma25 = 'This machine is used for cutting the length of bamboo.';
+const String ma26 = 'Parallel BLade Saw';
+const String ma27 = 'This machine has parallel blades which cuts the bamboo to straight splits.';
+const String ma28 = 'Four Side Planar';
+const String ma29 = 'This machine has parallel blades which cuts the bamboo to straight splits.';
+const String ma30 = 'Pressure Treatment Tank';
+const String ma31 = 'This machine is used for treating bamboo by impregnating chemicals by pressure.';
+const String ma32 = 'Silvering Machine';
+const String ma33 = 'This machine makes thin slivers for mat weaving.';
