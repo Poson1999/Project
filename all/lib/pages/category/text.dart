@@ -477,6 +477,24 @@ const String fp61 = 'Fix it with an adhesive and bamboo nail.';
 const String fp62 = 'The assembly of the leg unit to the seat.';
 const String fp63 = 'Final Stool';
 
+//Construction sequence
+const String csTitle = 'CONSTRUCTION SEQUENCE';
+const String cs1 = 'PLANNING THE SUBSTRUCTURE';
+const String cs2 = 'PREPARATION OF BAMBOO';
+const String cs3 = 'FRAMING SEQUENCE';
+const String cs4 = 'PLASTERING AND FINISHING';
+
+//PLANNING THE SUBSTRUCTURE
+const String pts1 = "To respond to site, weather and earthquakes etc. it is best to erect the bamboo structure on a brick and concrete base.The advantages of such a substructure are: ";
+const String pts2 = "The combination of short RCC columns and the plinth beams provide protection during earthquakes etc.";
+const String pts3 = "• The raised plinth keeps the rain splashing and moisture from reaching the bamboo structure.\n• The plinth is used to lay out the plumbing and electrical connection as per design and latest specification.\n• The plinth is to be designed keeping in mind the exact position of the Bamboo columns and framing so as to correctly place the Bamboo over the strip columns.";
+const String pts4 = "COLUMN AND FRAMING ARRANGEMENT ABOVE PLINTH";
+
+//PREPARATION OF BAMBOO
+const String pob1 = "The bamboo column is cut and sized to their required length.\n• The bamboo columns are placed over the strip columns in the plinth with the help of a reinforced detail.\n• Depending on the position and importance of the columns a combination of single and bundle columns are used.\n• Once the columns are fixed, it is left to cure for a week to ten days to attain its strength.";
+const String pob2 = "DETAIL OF BAMBOO FOOTING";
+
+
 //tools
 const String t = 'HAND TOOLS';
 const String t1 = 'MACHINE TOOLS';
