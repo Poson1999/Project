@@ -1,7 +1,5 @@
 // 先在這裡放category 的字串資源
 
-// Selection
-
 //homepage
 const String home = "Selection of Bamboo";
 const String home1 = "Plantation";
@@ -12,7 +10,17 @@ const String home5 = "Tools";
 const String home6 = "Value Chain";
 const String home7 = "Resource Centre";
 const String home8 = "World Bamboo Day";
+const String home9 = "DIY";
+const String home10 = "WEBINAR";
+const String home11 = "SPONSORS";
+const String home12 = 'CATEGORIES';
 
+//sponsors
+const String sponsor = 'NID';
+const String sponsor1 = 'SABF';
+const String sponsor2 = 'CCU';
+
+// Selection
 const String selectionTitle = "Selection";
 const String sob = "SELECTION OF BAMBOO";
 const String cbs = "COMMERCIAL BAMBOO SPECIES";

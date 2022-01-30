@@ -5,7 +5,7 @@ import 'package:all/pages/exams/test_page.dart';
 import 'package:all/pages/community_page.dart';
 import 'package:all/pages/chat_page.dart';
 import 'package:all/pages/edit_profile.dart';
-import 'package:all/pages/home_page.dart';
+import 'package:all/pages/homepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // 用來檢查是否已登入
