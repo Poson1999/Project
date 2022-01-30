@@ -1,4 +1,6 @@
+import 'package:all/pages/category/construction/framing_sequence.dart';
 import 'package:all/pages/category/construction/planning_the_substructure.dart';
+import 'package:all/pages/category/construction/plastering_and_finishing.dart';
 import 'package:all/pages/category/construction/preparation_of_bamboo.dart';
 import 'package:all/pages/category/text.dart';
 import 'package:flutter/material.dart';
@@ -40,10 +42,10 @@ class Construction extends StatelessWidget {
           ListTile(
             title: const Text(cs3),
             onTap: () {
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //         builder: (context) => const Harvesting()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const FramingSequence()));
             },
             trailing: const Icon(Icons.keyboard_arrow_right),
           ),
@@ -51,10 +53,10 @@ class Construction extends StatelessWidget {
           ListTile(
             title: const Text(cs4),
             onTap: () {
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //         builder: (context) => const Harvesting()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const PlasteringAndFinishing()));
             },
             trailing: const Icon(Icons.keyboard_arrow_right),
           ),
