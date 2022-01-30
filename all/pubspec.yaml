@@ -49,6 +49,8 @@ dependencies:
   # category 的三個功能
   flutter_speed_dial: ^5.0.0+1
 
+  webview_flutter: 
+
 dev_dependencies:
   flutter_native_splash: ^1.3.2
   flutter_test:
@@ -76,6 +78,8 @@ flutter:
     - assets/images/category/plantation/
     - assets/images/category/post/
     - assets/images/category/construction/
+    - assets/images/category/tools/
+    - assets/images/category/joinery/
     - assets/images/category/
 
 
