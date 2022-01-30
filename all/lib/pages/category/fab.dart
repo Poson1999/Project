@@ -19,7 +19,7 @@ class FAB extends StatefulWidget {
 
 
 class _FABState extends State<FAB> {
-  final TextEditingController _readingListController = TextEditingController();
+  final TextEditingController _contentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class _FABState extends State<FAB> {
         builder: (context) => AlertDialog(
           title: const Text('Add content to Reading List'),
           content: TextField(
-            controller: _readingListController,
+            controller: _contentController,
             autofocus: true,
             decoration: const InputDecoration(
                 hintText: "Copy the text you want here"
@@ -38,9 +38,8 @@ class _FABState extends State<FAB> {
           actions: [
             TextButton(
                 onPressed: (){
-                  Fluttertoast.showToast(
-                    msg: _readingListController.text,
-                  );
+                  addReadingList(widget.pageName, _contentController.text);
+                  Navigator.pop(context);
                 },
                 child: const Text("SUBMIT")
             )
@@ -80,6 +79,31 @@ class _FABState extends State<FAB> {
     var data = {
       "userId": prefs.getString("UserId"),
       "pageName": pageName,
+    };
+
+    try {
+      var res = await http.post(Uri.parse(url), body: data);
+      var jsonData = convert.jsonDecode(res.body);
+      debugPrint(jsonData);
+      Fluttertoast.showToast(
+        msg: jsonData.toString(),
+      );
+    } catch (e) {
+      debugPrint(e.toString());
+      Fluttertoast.showToast(
+        msg: "Error: " + e.toString(),
+      );
+    }
+  }
+
+  void addReadingList(String pageName, String content) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    var url = "https://project-ccu-2021.000webhostapp.com/phpformobile/addReadingList.php";
+    var data = {
+      "userId": prefs.getString("UserId"),
+      "pageName": pageName,
+      "content" : content,
     };
 
     try {
