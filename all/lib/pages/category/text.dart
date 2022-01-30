@@ -486,6 +486,34 @@ const String fp61 = 'Fix it with an adhesive and bamboo nail.';
 const String fp62 = 'The assembly of the leg unit to the seat.';
 const String fp63 = 'Final Stool';
 
+//Construction sequence
+const String csTitle = 'CONSTRUCTION SEQUENCE';
+const String cs1 = 'PLANNING THE SUBSTRUCTURE';
+const String cs2 = 'PREPARATION OF BAMBOO';
+const String cs3 = 'FRAMING SEQUENCE';
+const String cs4 = 'PLASTERING AND FINISHING';
+
+//Construction sequence-PLANNING THE SUBSTRUCTURE
+const String pts1 = "To respond to site, weather and earthquakes etc. it is best to erect the bamboo structure on a brick and concrete base.The advantages of such a substructure are: ";
+const String pts2 = "The combination of short RCC columns and the plinth beams provide protection during earthquakes etc.";
+const String pts3 = "• The raised plinth keeps the rain splashing and moisture from reaching the bamboo structure.\n• The plinth is used to lay out the plumbing and electrical connection as per design and latest specification.\n• The plinth is to be designed keeping in mind the exact position of the Bamboo columns and framing so as to correctly place the Bamboo over the strip columns.";
+const String pts4 = "COLUMN AND FRAMING ARRANGEMENT ABOVE PLINTH";
+
+//Construction sequence-PREPARATION OF BAMBOO
+const String pob1 = "The bamboo column is cut and sized to their required length.\n• The bamboo columns are placed over the strip columns in the plinth with the help of a reinforced detail.\n• Depending on the position and importance of the columns a combination of single and bundle columns are used.\n• Once the columns are fixed, it is left to cure for a week to ten days to attain its strength.";
+const String pob2 = "DETAIL OF BAMBOO FOOTING";
+
+//Construction sequence-FRAMING SEQUENCE
+const String fs1 = "After the columns are set, it is safe to proceed with the framing of the superstructure. ";
+const String fs2 = "The combination of short RCC columns and the plinth beams provide protection during earthquakes etc.";
+const String fs3 = "With attention to precision the edge beams and the ridge beam are put in place and temporarily fixed\n• The ridge beams have to be placed with a minor rise in the middle of the structure to negate the perspective effect.\n• The rafter and purling are to be fixed next as per design. They have to be selected on the basis of their lightweight nature and straightness.\n• The woven Bamboo panels are fixed in place and attached to the columns with Iron bars at regular intervals\n• The Door and Window frames are put in place and fixed with either the Bamboo wall panels or the Columns as per the location.\n• A wire mesh is then overlaid over the woven Bamboo panels. A combination of jute mesh and Bamboo weave can also be used.";
+const String fs4 = "SECTION THROUGH DEMONSTRATION HOUSE";
+
+//Construction sequence-PLASTERING AND FINISHING
+const String paf1 = "As a final step in the construction, the Bamboo weave panels have to be plastered to act as partition walls and also to provide stiffness and resilience to the structure.";
+const String paf2 = "• Cement plaster in the ratio of 1 :3 is applied over the Bamboo weave panels.\n•  The iron bars connecting the Panels to the Columns and The Door-Window frames etc are now embedded in the Plaster.\n•  The use of the wire mesh and metal bars embedded in the plaster gives much needed resilience to the structure\n• The walls have to cured with water for a week to attain its strength.\n•  The exposed Bamboos are now thoroughly cleaned and finished with any typical wood finish for protection from moisture and to add to aesthetics as well.";
+const String paf3 = "1. Bamboo weave and wire mesh combination \n2. 1 :3 cement plaster (20mm thick on both sides) \n3. Bamboo weave cut out of 20mm wide strips at 100 mm space over layer with jute mesh";
+
 //tools
 const String t0 = 'TOOLS';
 const String t = 'HAND TOOLS';
