@@ -1,98 +1,52 @@
-import 'dart:developer';
-import 'package:flutter/foundation.dart';
+import 'package:all/pages/category/text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import 'diy_url_title.dart';
 
 class DIY extends StatelessWidget {
   const DIY({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: YoutubeAppDemo(),
-      );
+      appBar: AppBar(
+        title: const Text(home9),
+      ),
+      body: const VideoPlayer());
 }
 
-///
-class YoutubeAppDemo extends StatefulWidget {
+class VideoPlayer extends StatefulWidget {
+  const VideoPlayer({Key? key}) : super(key: key);
+
   @override
-  _YoutubeAppDemoState createState() => _YoutubeAppDemoState();
+  _VideoPlayerState createState() => _VideoPlayerState();
 }
 
-class _YoutubeAppDemoState extends State<YoutubeAppDemo> {
-  late YoutubePlayerController _controller;
-  String url = '0UumdBiiboc';
-  String name = '文創影片-溪口天赦竹編';
+class _VideoPlayerState extends State<VideoPlayer> {
+  final List<YoutubePlayerController> _controllerList = [];
+
+  fillYTList() {
+    for (int i = 0; i < count; i++) {
+      YoutubePlayerController _controller = YoutubePlayerController(
+          initialVideoId: videos[i].url,
+          params: const YoutubePlayerParams(showControls: true));
+      _controllerList.add(_controller);
+    }
+  }
 
   @override
   void initState() {
     super.initState();
-    _controller = YoutubePlayerController(
-      initialVideoId: url,
-      params: const YoutubePlayerParams(
-        showControls: true,
-      ),
-    );
-    _controller.onEnterFullscreen = () {
-      SystemChrome.setPreferredOrientations([
-        DeviceOrientation.landscapeLeft,
-        DeviceOrientation.landscapeRight,
-      ]);
-      log('Entered Fullscreen');
-    };
-    _controller.onExitFullscreen = () {
-      log('Exited Fullscreen');
-    };
+    fillYTList();
   }
 
   @override
-  Widget build(BuildContext context) {
-    const player = YoutubePlayerIFrame();
-    return YoutubePlayerControllerProvider(
-        // Passing controller to widgets below.
-        controller: _controller,
-        child: Scaffold(
-            appBar: AppBar(
-              title: const Text('DIY'),
-            ),
-            body: LayoutBuilder(builder: (context, constraints) {
-              if (kIsWeb && constraints.maxWidth > 800) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Expanded(child: player),
-                    SizedBox(
-                      width: 500,
-                      child: SingleChildScrollView(
-                        child: Controls(),
-                      ),
-                    ),
-                  ],
-                );
-              }
-              return ListView(children: const [
-                player,
-                Controls(),
-              ]);
-            })));
-  }
-
-  @override
-  void dispose() {
-    _controller.close();
-    super.dispose();
-  }
-}
-
-class Controls extends StatelessWidget {
-  const Controls();
-
-  @override
-  Widget build(BuildContext context) => Padding(
-      padding: const EdgeInsets.all(16),
-      child:
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
-      ]));
-
-  Widget get _space => const SizedBox(height: 10);
+  Widget build(BuildContext context) => ListView.builder(
+      itemCount: count,
+      shrinkWrap: true,
+      itemBuilder: (context, index) => Column(children: <Widget>[
+            SizedBox(
+                width: double.infinity,
+                child: YoutubePlayerIFrame(controller: _controllerList[index])),
+            Text(videos[index].name)
+          ]));
 }

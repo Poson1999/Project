@@ -94,12 +94,11 @@ class _BottomNavigationControllerState
           UserAccountsDrawerHeader(
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/images/tree.png'),
+                      image: AssetImage('assets/images/homepage/tree.png'),
                       fit: BoxFit.cover)),
               accountName: Text(userName),
               accountEmail: Text(userEmail),
               currentAccountPicture: CircleAvatar(
-                  backgroundImage: const AssetImage('assets/images/tree.png'),
                   child: ClipOval(
                       child: Image.network(photoUrl, fit: BoxFit.cover)))),
           ListTile(
