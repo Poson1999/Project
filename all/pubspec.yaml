@@ -76,6 +76,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/category/
     - assets/images/homepage/
     - assets/images/category/selection/
     - assets/images/category/plantation/
@@ -83,7 +84,7 @@ flutter:
     - assets/images/category/construction/
     - assets/images/category/tools/
     - assets/images/category/joinery/
-    - assets/images/category/
+    - assets/images/category/value/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

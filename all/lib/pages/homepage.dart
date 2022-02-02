@@ -5,6 +5,7 @@ import 'package:all/pages/category/postHarvesting/post_harvesting.dart';
 import 'package:all/pages/category/selection/selection.dart';
 import 'package:all/pages/category/text.dart';
 import 'package:all/pages/category/tools/tools.dart';
+import 'package:all/pages/category/value/value_chain.dart';
 import 'package:all/pages/diy/diy.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -160,7 +161,10 @@ class HomePage extends StatelessWidget {
                         width: 75,
                         height: 75,
                         child: TextButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const ValueChain())),
                             child: const Image(
                                 image:
                                     AssetImage('assets/images/homepage/7.png'),

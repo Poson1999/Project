@@ -863,3 +863,38 @@ const String ut16 = 'BEAK OF FLUTE';
 const String ut17 = 'FISH MOUTH';
 const String ut18 = 'PRODUCTION';
 const String ut19 = 'CUTTING USED IN THE UNION OF BAMBOO';
+
+// Value Chain
+const String vcTitle = "VALUE CHAIN";
+const String vc1 = "BAMBOO DISTRIBUTION";
+const String vc2 = "BAMBOO VALUE CHAIN";
+const String vc3 = "BAMBOO VALUE CHAIN PROCESS";
+
+const String bd1 = "Biodiversity Distribution Map 1500 Species Fast Growing Grass";
+const String bd2 = "Rhizomes\nShoots\nSheaths\nCulm\nBranches\nBuds";
+const String bd3 = "Bamboo Distribution In India";
+const String bd4 = "India is the second richest country of the world after China in terms of bamboo genetic resources\n• The total bamboo bearing area of the country is estimated to be 8.96 million hectare, which is half the total area of bamboo reported for Asia\n• As per FSI 2011, total growing stock in India is 80.43 m MT and total collection of bamboo is 13.5 m MT\n• Total no. of culms at the national level has been estimated to be 23297 million out of which the percentage of green sound, dry sound and decayed has been estimated as 79%, 16% and 5% respectively\n• In India, 28 percent of area and 66 percent of growing stock of bamboo is in the NER and 20 percent of area and 12 percent of growing stock is in Madhya Pradesh and Chhattisgarh\n• Nearly 136 species of bamboo are occurring in India out of which 58 species belonging to 10 genera distributed in North eastern States alone.\n• India taps only one-fourth of its bamboo potential and contributes only 4% share of the global market, mainly because of low productivity of around 2 tons/ha/annum.\n• India’s total demand of bamboo is estimated at 27 million tonnes whereas the total supply is only 13.47 million tonnes.";
+
+const String bvc1 = "Bamboo in agriculture";
+const String bvc2 = "• Green Houses\n• Tools\n• Grain Bins\n• Traps\n• Fences";
+const String bvc3 = "• Agriculture\n• Fishing\n• Structures\n• Wind Breaks\n• Soil Errosion";
+const String bvc4 = "Bamboo Architecture";
+const String bvc5 = "Bridges\nEngineering\nCo-operation\nTensile Strength\nRope making";
+const String bvc6 = "Bamboo Fence";
+const String bvc7 = "• Walls\n• Trellis\n• Mats\n• Doors\n• Fences\n• Gates";
+const String bvc8 = "• Kiosks\n• Local Economy\n•Employment Generation\n• Aesthetic Sensibility";
+const String bvc9 = "Bamboo Commerce";
+const String bvc10 = "•Agriculture\n•Fishing\n•Housing\n•Mats\n•Furniture\n•Baskets\n•Tools";
+const String bvc11 = "Bamboo Matboard";
+const String bvc12 = "•Mat Weaving\n•Employment\n•Co-operative\n•Development";
+const String bvc13 = "Bamboo Mat Clusters";
+const String bvc14 = "Bamboo Shoot";
+const String bvc15 = "Bamboo Shoot & Pickle ";
+const String bvc16 = "Bamboo  Charcoal ";
+
+const String bvcp1 = "Bamboo Value Chain";
+const String bvcp2 = "The eight steps above steps are a resume of all supply chain steps.\nThe ones contained in the box are the one which will concern the future entity.";
+const String bvcp3 = "Bamboo Value Chain Actors";
+const String bvcp4 = "Opportuntities";
+const String bvcp5 = "•Changing consumer perception to use ecofriendly natural products\n•Surplus income with urban consumers\n•Increased awareness of urban consumers regarding bamboo crafts\n•Opportunity to form cluster of bamboo handicraft production units and providing common facilities at the center\n•Innovative development of designs in bamboo handicraft\n•Various skill development programs and trainings related to bamboo handicrafts are readily available\n•Creating valuable handicrafts from small piece of bamboo capable of fetching high consumer price\n•Availability of online platforms to display and sell bamboo handicrafts\n•Growth of tourism and hotel industry boosting the institutional sale ofbamboo crafts.\n•Development of new tools and technologies enhancing the productivity\n•Established methods of chemical treatment to improve durability\n•Bamboo craft have huge potential to generate rural employment";
+
