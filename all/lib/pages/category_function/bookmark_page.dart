@@ -1,5 +1,19 @@
 import 'dart:convert' as convert;
 import 'package:all/class/bookmark.dart';
+import 'package:all/pages/category/plantation/clum_harvesting_handling.dart';
+import 'package:all/pages/category/plantation/conventional.dart';
+import 'package:all/pages/category/plantation/maintenance_activities.dart';
+import 'package:all/pages/category/plantation/non_conventional.dart';
+import 'package:all/pages/category/plantation/proposed_planning.dart';
+import 'package:all/pages/category/plantation/shoot_harvesting_handling.dart';
+import 'package:all/pages/category/postHarvesting/basics_working_method.dart';
+import 'package:all/pages/category/postHarvesting/chamical_method.dart';
+import 'package:all/pages/category/postHarvesting/dying.dart';
+import 'package:all/pages/category/postHarvesting/finishing_method.dart';
+import 'package:all/pages/category/postHarvesting/furniture_products.dart';
+import 'package:all/pages/category/postHarvesting/traditional_method.dart';
+import 'package:all/pages/category/postHarvesting/weaving_and_woven_products.dart';
+import 'package:all/pages/category/postHarvesting/why_treatment_preservation.dart';
 import 'package:all/pages/category/selection/commercial_bamboo_species.dart';
 import 'package:all/pages/category/selection/selection_of_bamboo.dart';
 import 'package:http/http.dart' as http;
@@ -59,6 +73,7 @@ class _BookMarkPageState extends State<BookMarkPage> {
   // 轉跳至該頁面，這裡用每個頁面的pageName判斷
   void goToPage(String pageName){
     switch(pageName){
+      //Selection Of Bamboo
       case "SELECTION OF BAMBOO":
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const SelectionOfBamboo()));
@@ -66,6 +81,70 @@ class _BookMarkPageState extends State<BookMarkPage> {
       case "COMMERCIAL BAMBOO SPECIES":
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const CommericalBambooSpecies()));
+        break;
+        // Plantation
+        // Plantation-Method
+      case "NON CONVENTIONAL":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const NonConventional()));
+        break;
+      case "CONVENTIONAL":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const Conventional()));
+        break;
+        // Plantation-Nursery
+      case "MAINTENANCE ACTIVITIES":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const MaintenanceActivities()));
+        break;
+      case "PROPOSED PLANNING SCHEMES":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ProposedPlanning()));
+        break;
+        // // Plantation-Harvesting
+      case "CLUM HARVESTING & HANDLING":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ClumHarvestingHandling()));
+        break;
+      case "SHOOT HARVESTING & HANDLING":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ShootHarvestingHandling()));
+        break;
+      // post harvesting
+      // post harvesting-processing
+      case "WHY TREATMENT & PRESERVATION":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const WhyTreatmentPreservation()));
+        break;
+      // post harvesting-processing-methods of treatment
+      case "TRADITIONAL METHOD":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const TraditionalMethod()));
+        break;
+      case "CHEMICAL METHOD":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ChemicalMethod()));
+        break;
+      // post harvesting-management
+      case "BASICS WORKING METHOD":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const BasicsWorkingMethod()));
+        break;
+      case "DYING":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const Dying()));
+        break;
+      case "FINISHING METHOD":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const FinishingMethod()));
+        break;
+      case "WEAVING AND WOVEN PRODUCTS":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const WeavingAndWovenProducts()));
+        break;
+      case "FURNITURE PRODUCTS":
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const FurnitureProducts()));
         break;
     }
     
