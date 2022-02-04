@@ -1,4 +1,5 @@
 //homepage
+
 const String home = "Selection of Bamboo";
 const String home1 = "Plantation";
 const String home2 = "Post Harvesting";
@@ -897,4 +898,67 @@ const String bvcp2 = "The eight steps above steps are a resume of all supply cha
 const String bvcp3 = "Bamboo Value Chain Actors";
 const String bvcp4 = "Opportuntities";
 const String bvcp5 = "•Changing consumer perception to use ecofriendly natural products\n•Surplus income with urban consumers\n•Increased awareness of urban consumers regarding bamboo crafts\n•Opportunity to form cluster of bamboo handicraft production units and providing common facilities at the center\n•Innovative development of designs in bamboo handicraft\n•Various skill development programs and trainings related to bamboo handicrafts are readily available\n•Creating valuable handicrafts from small piece of bamboo capable of fetching high consumer price\n•Availability of online platforms to display and sell bamboo handicrafts\n•Growth of tourism and hotel industry boosting the institutional sale ofbamboo crafts.\n•Development of new tools and technologies enhancing the productivity\n•Established methods of chemical treatment to improve durability\n•Bamboo craft have huge potential to generate rural employment";
+
+// Resource Center
+const String rc = "RESOURCE CENTER";
+const String rc1 = "India - Taiwan Global Tech Forum - Resource Center";
+const String rc2 = "2021 Taiwan-India/Global Bamboo Tech Form - Series 3 Bamboo Charcoal Technology";
+const String rc3 = "2021 Taiwan-India/Global  Bamboo Tech Form - Series 2 Bamboo design for sustainable development";
+const String rc4 = "2021 Taiwan-India / Global Bamboo-Tech Forum - 1 Webinar Topics:Global Development Cases of Bamboo-Tech Industry";
+const String rc5 = "Global Bamboo and Livelihood in a COVID-19 World";
+const String rc6 = "Bamboo: a potential resource for the uplifting rural economy in post-COVID pandemic situation; in NE India";
+
+const String rc_1 = "Video";
+const String rc_2 = "Full Forum";
+const String rc_3 = "Opening";
+const String rc_4 = "Theme";
+const String rc_5 = "Power Movement";
+const String rcF1 = "Forum - 1";
+const String rcF2 = "Forum - 2";
+const String rcF3 = "Forum - 3";
+const String rcF4 = "Forum - 4";
+const String rcF5 = "Forum - 5";
+
+const String rc1Linkid1 = "9BEe88XD7_8";
+const String rc1Linkid2 = "-T52W8mC1AA";
+const String rc1Linkid3 = "BpeGjTmCmRQ";
+const String rc1Linkid4 = "atEhp_2K8tk";
+const String rc1Linkid5 = "BIZ6lkbDDDs";
+const String rc1Linkid6 = "bstt2lYRsJU";
+const String rc1Linkid7 = "68UxqNhAAME";
+
+const String rc2Linkid1 = "rANpwWWLbSA";
+const String rc2Linkid2 = "pS8eRsVP1ig";
+const String rc2Linkid3 = "JrzloIp1Rzo";
+const String rc2Linkid4 = "rL_Lkn6IoZc";
+const String rc2Linkid5 = "OCLddxYywfI";
+const String rc2Linkid6 = "timpoLMkRvQ";
+const String rc2Linkid7 = "Bg9fusADreI";
+const String rc2Linkid8 = "KRA6KtE4MBE";
+
+const String rc3Linkid1 = "os5sHP5mDko";
+const String rc3Linkid2 = "ctJQjVSpFYY";
+const String rc3Linkid3 = "ZqV7MBEokgg";
+const String rc3Linkid4 = "pOeljyCiwBw";
+const String rc3Linkid5 = "xQgcf0pmrWI";
+const String rc3Linkid6 = "09ZuluE26pA";
+
+const String rc4Linkid1 = "5u7FEZlKWyE";
+const String rc4Linkid2 = "kLfz4GpdkIA";
+const String rc4Linkid3 = "aFec0HalNy4";
+const String rc4Linkid4 = "A1LPVMOeGCg";
+const String rc4Linkid5 = "NJpINaS2DdE";
+const String rc4Linkid6 = "NO2J_iBs-e4";
+
+const String rc5Linkid1 = "4-MrYeLAENQ";
+const String rc5Linkid2 = "h2uVgEMLiM4";
+const String rc5Linkid3 = "cRzomNJTias";
+const String rc5Linkid4 = "xG9w3om-pUo";
+const String rc5Linkid5 = "ggoTANSBhCc";
+const String rc5Linkid6 = "iTew5WOcV88";
+const String rc5Linkid7 = "SZCI0qFeZkE";
+const String rc5Linkid8 = "luKH2FGU-VM";
+
+
+
 

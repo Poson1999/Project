@@ -2,6 +2,7 @@ import 'package:all/pages/category/construction/construction.dart';
 import 'package:all/pages/category/joinery/joinery.dart';
 import 'package:all/pages/category/plantation/plantation.dart';
 import 'package:all/pages/category/postHarvesting/post_harvesting.dart';
+import 'package:all/pages/category/resource/resource_center.dart';
 import 'package:all/pages/category/selection/selection.dart';
 import 'package:all/pages/category/text.dart';
 import 'package:all/pages/category/tools/tools.dart';
@@ -173,7 +174,10 @@ class HomePage extends StatelessWidget {
                         width: 75,
                         height: 75,
                         child: TextButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const ResourceCenter())),
                             child: const Image(
                                 image:
                                     AssetImage('assets/images/homepage/8.png'),
