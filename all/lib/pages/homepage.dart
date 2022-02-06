@@ -106,7 +106,8 @@ class HomePage extends StatelessWidget {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Construction())),
+                                    builder: (context) =>
+                                        const Construction())),
                             child: const Image(
                                 image:
                                     AssetImage('assets/images/homepage/4.png'),
@@ -275,8 +276,7 @@ class HomePage extends StatelessWidget {
                                         title: const Text(sponsor),
                                       ),
                                       body: const WebView(
-                                          initialUrl:
-                                              'https://www.nid.edu/home'))));
+                                          initialUrl: sponsorUrl))));
                             },
                             child: const Image(
                                 image: AssetImage(
@@ -294,8 +294,9 @@ class HomePage extends StatelessWidget {
                                         title: const Text(sponsor1),
                                       ),
                                       body: const WebView(
-                                          initialUrl:
-                                              'https://southasiabamboo.org/'))));
+                                          javascriptMode:
+                                              JavascriptMode.unrestricted,
+                                          initialUrl: sponsorUrl1))));
                             },
                             child: const Image(
                                 image: AssetImage(
@@ -313,8 +314,9 @@ class HomePage extends StatelessWidget {
                                         title: const Text(sponsor2),
                                       ),
                                       body: const WebView(
-                                          initialUrl:
-                                              'https://www.ec.ccu.edu.tw/bamboo/zh/'))));
+                                          debuggingEnabled: true,
+                                          zoomEnabled: true,
+                                          initialUrl: sponsorUrl2))));
                             },
                             child: const Image(
                                 image: AssetImage(

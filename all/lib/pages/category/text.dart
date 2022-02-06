@@ -17,6 +17,9 @@ const String home12 = 'CATEGORIES';
 const String sponsor = 'NID';
 const String sponsor1 = 'SABF';
 const String sponsor2 = 'CCU';
+const String sponsorUrl = 'https://www.nid.edu/home';
+const String sponsorUrl1 = 'https://southasiabamboo.org/';
+const String sponsorUrl2 = 'https://www.ec.ccu.edu.tw/bamboo/zh/';
 
 // Selection
 const String selectionTitle = "Selection";

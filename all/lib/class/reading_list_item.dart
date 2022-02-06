@@ -1,4 +1,3 @@
-
 class ReadingListItem {
   String id, userId, pageName, content;
 
