@@ -47,8 +47,7 @@ class DIYState extends State<DIY> {
             tooltip: 'Search',
             icon: const Icon(Icons.search),
             onPressed: () async {
-              final String? selected = await showSearch<String>(
-                  context: context, delegate: _delegate);
+              await showSearch<String>(context: context, delegate: _delegate);
             })
       ]),
       body: Scrollbar(
@@ -73,12 +72,13 @@ class DIYState extends State<DIY> {
 class _MySearchDelegate extends SearchDelegate<String> {
   final List<String> _words;
   final List<String> _history;
-  int selected = 0;
 
   getSelectedUrl(String string) {
+    int selected = 0;
     for (int i = 0; i < count; i++) {
       if (string == title[i]) {
         selected = i;
+        break;
       }
     }
     return selected;

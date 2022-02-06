@@ -19,36 +19,36 @@ class BambooValueChainProcess extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
+            children: const [
+              Padding(
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child:SelectableText(bvcp1, style: titleStyle),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child:Image(
                   image: AssetImage("assets/images/category/value/bvcp1.png"),
                 )
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child:SelectableText(bvcp2, style: textStyle),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child:SelectableText(bvcp3, style: titleStyle),
               ),
-              const Padding(
+              Padding(
                   padding: EdgeInsets.symmetric(vertical: 5),
                   child:Image(
                     image: AssetImage("assets/images/category/value/bvcp2.png"),
                   )
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child:SelectableText(bvcp4, style: titleStyle),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child:SelectableText(bvcp5, style: textStyle),
               ),
