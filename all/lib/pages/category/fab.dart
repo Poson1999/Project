@@ -19,7 +19,8 @@ class FAB extends StatefulWidget {
 
 
 class _FABState extends State<FAB> {
-  final TextEditingController _contentController = TextEditingController();
+  final TextEditingController _readingListContentController = TextEditingController();
+  final TextEditingController _qaContentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class _FABState extends State<FAB> {
         builder: (context) => AlertDialog(
           title: const Text('Add content to Reading List'),
           content: TextField(
-            controller: _contentController,
+            controller: _readingListContentController,
             autofocus: true,
             decoration: const InputDecoration(
                 hintText: "Copy the text you want here"
@@ -38,7 +39,30 @@ class _FABState extends State<FAB> {
           actions: [
             TextButton(
                 onPressed: (){
-                  addReadingList(widget.pageName, _contentController.text);
+                  addReadingList(widget.pageName, _readingListContentController.text);
+                  Navigator.pop(context);
+                },
+                child: const Text("SUBMIT")
+            )
+          ],
+        )
+    );
+
+    Future _openQADialog() => showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text('Ask question'),
+          content: TextField(
+            controller: _qaContentController,
+            autofocus: true,
+            decoration: const InputDecoration(
+                hintText: "Enter the question you want to ask here."
+            ),
+          ),
+          actions: [
+            TextButton(
+                onPressed: (){
+                  addQA(_qaContentController.text);
                   Navigator.pop(context);
                 },
                 child: const Text("SUBMIT")
@@ -54,14 +78,13 @@ class _FABState extends State<FAB> {
       children: [
         SpeedDialChild(
             child: const Icon(Icons.question_answer_outlined),
-            label: 'Q & A'
+            label: 'Q & A',
+            onTap: () => _openQADialog(),
         ),
         SpeedDialChild(
             child: const Icon(Icons.format_list_bulleted),
             label: 'Reading List',
-            onTap: (){
-              _openReadingListDialog();
-            }
+            onTap: () => _openReadingListDialog(),
         ),
         SpeedDialChild(
             child: const Icon(Icons.bookmark_add),
@@ -104,6 +127,30 @@ class _FABState extends State<FAB> {
       "userId": prefs.getString("UserId"),
       "pageName": pageName,
       "content" : content,
+    };
+
+    try {
+      var res = await http.post(Uri.parse(url), body: data);
+      var jsonData = convert.jsonDecode(res.body);
+      debugPrint(jsonData);
+      Fluttertoast.showToast(
+        msg: jsonData.toString(),
+      );
+    } catch (e) {
+      debugPrint(e.toString());
+      Fluttertoast.showToast(
+        msg: "Error: " + e.toString(),
+      );
+    }
+  }
+
+  void addQA(String question) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    var url = "https://project-ccu-2021.000webhostapp.com/phpformobile/addQA.php";
+    var data = {
+      "userId": prefs.getString("UserId"),
+      "question": question,
     };
 
     try {
