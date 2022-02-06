@@ -60,6 +60,7 @@ class _SignState extends State<SignInUp> {
         prefs.setString('UserName', newUser.name);
         prefs.setString('UserEmail', newUser.email);
         prefs.setString('UserPassword', newUser.password);
+        prefs.setString('UserIdCode', newUser.identificationCode);
         prefs.setString('PhotoFlag', newUser.photoFlag);
 
         String result =
