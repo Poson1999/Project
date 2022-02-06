@@ -1,7 +1,7 @@
 import 'package:all/pages/category/text.dart';
 import 'package:all/pages/constant.dart';
+import 'package:all/pages/diy/video.dart';
 import 'package:flutter/material.dart';
-import 'diy_url_title.dart' as video_titles;
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import 'diy_url_title.dart';
 
@@ -14,20 +14,13 @@ class DIY extends StatefulWidget {
 
 class DIYState extends State<DIY> {
   final List<YoutubePlayerController> _controllerList = [];
-  final List<String> searchFilter;
+  List<Video> filteredVideos = videos;
   late _MySearchDelegate _delegate;
-
-  DIYState()
-      : searchFilter = List.from(Set.from(video_titles.title))
-          ..sort(
-            (w1, w2) => w1.toLowerCase().compareTo(w2.toLowerCase()),
-          ),
-        super();
 
   fillYTList() {
     for (int i = 0; i < count; i++) {
       YoutubePlayerController _controller = YoutubePlayerController(
-          initialVideoId: url[i],
+          initialVideoId: filteredVideos[i].url,
           params: const YoutubePlayerParams(showControls: true));
       _controllerList.add(_controller);
     }
@@ -37,22 +30,54 @@ class DIYState extends State<DIY> {
   void initState() {
     super.initState();
     fillYTList();
-    _delegate = _MySearchDelegate(searchFilter);
+    _delegate = _MySearchDelegate(titles);
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      appBar: AppBar(title: const Text(home9), actions: <Widget>[
+      appBar:
+          AppBar(title: const Text(home9), centerTitle: true, actions: <Widget>[
         IconButton(
             tooltip: 'Search',
             icon: const Icon(Icons.search),
             onPressed: () async {
               await showSearch<String>(context: context, delegate: _delegate);
-            })
+            }),
+        /*PopupMenuButton(
+            color: Colors.green,
+            tooltip: 'Filter',
+            icon: const Icon(Icons.filter_alt),
+            itemBuilder: (BuildContext context) => [
+                  PopupMenuItem(child: const Text(diy, style: TextStyle(color: Colors.white)), onTap: () {
+                    filteredVideos.clear();
+                    for(int i = 0; i < count; i++){
+                      if(videos[i].flag == 0) {
+                        filteredVideos.add(videos[i]);
+                      }
+                    }
+                    initState();
+                  }),
+                  PopupMenuItem(child: const Text(diy1, style: TextStyle(color: Colors.white)), onTap: () {
+                    filteredVideos.clear();
+                    for(int i = 0; i < count; i++){
+                      if(videos[i].flag == 1) {
+                        filteredVideos.add(videos[i]);
+                      }
+                    }
+                  }),
+                  PopupMenuItem(child: const Text(diy2, style: TextStyle(color: Colors.white)), onTap: () {
+                    filteredVideos.clear();
+                    for(int i = 0; i < count; i++){
+                      if(videos[i].flag == 2) {
+                        filteredVideos.add(videos[i]);
+                      }
+                    }
+                  })
+                ])*/
       ]),
       body: Scrollbar(
           child: ListView.builder(
-              itemCount: searchFilter.length,
+              itemCount: count,
               itemBuilder: (context, index) => Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -65,7 +90,7 @@ class DIYState extends State<DIY> {
                         ]),
                         Padding(
                             padding: const EdgeInsets.only(bottom: 5, left: 10),
-                            child: Text(title[index]))
+                            child: Text(filteredVideos[index].title))
                       ]))));
 }
 
@@ -76,7 +101,7 @@ class _MySearchDelegate extends SearchDelegate<String> {
   getSelectedUrl(String string) {
     int selected = 0;
     for (int i = 0; i < count; i++) {
-      if (string == title[i]) {
+      if (string == videos[i].title) {
         selected = i;
         break;
       }
@@ -86,7 +111,7 @@ class _MySearchDelegate extends SearchDelegate<String> {
 
   _MySearchDelegate(List<String> words)
       : _words = words,
-        _history = title,
+        _history = titles,
         super();
 
   @override
@@ -105,14 +130,13 @@ class _MySearchDelegate extends SearchDelegate<String> {
           child: GestureDetector(
               onTap: () => close(context, query),
               child: Column(children: <Widget>[
-                Row(
-                  children: [
-                    Expanded(
-                        child: YoutubePlayerIFrame(
-                            controller: YoutubePlayerController(
-                                initialVideoId: url[getSelectedUrl(query)])))
-                  ],
-                ),
+                Row(children: [
+                  Expanded(
+                      child: YoutubePlayerIFrame(
+                          controller: YoutubePlayerController(
+                              initialVideoId:
+                                  videos[getSelectedUrl(query)].url)))
+                ]),
                 Text(query, style: textStyle)
               ]))));
 

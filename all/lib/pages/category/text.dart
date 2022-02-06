@@ -14,6 +14,11 @@ const String home10 = "WEBINAR";
 const String home11 = "SPONSORS";
 const String home12 = 'CATEGORIES';
 
+//diy
+const String diy = 'Taiwan';
+const String diy1 = 'Tableware';
+const String diy2 = 'Furniture';
+
 //sponsors
 const String sponsor = 'NID';
 const String sponsor1 = 'SABF';

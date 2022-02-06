@@ -1,21 +1,13 @@
-List<String> url = [
-  '0UumdBiiboc',
-  'EBPG_14ImKk',
-  'G3rNeQeIuuw',
-  'NJv8aGIuPAY',
-  'sr5CD-jyKYo'
-];
+import 'package:all/pages/diy/video.dart';
 
-List<String> title = [
-  '文創影片-溪口天赦竹編',
-  'Make Bamboo Cups natural and environmentally friendly',
-  'Awesome Skillful Process Of Making Bamboo Products',
-  'Making bamboo furniture',
-  'beautiful bamboo crafts'
+List<Video> videos = [
+  Video('0UumdBiiboc', '文創影片-溪口天赦竹編', 0),
+  Video('EBPG_14ImKk', 'Make Bamboo Cups natural and environmentally friendly', 1),
+  Video('G3rNeQeIuuw', 'Awesome Skillful Process Of Making Bamboo Products', 2),
+  Video('NJv8aGIuPAY', 'Making bamboo furniture', 1),
+  Video('sr5CD-jyKYo', 'beautiful bamboo crafts', 2)
 ];
+List<String> titles = [];
+List<int> flags = [];
 
-List<int> flag = [
-  0, 1, 2, 1, 2
-];
-
-int count = url.length;
+int count = videos.length;

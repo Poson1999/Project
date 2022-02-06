@@ -11,6 +11,8 @@ import 'package:all/pages/diy/diy.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import 'diy/diy_url_title.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -178,7 +180,8 @@ class HomePage extends StatelessWidget {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const ResourceCenter())),
+                                    builder: (context) =>
+                                        const ResourceCenter())),
                             child: const Image(
                                 image:
                                     AssetImage('assets/images/homepage/8.png'),
@@ -236,10 +239,18 @@ class HomePage extends StatelessWidget {
                         width: double.infinity,
                         height: double.infinity,
                       ),
-                      onPressed: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const DIY()))))),
+                      onPressed: () {
+                        if(titles.isEmpty){
+                          for (int i = 0; i < count; i++) {
+                            titles.add(videos[i].title);
+                            flags.add(videos[i].flag);
+                          }
+                        }
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const DIY()));
+                      }))),
           Container(
               margin: const EdgeInsets.only(left: 30, right: 30),
               child: const Divider(color: Colors.black)),
