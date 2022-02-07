@@ -7,7 +7,7 @@ List<Video> videos = [
   Video('NJv8aGIuPAY', 'Making bamboo furniture', 1),
   Video('sr5CD-jyKYo', 'beautiful bamboo crafts', 2)
 ];
+
 List<String> titles = [];
-List<int> flags = [];
 
 int count = videos.length;

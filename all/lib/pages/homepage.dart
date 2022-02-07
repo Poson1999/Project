@@ -243,7 +243,6 @@ class HomePage extends StatelessWidget {
                         if(titles.isEmpty){
                           for (int i = 0; i < count; i++) {
                             titles.add(videos[i].title);
-                            flags.add(videos[i].flag);
                           }
                         }
                         Navigator.push(

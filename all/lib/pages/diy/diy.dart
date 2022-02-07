@@ -152,6 +152,12 @@ class _MySearchDelegate extends SearchDelegate<String> {
         onSelected: (String suggestion) {
           query = suggestion;
           _history.insert(0, suggestion);
+          for (int i = 1; i < _history.length - 1; i++) {
+            if (_history[i] == suggestion) {
+              _history.removeAt(i);
+              break;
+            }
+          }
           showResults(context);
         });
   }
