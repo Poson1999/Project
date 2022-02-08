@@ -10,4 +10,4 @@ List<Video> videos = [
 
 List<String> titles = [];
 
-int count = videos.length;
+List<Video> filtered = [];

@@ -170,7 +170,7 @@ class _BottomNavigationControllerState
                           ])))
         ])),
         appBar: AppBar(
-            title: const Text('BamCommunity'),
+            title: const Text('Bamtech'),
             centerTitle: true,
             actions: <Widget>[
               IconButton(

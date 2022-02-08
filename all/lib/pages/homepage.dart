@@ -9,8 +9,7 @@ import 'package:all/pages/category/tools/tools.dart';
 import 'package:all/pages/category/value/value_chain.dart';
 import 'package:all/pages/diy/diy.dart';
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import 'diy/diy_url_title.dart';
 
 class HomePage extends StatelessWidget {
@@ -190,16 +189,7 @@ class HomePage extends StatelessWidget {
                         width: 75,
                         height: 75,
                         child: TextButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (ctx) => Scaffold(
-                                      appBar: AppBar(
-                                        title: const Text(home8),
-                                      ),
-                                      body: const WebView(
-                                          initialUrl:
-                                              'https://worldbambooday.in/'))));
-                            },
+                            onPressed: () => launch(wbdUrl),
                             child: const Image(
                                 image:
                                     AssetImage('assets/images/homepage/9.png'),
@@ -240,8 +230,8 @@ class HomePage extends StatelessWidget {
                         height: double.infinity,
                       ),
                       onPressed: () {
-                        if(titles.isEmpty){
-                          for (int i = 0; i < count; i++) {
+                        if (titles.isEmpty) {
+                          for (int i = 0; i < videos.length; i++) {
                             titles.add(videos[i].title);
                           }
                         }
@@ -287,15 +277,7 @@ class HomePage extends StatelessWidget {
                         width: 100,
                         height: 100,
                         child: TextButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (ctx) => Scaffold(
-                                      appBar: AppBar(
-                                        title: const Text(sponsor),
-                                      ),
-                                      body: const WebView(
-                                          initialUrl: sponsorUrl))));
-                            },
+                            onPressed: () => launch(sponsorUrl),
                             child: const Image(
                                 image: AssetImage(
                                     'assets/images/homepage/nid_logo.jpg'),
@@ -305,17 +287,7 @@ class HomePage extends StatelessWidget {
                         width: 100,
                         height: 100,
                         child: TextButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (ctx) => Scaffold(
-                                      appBar: AppBar(
-                                        title: const Text(sponsor1),
-                                      ),
-                                      body: const WebView(
-                                          javascriptMode:
-                                              JavascriptMode.unrestricted,
-                                          initialUrl: sponsorUrl1))));
-                            },
+                            onPressed: () => launch(sponsorUrl1),
                             child: const Image(
                                 image: AssetImage(
                                     'assets/images/homepage/sabf_logo.jpg'),
@@ -325,17 +297,7 @@ class HomePage extends StatelessWidget {
                         width: 100,
                         height: 100,
                         child: TextButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (ctx) => Scaffold(
-                                      appBar: AppBar(
-                                        title: const Text(sponsor2),
-                                      ),
-                                      body: const WebView(
-                                          debuggingEnabled: true,
-                                          zoomEnabled: true,
-                                          initialUrl: sponsorUrl2))));
-                            },
+                            onPressed: () => launch(sponsorUrl2),
                             child: const Image(
                                 image: AssetImage(
                                     'assets/images/homepage/ccu_logo.png'),

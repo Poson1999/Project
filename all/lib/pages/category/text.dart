@@ -1,5 +1,4 @@
 //homepage
-
 const String home = "Selection of Bamboo";
 const String home1 = "Plantation";
 const String home2 = "Post Harvesting";
@@ -13,11 +12,17 @@ const String home9 = "DIY";
 const String home10 = "WEBINAR";
 const String home11 = "SPONSORS";
 const String home12 = 'CATEGORIES';
+const String wbdUrl = 'https://worldbambooday.in/';
 
 //diy
 const String diy = 'Taiwan';
 const String diy1 = 'Tableware';
 const String diy2 = 'Furniture';
+const String diy3 = 'All';
+const String tip = 'Search';
+const String tip1 = 'Filter';
+const String tip2 = 'Back';
+const String tip3 = 'Clear';
 
 //sponsors
 const String sponsor = 'NID';
