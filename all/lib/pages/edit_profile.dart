@@ -66,9 +66,7 @@ class EditProfile extends StatelessWidget {
             ListTile(
                 title: const Text('Change Photo'),
                 leading: const Icon(Icons.photo, color: Colors.green),
-                onTap: () {
-                  uploadPic();
-                }),
+                onTap: () => uploadPic()),
             const Divider(color: Colors.green),
             ListTile(
                 title: const Text('Change Password'),

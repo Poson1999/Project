@@ -15,10 +15,7 @@ const String home12 = 'CATEGORIES';
 const String wbdUrl = 'https://worldbambooday.in/';
 
 //diy
-const String diy = 'Taiwan';
-const String diy1 = 'Tableware';
-const String diy2 = 'Furniture';
-const String diy3 = 'All';
+const List<String> diy = ['Taiwan', 'Tableware', 'Furniture'];
 const String tip = 'Search';
 const String tip1 = 'Filter';
 const String tip2 = 'Back';

@@ -1,5 +1,6 @@
 import 'package:all/pages/category/text.dart';
 import 'package:all/pages/constant.dart';
+import 'package:all/pages/diy/diy_filter.dart';
 import 'package:all/pages/diy/video.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
@@ -14,9 +15,7 @@ class DIY extends StatefulWidget {
 
 class DIYState extends State<DIY> {
   List<YoutubePlayerController> shownController = [];
-  //List<YoutubePlayerController> filteredControllers = [];
   List<Video> shownVideos = videos;
-  //List<Video> filteredVideos = [];
   late _MySearchDelegate delegate;
 
   void fillYTList(
@@ -55,34 +54,17 @@ class DIYState extends State<DIY> {
     delegate = _MySearchDelegate(titles);
   }
 
-  /*void diyFilter(int n) {
-    filteredVideos.clear();
-    filteredControllers.clear();
-    shownController.clear();
+  diyFilter(int n) {
+    filterTitle = diy[n];
+    filtered.clear();
     for (int i = 0; i < videos.length; i++) {
       if (videos[i].flag == n) {
-        filteredVideos.add(videos[i]);
+        filtered.add(videos[i]);
       }
     }
-    fillYTList(filteredVideos, filteredControllers);
-    setState(() {
-      shownVideos = filteredVideos;
-      shownController = filteredControllers;
-    });
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const DIYFilter()));
   }
-
-  void all() {
-    shownController.clear();
-    setState(() {
-      shownVideos = videos;
-      for (int i = 0; i < videos.length; i++) {
-        YoutubePlayerController controller = YoutubePlayerController(
-            initialVideoId: shownVideos[i].url,
-            params: const YoutubePlayerParams(showControls: false));
-        shownController.add(controller);
-      }
-    });
-  }*/
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -93,33 +75,33 @@ class DIYState extends State<DIY> {
             icon: const Icon(Icons.search),
             onPressed: () async =>
                 await showSearch<String>(context: context, delegate: delegate)),
-        /*PopupMenuButton(
+        PopupMenuButton(
             color: Colors.green,
             tooltip: tip1,
-            initialValue: 3,
             icon: const Icon(Icons.filter_alt),
-            itemBuilder: (BuildContext context) => [
+            itemBuilder: (context) => [
                   PopupMenuItem(
-                      child: const Text(diy,
-                          style: TextStyle(color: Colors.white)),
-                      value: 0,
-                      onTap: () => diyFilter(0)),
+                      child: TextButton(
+                        child: Text(diy[0],
+                            style: const TextStyle(color: Colors.white)),
+                        onPressed: () => diyFilter(0),
+                      ),
+                      onTap: () {}),
                   PopupMenuItem(
-                      child: const Text(diy1,
-                          style: TextStyle(color: Colors.white)),
-                      value: 1,
-                      onTap: () => diyFilter(1)),
+                      child: TextButton(
+                        child: Text(diy[1],
+                            style: const TextStyle(color: Colors.white)),
+                        onPressed: () => diyFilter(1),
+                      ),
+                      onTap: () {}),
                   PopupMenuItem(
-                      child: const Text(diy2,
-                          style: TextStyle(color: Colors.white)),
-                      value: 2,
-                      onTap: () => diyFilter(2)),
-                  PopupMenuItem(
-                      child: const Text(diy3,
-                          style: TextStyle(color: Colors.white)),
-                      value: 3,
-                      onTap: () => all())
-                ])*/
+                      child: TextButton(
+                        child: Text(diy[2],
+                            style: const TextStyle(color: Colors.white)),
+                        onPressed: () => diyFilter(2),
+                      ),
+                      onTap: () {}),
+                ])
       ]),
       body: Scrollbar(child: buildYTList(shownVideos, shownController)));
 }

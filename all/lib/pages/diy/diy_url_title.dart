@@ -10,4 +10,6 @@ List<Video> videos = [
 
 List<String> titles = [];
 
+String filterTitle = '';
+
 List<Video> filtered = [];
