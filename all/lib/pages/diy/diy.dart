@@ -14,18 +14,18 @@ class DIY extends StatefulWidget {
 
 class DIYState extends State<DIY> {
   List<YoutubePlayerController> shownController = [];
-  List<YoutubePlayerController> filteredControllers = [];
+  //List<YoutubePlayerController> filteredControllers = [];
   List<Video> shownVideos = videos;
-  List<Video> filteredVideos = [];
-  late _MySearchDelegate _delegate;
+  //List<Video> filteredVideos = [];
+  late _MySearchDelegate delegate;
 
-  void fillYTList() {
-    for (int i = 0; i < videos.length; i++) {
-      YoutubePlayerController _controller = YoutubePlayerController(
-          initialVideoId: shownVideos[i].url,
-          params: const YoutubePlayerParams(
-              showControls: false, autoPlay: false, enableCaption: false));
-      shownController.add(_controller);
+  void fillYTList(
+      List<Video> videoList, List<YoutubePlayerController> controllerList) {
+    for (int i = 0; i < videoList.length; i++) {
+      YoutubePlayerController controller = YoutubePlayerController(
+          initialVideoId: videoList[i].url,
+          params: const YoutubePlayerParams());
+      controllerList.add(controller);
     }
   }
 
@@ -51,24 +51,21 @@ class DIYState extends State<DIY> {
   @override
   void initState() {
     super.initState();
-    fillYTList();
-    _delegate = _MySearchDelegate(titles);
+    fillYTList(videos, shownController);
+    delegate = _MySearchDelegate(titles);
   }
 
-  void diyFilter(int n) {
+  /*void diyFilter(int n) {
     filteredVideos.clear();
     filteredControllers.clear();
     shownController.clear();
-    setState(() {
-      for (int i = 0; i < videos.length; i++) {
-        if (videos[i].flag == n) {
-          filteredVideos.add(videos[i]);
-          YoutubePlayerController controller = YoutubePlayerController(
-              initialVideoId: videos[i].url,
-              params: const YoutubePlayerParams(showControls: false));
-          filteredControllers.add(controller);
-        }
+    for (int i = 0; i < videos.length; i++) {
+      if (videos[i].flag == n) {
+        filteredVideos.add(videos[i]);
       }
+    }
+    fillYTList(filteredVideos, filteredControllers);
+    setState(() {
       shownVideos = filteredVideos;
       shownController = filteredControllers;
     });
@@ -79,13 +76,13 @@ class DIYState extends State<DIY> {
     setState(() {
       shownVideos = videos;
       for (int i = 0; i < videos.length; i++) {
-        YoutubePlayerController _controller = YoutubePlayerController(
+        YoutubePlayerController controller = YoutubePlayerController(
             initialVideoId: shownVideos[i].url,
             params: const YoutubePlayerParams(showControls: false));
-        shownController.add(_controller);
+        shownController.add(controller);
       }
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -94,39 +91,35 @@ class DIYState extends State<DIY> {
         IconButton(
             tooltip: tip,
             icon: const Icon(Icons.search),
-            onPressed: () async => await showSearch<String>(
-                context: context, delegate: _delegate)),
-        PopupMenuButton(
+            onPressed: () async =>
+                await showSearch<String>(context: context, delegate: delegate)),
+        /*PopupMenuButton(
             color: Colors.green,
             tooltip: tip1,
+            initialValue: 3,
             icon: const Icon(Icons.filter_alt),
-            itemBuilder: (context) => [
+            itemBuilder: (BuildContext context) => [
                   PopupMenuItem(
-
                       child: const Text(diy,
                           style: TextStyle(color: Colors.white)),
-                      onTap: () {
-                        diyFilter(0);
-                      }),
+                      value: 0,
+                      onTap: () => diyFilter(0)),
                   PopupMenuItem(
                       child: const Text(diy1,
                           style: TextStyle(color: Colors.white)),
-                      onTap: () {
-                        diyFilter(1);
-                      }),
+                      value: 1,
+                      onTap: () => diyFilter(1)),
                   PopupMenuItem(
                       child: const Text(diy2,
                           style: TextStyle(color: Colors.white)),
-                      onTap: () {
-                        diyFilter(2);
-                      }),
+                      value: 2,
+                      onTap: () => diyFilter(2)),
                   PopupMenuItem(
                       child: const Text(diy3,
                           style: TextStyle(color: Colors.white)),
-                      onTap: () {
-                        all();
-                      }),
-                ])
+                      value: 3,
+                      onTap: () => all())
+                ])*/
       ]),
       body: Scrollbar(child: buildYTList(shownVideos, shownController)));
 }
@@ -158,21 +151,26 @@ class _MySearchDelegate extends SearchDelegate<String> {
       onPressed: () => close(context, ''));
 
   @override
-  Widget buildResults(BuildContext context) => Padding(
-      padding: const EdgeInsets.all(5),
-      child: Center(
-          child: GestureDetector(
-              onTap: () => close(context, query),
-              child: Column(children: <Widget>[
+  Widget buildResults(BuildContext context) => Center(
+      child: GestureDetector(
+          onTap: () => close(context, query),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
                 Row(children: [
                   Expanded(
-                      child: YoutubePlayerIFrame(
-                          controller: YoutubePlayerController(
-                              initialVideoId:
-                                  videos[getSelectedUrl(query)].url)))
+                      child: Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: YoutubePlayerIFrame(
+                        controller: YoutubePlayerController(
+                            initialVideoId: videos[getSelectedUrl(query)].url)),
+                  ))
                 ]),
-                Text(query, style: textStyle)
-              ]))));
+                Padding(
+                    padding: const EdgeInsets.only(left: 5, right: 5),
+                    child: Text(query, style: textStyle))
+              ])));
 
   @override
   Widget buildSuggestions(BuildContext context) {
