@@ -57,23 +57,32 @@ class DIYState extends State<DIY> {
         PopupMenuButton(
             color: Colors.green,
             tooltip: tip1,
+            offset: const Offset(0, 50),
             icon: const Icon(Icons.filter_alt),
-            itemBuilder: (context) => [
+            itemBuilder: (context) => <PopupMenuEntry>[
                   PopupMenuItem(
-                      child: TextButton(
-                          child: Text(diy[0],
-                              style: const TextStyle(color: Colors.white)),
-                          onPressed: () => diyFilter(0))),
+                      child: SizedBox(
+                          width: double.infinity,
+                          child: TextButton(
+                              child: Text(diy[0],
+                                  style: const TextStyle(color: Colors.white)),
+                              onPressed: () => diyFilter(0)))),
+                  const PopupMenuDivider(),
                   PopupMenuItem(
-                      child: TextButton(
-                          child: Text(diy[1],
-                              style: const TextStyle(color: Colors.white)),
-                          onPressed: () => diyFilter(1))),
+                      child: SizedBox(
+                          width: double.infinity,
+                          child: TextButton(
+                              child: Text(diy[1],
+                                  style: const TextStyle(color: Colors.white)),
+                              onPressed: () => diyFilter(1)))),
+                  const PopupMenuDivider(),
                   PopupMenuItem(
-                      child: TextButton(
-                          child: Text(diy[2],
-                              style: const TextStyle(color: Colors.white)),
-                          onPressed: () => diyFilter(2)))
+                      child: SizedBox(
+                          width: double.infinity,
+                          child: TextButton(
+                              child: Text(diy[2],
+                                  style: const TextStyle(color: Colors.white)),
+                              onPressed: () => diyFilter(2))))
                 ])
       ]),
       body: Scrollbar(
