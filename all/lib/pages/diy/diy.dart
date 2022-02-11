@@ -1,6 +1,5 @@
 import 'package:all/pages/category/text.dart';
 import 'package:all/pages/constant.dart';
-import 'package:all/pages/diy/diy_filter.dart';
 import 'package:all/pages/diy/video.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
@@ -14,38 +13,18 @@ class DIY extends StatefulWidget {
 }
 
 class DIYState extends State<DIY> {
-  List<YoutubePlayerController> shownController = [];
   List<Video> shownVideos = videos;
+  List<YoutubePlayerController> shownController = [];
   late _MySearchDelegate delegate;
 
   void fillYTList(
       List<Video> videoList, List<YoutubePlayerController> controllerList) {
     for (int i = 0; i < videoList.length; i++) {
-      YoutubePlayerController controller = YoutubePlayerController(
-          initialVideoId: videoList[i].url,
-          params: const YoutubePlayerParams());
+      YoutubePlayerController controller =
+          YoutubePlayerController(initialVideoId: videoList[i].url);
       controllerList.add(controller);
     }
   }
-
-  Widget buildYTList(List<Video> videosList,
-          List<YoutubePlayerController> ytControllerList) =>
-      ListView.builder(
-          itemCount: videosList.length,
-          itemBuilder: (context, index) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Row(children: [
-                      Expanded(
-                          child: Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: YoutubePlayerIFrame(
-                                  controller: ytControllerList[index])))
-                    ]),
-                    Padding(
-                        padding: const EdgeInsets.only(bottom: 5, left: 10),
-                        child: Text(videosList[index].title))
-                  ]));
 
   @override
   void initState() {
@@ -54,7 +33,7 @@ class DIYState extends State<DIY> {
     delegate = _MySearchDelegate(titles);
   }
 
-  diyFilter(int n) {
+  void diyFilter(int n) {
     filterTitle = diy[n];
     filtered.clear();
     for (int i = 0; i < videos.length; i++) {
@@ -82,28 +61,35 @@ class DIYState extends State<DIY> {
             itemBuilder: (context) => [
                   PopupMenuItem(
                       child: TextButton(
-                        child: Text(diy[0],
-                            style: const TextStyle(color: Colors.white)),
-                        onPressed: () => diyFilter(0),
-                      ),
-                      onTap: () {}),
+                          child: Text(diy[0],
+                              style: const TextStyle(color: Colors.white)),
+                          onPressed: () => diyFilter(0))),
                   PopupMenuItem(
                       child: TextButton(
-                        child: Text(diy[1],
-                            style: const TextStyle(color: Colors.white)),
-                        onPressed: () => diyFilter(1),
-                      ),
-                      onTap: () {}),
+                          child: Text(diy[1],
+                              style: const TextStyle(color: Colors.white)),
+                          onPressed: () => diyFilter(1))),
                   PopupMenuItem(
                       child: TextButton(
-                        child: Text(diy[2],
-                            style: const TextStyle(color: Colors.white)),
-                        onPressed: () => diyFilter(2),
-                      ),
-                      onTap: () {}),
+                          child: Text(diy[2],
+                              style: const TextStyle(color: Colors.white)),
+                          onPressed: () => diyFilter(2)))
                 ])
       ]),
-      body: Scrollbar(child: buildYTList(shownVideos, shownController)));
+      body: Scrollbar(
+          child: ListView.builder(
+              itemCount: shownVideos.length,
+              itemBuilder: (context, index) => Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: YoutubePlayerIFrame(
+                                controller: shownController[index])),
+                        Padding(
+                            padding: const EdgeInsets.only(bottom: 5, left: 10),
+                            child: Text(shownVideos[index].title))
+                      ]))));
 }
 
 class _MySearchDelegate extends SearchDelegate<String> {
@@ -222,4 +208,43 @@ class _SuggestionList extends StatelessWidget {
               onTap: () => onSelected(suggestion));
         });
   }
+}
+
+class DIYFilter extends StatefulWidget {
+  const DIYFilter({Key? key}) : super(key: key);
+
+  @override
+  DIYFilterState createState() => DIYFilterState();
+}
+
+class DIYFilterState extends State<DIYFilter> {
+  List<YoutubePlayerController> filteredControllers = [];
+
+  @override
+  void initState() {
+    super.initState();
+    for (int i = 0; i < filtered.length; i++) {
+      YoutubePlayerController controller =
+          YoutubePlayerController(initialVideoId: filtered[i].url);
+      filteredControllers.add(controller);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+      appBar: AppBar(title: Text(filterTitle), centerTitle: true),
+      body: Scrollbar(
+          child: ListView.builder(
+              itemCount: filtered.length,
+              itemBuilder: (context, index) => Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: YoutubePlayerIFrame(
+                                controller: filteredControllers[index])),
+                        Padding(
+                            padding: const EdgeInsets.only(bottom: 5, left: 10),
+                            child: Text(filtered[index].title))
+                      ]))));
 }

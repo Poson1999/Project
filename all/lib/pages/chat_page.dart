@@ -19,7 +19,7 @@ class ChatPageState extends State<ChatPage> {
               child: TextField(
                   controller: _textController,
                   onSubmitted: _handleSubmitted,
-                  decoration: const InputDecoration.collapsed(hintText: 'Send Message'))
+                  decoration: const InputDecoration.collapsed(hintText: 'Developing'))
           ),
             Container(
                 margin: const EdgeInsets.symmetric(horizontal: 4),

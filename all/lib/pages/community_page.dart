@@ -4,5 +4,5 @@ class CommunityPage extends StatelessWidget {
   const CommunityPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => const Center(child: Text("Bamboo Community"));
+  Widget build(BuildContext context) => const Center(child: Text('Developing'));
 }

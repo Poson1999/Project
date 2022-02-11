@@ -6,6 +6,6 @@ class PrimaryTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('Primary Level'), centerTitle: true,),
-    body: const Center(child: Text('primary\nprimary\nprimary', style: TextStyle(fontSize: 50)))
+    body: const Center(child: Text('Developing', style: TextStyle(fontSize: 50)))
   );
 }

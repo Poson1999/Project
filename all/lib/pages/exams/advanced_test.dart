@@ -6,6 +6,6 @@ class AdvancedTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(title: const Text('Advanced Level'), centerTitle: true,),
-      body: const Center(child: Text('advanced\nadvanced\nadvanced', style: TextStyle(fontSize: 50)))
+      body: const Center(child: Text('Developing', style: TextStyle(fontSize: 50)))
   );
 }
