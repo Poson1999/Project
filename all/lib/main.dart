@@ -1,7 +1,9 @@
 import 'package:all/pages/auth/signin_signup.dart';
+import 'package:all/pages/category/text.dart';
 import 'package:all/pages/category_function/bookmark_page.dart';
 import 'package:all/pages/category_function/qa_list_page.dart';
 import 'package:all/pages/category_function/reading_list_page.dart';
+import 'package:all/pages/drawer/about_us.dart';
 import 'package:flutter/material.dart';
 import 'package:all/pages/exams/test_page.dart';
 import 'package:all/pages/community_page.dart';
@@ -67,16 +69,18 @@ class _BottomNavigationControllerState
         .pushNamedAndRemoveUntil('/auth', (Route<dynamic> route) => false);
   }
 
-  void getProfile() async{
+  void getProfile() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       userName = prefs.getString("UserName")!;
       userEmail = prefs.getString("UserEmail")!;
       if (prefs.getString("PhotoFlag")! == "0") {
-        photoUrl = "https://project-ccu-2021.000webhostapp.com/pic/user/default.png";
+        photoUrl =
+            "https://project-ccu-2021.000webhostapp.com/pic/user/default.png";
       } else {
-        photoUrl = "https://project-ccu-2021.000webhostapp.com/pic/user/"
-            + prefs.getString("UserId")! + ".png";
+        photoUrl = "https://project-ccu-2021.000webhostapp.com/pic/user/" +
+            prefs.getString("UserId")! +
+            ".png";
       }
     });
   }
@@ -89,113 +93,103 @@ class _BottomNavigationControllerState
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        drawer: Drawer(
-            child:
-                ListView(padding: const EdgeInsets.only(), children: <Widget>[
-          UserAccountsDrawerHeader(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/homepage/tree.png'),
-                      fit: BoxFit.cover)),
-              accountName: Text(userName),
-              accountEmail: Text(userEmail),
-              currentAccountPicture: CircleAvatar(
-                  child: ClipOval(
-                      child: Image.network(photoUrl, fit: BoxFit.cover)))),
-          ListTile(
-              title: const Text('About us'),
-              leading: const Icon(Icons.help_outline, color: Colors.green),
-              onTap: () {}),
-          ListTile(
-              title: const Text('Reference link'),
-              leading: const Icon(Icons.link, color: Colors.green),
-              onTap: () {}),
-          ListTile(
-              title: const Text('Q&A'),
-              leading: const Icon(Icons.people_outline, color: Colors.green),
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const QAList()))),
-          ListTile(
-              title: const Text('Bookmark'),
-              leading: const Icon(Icons.bookmark_outline, color: Colors.green),
-              onTap: ()=> Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const BookMarkPage()))),
-          ListTile(
-              title: const Text('Reading List'),
-              leading: const Icon(Icons.list, color: Colors.green),
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ReadingListPage()))),
-          ListTile(
-              title: const Text('Liked Shops'),
-              leading: const Icon(Icons.storefront, color: Colors.green),
-              onTap: () {}),
-          ListTile(
-              title: const Text('Liked Article'),
-              leading: const Icon(Icons.thumb_up_off_alt, color: Colors.green),
-              onTap: () {}),
-          ListTile(
-              title: const Text('My Certificate'),
-              leading: const Icon(Icons.school_outlined, color: Colors.green),
-              onTap: () {}),
-          ListTile(
-              title: const Text('Edit Profile'),
-              leading: const Icon(Icons.edit_outlined, color: Colors.green),
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const EditProfile()))),
-          ListTile(
-              title: const Text('Logout'),
-              leading: const Icon(Icons.logout, color: Colors.green),
-              onTap: () => showDialog(
-                  context: context,
-                  builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Are you sure to logout?'),
-                          content:
-                              const Text('This action can not be canceled.'),
-                          actions: <Widget>[
-                            TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(context, 'Cancel'),
-                                child: const Text('Cancel')),
-                            TextButton(
-                                onPressed: () => logout(),
-                                child: const Text('Logout'))
-                          ])))
-        ])),
-        appBar: AppBar(
-            title: const Text('Bamtech'),
-            centerTitle: true,
-            actions: <Widget>[
-              IconButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ChatPage())),
-                  icon: const Icon(Icons.forum))
-            ]),
-        body: pages[_currentIndex],
-        bottomNavigationBar: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.school, size: 30), label: 'Knowledge'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.menu_book, size: 30), label: 'Exam'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.groups, size: 30), label: 'Community')
-            ],
-            iconSize: 20,
-            unselectedFontSize: 12,
-            selectedFontSize: 16,
-            currentIndex: _currentIndex,
-            fixedColor: Colors.green,
-            onTap: _onItemClick));
+      drawer: Drawer(
+          child: ListView(padding: const EdgeInsets.only(), children: <Widget>[
+        UserAccountsDrawerHeader(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/homepage/tree.png'),
+                    fit: BoxFit.cover)),
+            accountName: Text(userName),
+            accountEmail: Text(userEmail),
+            currentAccountPicture: CircleAvatar(
+                child: ClipOval(
+                    child: Image.network(photoUrl, fit: BoxFit.cover)))),
+        ListTile(
+            title: const Text(dr),
+            leading: const Icon(Icons.help_outline, color: Colors.green),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const AboutUs()))),
+        ListTile(
+            title: const Text(dr1),
+            leading: const Icon(Icons.link, color: Colors.green),
+            onTap: () {}),
+        ListTile(
+            title: const Text(dr2),
+            leading: const Icon(Icons.people_outline, color: Colors.green),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const QAList()))),
+        ListTile(
+            title: const Text(dr3),
+            leading: const Icon(Icons.bookmark_outline, color: Colors.green),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const BookMarkPage()))),
+        ListTile(
+            title: const Text(dr4),
+            leading: const Icon(Icons.list, color: Colors.green),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ReadingListPage()))),
+        ListTile(
+            title: const Text(dr5),
+            leading: const Icon(Icons.storefront, color: Colors.green),
+            onTap: () {}),
+        ListTile(
+            title: const Text(dr6),
+            leading: const Icon(Icons.thumb_up_off_alt, color: Colors.green),
+            onTap: () {}),
+        ListTile(
+            title: const Text(dr7),
+            leading: const Icon(Icons.school_outlined, color: Colors.green),
+            onTap: () {}),
+        ListTile(
+            title: const Text(dr8),
+            leading: const Icon(Icons.edit_outlined, color: Colors.green),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const EditProfile()))),
+        ListTile(
+            title: const Text(dr9),
+            leading: const Icon(Icons.logout, color: Colors.green),
+            onTap: () => showDialog(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                        title: const Text('Are you sure to logout?'),
+                        content: const Text('This action can not be canceled.'),
+                        actions: <Widget>[
+                          TextButton(
+                              onPressed: () => Navigator.pop(context, 'Cancel'),
+                              child: const Text('Cancel')),
+                          TextButton(
+                              onPressed: () => logout(),
+                              child: const Text('Logout'))
+                        ])))
+      ])),
+      appBar: AppBar(
+          title: const Text('Bamtech'),
+          centerTitle: true,
+          actions: <Widget>[
+            IconButton(
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const ChatPage())),
+                icon: const Icon(Icons.forum))
+          ]),
+      body: pages[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(Icons.school, size: 30), label: 'Knowledge'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.menu_book, size: 30), label: 'Exam'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.groups, size: 30), label: 'Community')
+          ],
+          iconSize: 20,
+          unselectedFontSize: 12,
+          selectedFontSize: 16,
+          currentIndex: _currentIndex,
+          fixedColor: Colors.green,
+          onTap: _onItemClick));
 
   void _onItemClick(int index) => setState(() => _currentIndex = index);
 }
