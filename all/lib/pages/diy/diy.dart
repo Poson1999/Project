@@ -20,8 +20,9 @@ class DIYState extends State<DIY> {
   void fillYTList(
       List<Video> videoList, List<YoutubePlayerController> controllerList) {
     for (int i = 0; i < videoList.length; i++) {
-      YoutubePlayerController controller =
-          YoutubePlayerController(initialVideoId: videoList[i].url);
+      YoutubePlayerController controller = YoutubePlayerController(
+          initialVideoId: videoList[i].url,
+          params: const YoutubePlayerParams(showFullscreenButton: true));
       controllerList.add(controller);
     }
   }
