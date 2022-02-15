@@ -14,6 +14,27 @@ const String home11 = "SPONSORS";
 const String home12 = 'CATEGORIES';
 const String wbdUrl = 'https://worldbambooday.in/';
 
+//drawer
+const String dr = 'About Us';
+const String dr1 = 'Reference Links';
+const String dr2 = 'Q&A';
+const String dr3 = 'Bookmark';
+const String dr4 = 'Reading List';
+const String dr5 = 'Liked Shops';
+const String dr6 = 'Liked Articles';
+const String dr7 = 'My Certificate';
+const String dr8 = 'Edit Profile';
+const String dr9 = 'Logout';
+const String au0 = 'ABOUT US';
+const String au = 'We are passionate individuals who wants to share the knowledge of bamboo.';
+const String au1 = 'In order to bridge the gap between research and development and large scale '
+    'application of new building material technologies,, the erstwhile of ministry of Urban '
+    'development, Government of India, had established the BUILDING MATERIALS AND TECHNOLOGY PROMOTION COUNCIL in July 1990.';
+const String au2 = 'WHY BAMBOO';
+const String au3 = 'Bamboo, the giant grass, with more than 70 genera and about 1450 species, '
+'occur in a wide variety of soil and climatic conditions around the globe and play a critical '
+'role in providing ecological, livelihood and food security to mankind. In India, although';
+
 //diy
 const List<String> diy = ['Taiwan', 'Tableware', 'Furniture'];
 const String tip = 'Search';
