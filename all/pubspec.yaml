@@ -57,6 +57,7 @@ dependencies:
 
 dev_dependencies:
   flutter_native_splash: ^1.3.2
+  flutter_launcher_icons:
   flutter_test:
     sdk: flutter
 
@@ -77,6 +78,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
+    - assets/
     - assets/images/
     - assets/images/category/
     - assets/images/homepage/
@@ -123,3 +125,9 @@ flutter_native_splash:
   image: assets/images/splash.png
   color: "#ffffff"
   android_disable_fullscreen: true
+
+flutter_icons:
+  image_path: "assets/app.png"
+  android: true
+  ios: true
+  remove_alpha_ios: true
