@@ -1,5 +1,15 @@
 import 'dart:convert' as convert;
 import 'package:all/class/bookmark.dart';
+import 'package:all/pages/category/construction/framing_sequence.dart';
+import 'package:all/pages/category/construction/planning_the_substructure.dart';
+import 'package:all/pages/category/construction/plastering_and_finishing.dart';
+import 'package:all/pages/category/construction/preparation_of_bamboo.dart';
+import 'package:all/pages/category/joinery/angle_joints_for_trusses_joints.dart';
+import 'package:all/pages/category/joinery/basic_principle.dart';
+import 'package:all/pages/category/joinery/modern_joining_technique.dart';
+import 'package:all/pages/category/joinery/orthogonal_joints.dart';
+import 'package:all/pages/category/joinery/spliced_joints.dart';
+import 'package:all/pages/category/joinery/useful_techniques.dart';
 import 'package:all/pages/category/plantation/clum_harvesting_handling.dart';
 import 'package:all/pages/category/plantation/conventional.dart';
 import 'package:all/pages/category/plantation/maintenance_activities.dart';
@@ -16,6 +26,12 @@ import 'package:all/pages/category/postHarvesting/weaving_and_woven_products.dar
 import 'package:all/pages/category/postHarvesting/why_treatment_preservation.dart';
 import 'package:all/pages/category/selection/commercial_bamboo_species.dart';
 import 'package:all/pages/category/selection/selection_of_bamboo.dart';
+import 'package:all/pages/category/text.dart';
+import 'package:all/pages/category/tools/hand_tools.dart';
+import 'package:all/pages/category/tools/machine_tools.dart';
+import 'package:all/pages/category/value/bamboo_distribution.dart';
+import 'package:all/pages/category/value/bamboo_value_chain.dart';
+import 'package:all/pages/category/value/bamboo_value_chain_process.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -146,8 +162,72 @@ class _BookMarkPageState extends State<BookMarkPage> {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const FurnitureProducts()));
         break;
+        // construction
+      case cs1:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const PlanningTheSubstructure()));
+        break;
+      case cs2:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const PreparationOfBamboo()));
+        break;
+      case cs3:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const FramingSequence()));
+        break;
+      case cs4:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const PlasteringAndFinishing()));
+        break;
+        //joinery-basic
+      case j:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const BasicPrinciple()));
+        break;
+      //joinery-tech
+      case jt:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const SplicedJoints()));
+        break;
+      case jt1:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const OrthogonalJoints()));
+        break;
+      case jt2:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const AngleJointsForTrussesJoints()));
+        break;
+      case jt3:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ModernJoiningTechnique()));
+        break;
+      case jt4:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const UsefulTechniques()));
+        break;
+        //Tools
+      case t:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const HandTools()));
+        break;
+      case t1:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const MachineTools()));
+        break;
+        //value-chain
+      case vc1:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const BambooDistribution()));
+        break;
+      case vc2:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const BambooValueChain()));
+        break;
+      case vc3:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const BambooValueChainProcess()));
+        break;
     }
-    
   }
 
 
