@@ -8,3 +8,4 @@ Here are some resources I used:
 - [Flutter catalog](https://x-wei.github.io/flutter_catalog/#/)
 - [Flutter development](https://docs.flutter.dev/development/packages-and-plugins/favorites)
 - [App safety](https://www.mas.org.tw/spaw2/uploads/files/1050811-1.pdf)
+- [Quiz](https://www.geeksforgeeks.org/basic-quiz-app-in-flutter-api/)
