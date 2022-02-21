@@ -3,7 +3,7 @@ import 'package:all/pages/category/text.dart';
 import 'package:all/pages/category_function/bookmark_page.dart';
 import 'package:all/pages/category_function/qa_list_page.dart';
 import 'package:all/pages/category_function/reading_list_page.dart';
-import 'package:all/pages/drawer/about_us.dart';
+import 'package:all/pages/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:all/pages/exams/test_page.dart';
 import 'package:all/pages/community_page.dart';
@@ -108,8 +108,39 @@ class _BottomNavigationControllerState
         ListTile(
             title: const Text(dr),
             leading: const Icon(Icons.help_outline, color: Colors.green),
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const AboutUs()))),
+            onTap: () => showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => SimpleDialog(
+                        children: <Widget>[
+                          const Padding(
+                              padding: EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
+                              child: Text(au0, style: titleStyle)),
+                          Padding(
+                              padding: const EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const <Widget>[
+                                    Expanded(child: Text(au, style: textStyle)),
+                                    SizedBox(width: 5),
+                                    Expanded(
+                                        child: Image(
+                                            image: AssetImage(
+                                                "assets/images/homepage/au.png")))
+                                  ])),
+                          const Padding(
+                              padding: EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
+                              child: Text(au1, style: textStyle)),
+                          const Padding(
+                              padding: EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
+                              child: Text(au2, style: titleStyle)),
+                          const Padding(
+                              padding: EdgeInsets.only(left: 10, top: 5, right: 10),
+                              child: Text(au3, style: textStyle))
+                        ])) /*Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const AboutUs()))*/
+            ),
         ListTile(
             title: const Text(dr1),
             leading: const Icon(Icons.link, color: Colors.green),

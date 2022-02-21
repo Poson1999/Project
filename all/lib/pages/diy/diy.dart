@@ -139,11 +139,13 @@ class _MySearchDelegate extends SearchDelegate<String> {
                 Row(children: [
                   Expanded(
                       child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: YoutubePlayerIFrame(
-                        controller: YoutubePlayerController(
-                            initialVideoId: videos[getSelectedUrl(query)].url)),
-                  ))
+                          padding: const EdgeInsets.all(5),
+                          child: YoutubePlayerIFrame(
+                              controller: YoutubePlayerController(
+                                  initialVideoId:
+                                      videos[getSelectedUrl(query)].url,
+                                  params: const YoutubePlayerParams(
+                                      showFullscreenButton: true)))))
                 ]),
                 Padding(
                     padding: const EdgeInsets.only(left: 5, right: 5),
@@ -234,8 +236,9 @@ class DIYFilterState extends State<DIYFilter> {
   void initState() {
     super.initState();
     for (int i = 0; i < filtered.length; i++) {
-      YoutubePlayerController controller =
-          YoutubePlayerController(initialVideoId: filtered[i].url);
+      YoutubePlayerController controller = YoutubePlayerController(
+          initialVideoId: filtered[i].url,
+          params: const YoutubePlayerParams(showFullscreenButton: true));
       filteredControllers.add(controller);
     }
   }
