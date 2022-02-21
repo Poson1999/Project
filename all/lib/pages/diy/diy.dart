@@ -19,9 +19,9 @@ class DIYState extends State<DIY> {
 
   void fillYTList(
       List<Video> videoList, List<YoutubePlayerController> controllerList) {
-    for (int i = 0; i < videoList.length; i++) {
+    for (Video i in videoList) {
       YoutubePlayerController controller = YoutubePlayerController(
-          initialVideoId: videoList[i].url,
+          initialVideoId: i.url,
           params: const YoutubePlayerParams(showFullscreenButton: true));
       controllerList.add(controller);
     }
@@ -37,10 +37,8 @@ class DIYState extends State<DIY> {
   void diyFilter(int n) {
     filterTitle = diy[n];
     filtered.clear();
-    for (int i = 0; i < videos.length; i++) {
-      if (videos[i].flag == n) {
-        filtered.add(videos[i]);
-      }
+    for (Video i in videos) {
+      if (i.flag == n) filtered.add(i);
     }
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => const DIYFilter()));
