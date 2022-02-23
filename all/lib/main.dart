@@ -6,7 +6,7 @@ import 'package:all/pages/category_function/reading_list_page.dart';
 import 'package:all/pages/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:all/pages/exams/test_page.dart';
-import 'package:all/pages/community_page.dart';
+import 'package:all/pages/community/community_page.dart';
 import 'package:all/pages/chat_page.dart';
 import 'package:all/pages/edit_profile.dart';
 import 'package:all/pages/homepage.dart';
@@ -110,41 +110,44 @@ class _BottomNavigationControllerState
             leading: const Icon(Icons.help_outline, color: Colors.green),
             onTap: () => showDialog<String>(
                 context: context,
-                builder: (BuildContext context) => SimpleDialog(
-                        children: <Widget>[
-                          const Padding(
-                              padding: EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
-                              child: Text(au0, style: titleStyle)),
-                          Padding(
-                              padding: const EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
-                              child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const <Widget>[
-                                    Expanded(child: Text(au, style: textStyle)),
-                                    SizedBox(width: 5),
-                                    Expanded(
-                                        child: Image(
-                                            image: AssetImage(
-                                                "assets/images/homepage/au.png")))
-                                  ])),
-                          const Padding(
-                              padding: EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
-                              child: Text(au1, style: textStyle)),
-                          const Padding(
-                              padding: EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
-                              child: Text(au2, style: titleStyle)),
-                          const Padding(
-                              padding: EdgeInsets.only(left: 10, top: 5, right: 10),
-                              child: Text(au3, style: textStyle))
-                        ])) /*Navigator.push(context,
+                builder: (BuildContext context) =>
+                    SimpleDialog(children: <Widget>[
+                      const Padding(
+                          padding: EdgeInsets.only(
+                              left: 10, top: 5, right: 10, bottom: 5),
+                          child: Text(au0, style: titleStyle)),
+                      Padding(
+                          padding: const EdgeInsets.only(
+                              left: 10, top: 5, right: 10, bottom: 5),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const <Widget>[
+                                Expanded(child: Text(au, style: textStyle)),
+                                SizedBox(width: 5),
+                                Expanded(
+                                    child: Image(
+                                        image: AssetImage(
+                                            "assets/images/homepage/au.png")))
+                              ])),
+                      const Padding(
+                          padding: EdgeInsets.only(
+                              left: 10, top: 5, right: 10, bottom: 5),
+                          child: Text(au1, style: textStyle)),
+                      const Padding(
+                          padding: EdgeInsets.only(
+                              left: 10, top: 5, right: 10, bottom: 5),
+                          child: Text(au2, style: titleStyle)),
+                      const Padding(
+                          padding: EdgeInsets.only(left: 10, top: 5, right: 10),
+                          child: Text(au3, style: textStyle))
+                    ])) /*Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const AboutUs()))*/
             ),
-        ListTile(
+        /*ListTile(
             title: const Text(dr1),
             leading: const Icon(Icons.link, color: Colors.green),
-            onTap: () {}),
+            onTap: () {}),*/
         ListTile(
             title: const Text(dr2),
             leading: const Icon(Icons.people_outline, color: Colors.green),
@@ -162,7 +165,7 @@ class _BottomNavigationControllerState
                 context,
                 MaterialPageRoute(
                     builder: (context) => const ReadingListPage()))),
-        ListTile(
+        /*ListTile(
             title: const Text(dr5),
             leading: const Icon(Icons.storefront, color: Colors.green),
             onTap: () {}),
@@ -173,7 +176,7 @@ class _BottomNavigationControllerState
         ListTile(
             title: const Text(dr7),
             leading: const Icon(Icons.school_outlined, color: Colors.green),
-            onTap: () {}),
+            onTap: () {}),*/
         ListTile(
             title: const Text(dr8),
             leading: const Icon(Icons.edit_outlined, color: Colors.green),

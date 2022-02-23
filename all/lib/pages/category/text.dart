@@ -16,13 +16,13 @@ const String wbdUrl = 'https://worldbambooday.in/';
 
 //drawer
 const String dr = 'About Us';
-const String dr1 = 'Reference Links';
+//const String dr1 = 'Reference Links';
 const String dr2 = 'Q&A';
 const String dr3 = 'Bookmark';
 const String dr4 = 'Reading List';
-const String dr5 = 'Liked Shops';
-const String dr6 = 'Liked Articles';
-const String dr7 = 'My Certificate';
+//const String dr5 = 'Liked Shops';
+//const String dr6 = 'Liked Articles';
+//const String dr7 = 'My Certificate';
 const String dr8 = 'Edit Profile';
 const String dr9 = 'Logout';
 const String au0 = 'ABOUT US';
