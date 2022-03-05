@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:all/class/user.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -77,6 +79,33 @@ class _SignState extends State<SignInUp> {
           Fluttertoast.showToast(msg: "password incorrect!");
         }
       }
+    } catch (e) {
+      ScaffoldMessenger.of(context).removeCurrentSnackBar();
+      Fluttertoast.showToast(
+        msg: "Error: " + e.toString(),
+      );
+    }
+  }
+
+  //登入方法
+  void signUp() async {
+
+    var url =
+        "https://project-ccu-2021.000webhostapp.com/phpformobile/signup.php";
+    var data = {
+      "name": nameController.text,
+      "email": emailController.text,
+      "password": passController.text
+    };
+
+    try {
+      var res = await http.post(Uri.parse(url), body: data);
+      var jsonData = convert.jsonDecode(res.body);
+      ScaffoldMessenger.of(context).removeCurrentSnackBar();
+      Fluttertoast.showToast(
+        msg: jsonData.toString()
+      );
+
     } catch (e) {
       ScaffoldMessenger.of(context).removeCurrentSnackBar();
       Fluttertoast.showToast(
@@ -175,7 +204,16 @@ class _SignState extends State<SignInUp> {
                                 labelText: 'Confirm Password',
                                 labelStyle: TextStyle(fontSize: 20)))),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          if(passController.text == confirmPassController.text) {
+                              signUp();
+                          }
+                          else {
+                              Fluttertoast.showToast(
+                                  msg: "Passwords are not the same!"
+                              );
+                          }
+                        },
                         child: const Text("Sign up",
                             style: TextStyle(color: Colors.green))),
                   ]
