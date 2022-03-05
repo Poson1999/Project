@@ -18,8 +18,8 @@ const TextStyle content = TextStyle(
 );
 
 List<Post> posts = [
-  Post('', '', '', '', ''),
-  Post('', '', '', '', ''),
+  Post('test content', 'https://project-ccu-2021.000webhostapp.com/pic/user/default.png', 'Tester', 'https://project-ccu-2021.000webhostapp.com/pic/user/1.png', '2/23/2022\n21:17'),
+  Post('test content2', 'https://project-ccu-2021.000webhostapp.com/pic/user/1.png', 'Poppy', 'https://project-ccu-2021.000webhostapp.com/pic/user/default.png', '2/23/2022\n22:17'),
   Post('', '', '', '', ''),
   Post('', '', '', '', ''),
   Post('', '', '', '', ''),

@@ -7,7 +7,6 @@ import 'package:all/pages/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:all/pages/exams/test_page.dart';
 import 'package:all/pages/community/community_page.dart';
-import 'package:all/pages/chat_page.dart';
 import 'package:all/pages/edit_profile.dart';
 import 'package:all/pages/homepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -144,6 +143,7 @@ class _BottomNavigationControllerState
                     ])) /*Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const AboutUs()))*/
             ),
+        const Divider(),
         /*ListTile(
             title: const Text(dr1),
             leading: const Icon(Icons.link, color: Colors.green),
@@ -153,11 +153,13 @@ class _BottomNavigationControllerState
             leading: const Icon(Icons.people_outline, color: Colors.green),
             onTap: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const QAList()))),
+        const Divider(),
         ListTile(
             title: const Text(dr3),
             leading: const Icon(Icons.bookmark_outline, color: Colors.green),
             onTap: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const BookMarkPage()))),
+        const Divider(),
         ListTile(
             title: const Text(dr4),
             leading: const Icon(Icons.list, color: Colors.green),
@@ -165,6 +167,7 @@ class _BottomNavigationControllerState
                 context,
                 MaterialPageRoute(
                     builder: (context) => const ReadingListPage()))),
+        const Divider(),
         /*ListTile(
             title: const Text(dr5),
             leading: const Icon(Icons.storefront, color: Colors.green),
@@ -182,6 +185,7 @@ class _BottomNavigationControllerState
             leading: const Icon(Icons.edit_outlined, color: Colors.green),
             onTap: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const EditProfile()))),
+        const Divider(),
         ListTile(
             title: const Text(dr9),
             leading: const Icon(Icons.logout, color: Colors.green),
@@ -197,17 +201,10 @@ class _BottomNavigationControllerState
                           TextButton(
                               onPressed: () => logout(),
                               child: const Text('Logout'))
-                        ])))
+                        ]))),
+        const Divider()
       ])),
-      appBar: AppBar(
-          title: const Text('Bamtech'),
-          centerTitle: true,
-          actions: <Widget>[
-            IconButton(
-                onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const ChatPage())),
-                icon: const Icon(Icons.forum))
-          ]),
+      appBar: AppBar(title: const Text('Bamtech'), centerTitle: true),
       body: pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
