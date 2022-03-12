@@ -73,14 +73,7 @@ class _BottomNavigationControllerState
     setState(() {
       userName = prefs.getString("UserName")!;
       userEmail = prefs.getString("UserEmail")!;
-      if (prefs.getString("PhotoFlag")! == "0") {
-        photoUrl =
-            "https://project-ccu-2021.000webhostapp.com/pic/user/default.png";
-      } else {
-        photoUrl = "https://project-ccu-2021.000webhostapp.com/pic/user/" +
-            prefs.getString("UserId")! +
-            ".png";
-      }
+      photoUrl = prefs.getString("Photo")!;
     });
   }
 

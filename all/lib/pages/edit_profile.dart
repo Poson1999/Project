@@ -43,8 +43,6 @@ class EditProfile extends StatelessWidget {
       var res = await http.post(Uri.parse(url), body: data);
       var result = jsonDecode(res.body);
 
-      prefs.setString('PhotoFlag', "1");
-
       Fluttertoast.showToast(
         msg: result.toString(),
       );

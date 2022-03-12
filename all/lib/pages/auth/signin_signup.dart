@@ -63,7 +63,7 @@ class _SignState extends State<SignInUp> {
         prefs.setString('UserEmail', newUser.email);
         prefs.setString('UserPassword', newUser.password);
         prefs.setString('UserIdCode', newUser.identificationCode);
-        prefs.setString('PhotoFlag', newUser.photoFlag);
+        prefs.setString('Photo', newUser.photo);
 
         String result =
             "獲得資料: " + newUser.id + ", " + newUser.name + ", " + newUser.email;
@@ -150,7 +150,7 @@ class _SignState extends State<SignInUp> {
                       TextButton(
                           onPressed: login,
                           child: const Text(
-                              "Sign in")) /*,
+                              "Log in")) /*,
                       TextButton(onPressed: () {}, child: const Text("獲取資料")),
                       TextButton(
                           onPressed: () => Navigator.of(context)
