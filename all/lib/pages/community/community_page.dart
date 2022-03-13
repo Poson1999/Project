@@ -13,9 +13,10 @@ class CommunityPage extends StatefulWidget {
 }
 
 class _CommunityPageState extends State<CommunityPage> {
+  final searchController = TextEditingController();
 
-
-  List<Post> postList = <Post>[];
+  List<Post> postList = <Post>[];// 從資料庫抓取到的、原始的所有的貼文
+  List<Post> posts = <Post>[];// 經過search後實際上展示的貼文
 
   @override
   void initState() {
@@ -29,6 +30,7 @@ class _CommunityPageState extends State<CommunityPage> {
 
     setState(() {
       postList.clear();
+      posts.clear();
     });
 
     try {
@@ -40,6 +42,7 @@ class _CommunityPageState extends State<CommunityPage> {
         });
         debugPrint(item.toString());
       }
+      posts = postList;
       debugPrint(postList.toString());
     } catch (e) {
       debugPrint(e.toString());
@@ -52,31 +55,64 @@ class _CommunityPageState extends State<CommunityPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ListView.builder(
-            itemCount: postList.length,
-            itemBuilder: (context, index) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: ListTile(
-                              leading: ClipOval(
-                                  child: Image.network(postList[index].authorPic,
-                                      fit: BoxFit.cover)),
-                              title: Text(postList[index].authorName, style: author),
-                          trailing: Text(postList[index].time, style: time))),
-                      Padding(
-                          padding: const EdgeInsets.only(left: 10, right: 10),
-                          child: Text(postList[index].content, style: content)),
-                      Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: SizedBox(
-                            width: double.infinity,
-                            child: Image.network(posts[index].picture,
-                                fit: BoxFit.cover)
-                          )),
-                      const Divider(height: 3, color: Colors.black)
-                    ])),
+          body: Column(
+            children: <Widget>[
+              Container(
+                margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+                child: TextField(
+                  controller: searchController,
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.search),
+                    hintText: 'Search for post content or author',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  onChanged: searchPost,
+                ),
+              ),
+              Expanded(
+                  child: ListView.builder(
+                      itemCount: posts.length,
+                      itemBuilder: (context, index) => Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 10),
+                                child: ListTile(
+                                    leading: ClipOval(
+                                        child: Image.network(posts[index].authorPic,
+                                            fit: BoxFit.cover)),
+                                    title: Text(posts[index].authorName, style: author),
+                                    trailing: Text(posts[index].time, style: time))),
+                            Padding(
+                                padding: const EdgeInsets.only(left: 10, right: 10),
+                                child: Text(posts[index].content, style: content)),
+                            Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: SizedBox(
+                                    width: double.infinity,
+                                    child: Image.network(posts[index].picture,
+                                        fit: BoxFit.cover)
+                                )),
+                            const Divider(height: 3, color: Colors.black)
+                          ])),
+              )
+            ],
+          ),
       );
-  }
+    }
+
+    // 搜尋貼文與作者
+    void searchPost(String query) {
+      final result = postList.where((post) {
+        final postContent = post.content.toLowerCase();
+        final postAuthor = post.authorName.toLowerCase();
+        final input = query.toLowerCase();
+
+        return postContent.contains(input) || postAuthor.contains(input);
+      }).toList();
+
+      setState(() => posts = result);
+    }
 }
