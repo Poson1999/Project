@@ -55,7 +55,7 @@ class BottomNavigationController extends StatefulWidget {
 class _BottomNavigationControllerState
     extends State<BottomNavigationController> {
   int _currentIndex = 0;
-  static const pages = [HomePage(), TestPage(), CommunityPage()];
+  static List<Widget> pages = [const HomePage(), const TestPage(), const CommunityPage()];
   String userName = "";
   String userEmail = "";
   String photoUrl = "";

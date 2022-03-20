@@ -34,3 +34,11 @@ const TextStyle textStyle = TextStyle(
   fontSize: 17,
   height: 1.35,
 );
+
+ButtonStyle option = ElevatedButton.styleFrom(
+  primary: Colors.white,
+);
+
+ButtonStyle selected = ElevatedButton.styleFrom(
+  primary: const Color(0xFF4EB857),
+);
