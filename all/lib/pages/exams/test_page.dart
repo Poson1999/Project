@@ -3,6 +3,7 @@ import 'package:all/pages/exams/primary_test.dart';
 import 'package:all/pages/exams/middle_test.dart';
 import 'package:all/pages/exams/advanced_test.dart';
 
+
 class TestPage extends StatelessWidget {
   const TestPage({Key? key}) : super(key: key);
 
@@ -34,7 +35,7 @@ class TestPage extends StatelessWidget {
                         onPressed: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const PrimaryTest())),
+                                builder: (context) => PrimaryTest())),
                         child: const Text('Primary',
                             style: TextStyle(fontSize: 20))))),
             Container(
