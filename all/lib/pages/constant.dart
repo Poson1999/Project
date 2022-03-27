@@ -42,3 +42,7 @@ ButtonStyle option = ElevatedButton.styleFrom(
 ButtonStyle selected = ElevatedButton.styleFrom(
   primary: const Color(0xFF4EB857),
 );
+
+ButtonStyle wrong = ElevatedButton.styleFrom(
+  primary: const Color(0xB6E74141),
+);
