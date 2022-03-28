@@ -41,13 +41,17 @@ class _QAListState extends State<QAList> {
     try {
       var res = await http.post(Uri.parse(url), body: data);
       var jsonData = convert.jsonDecode(res.body);
-      for (var item in jsonData) {
-        setState(() {
-          QAList.add(QAListItem.fromJson(item));
-        });
-        debugPrint(item.toString());
+      if(jsonData != "empty"){
+        for (var item in jsonData) {
+          setState(() {
+            QAList.add(QAListItem.fromJson(item));
+          });
+          // debugPrint(item.toString());
+        }
+      } else {
+        debugPrint("List is empty.");
       }
-      debugPrint(QAList.toString());
+      // debugPrint(QAList.toString());
     } catch (e) {
       debugPrint(e.toString());
       Fluttertoast.showToast(
@@ -71,9 +75,9 @@ class _QAListState extends State<QAList> {
         setState(() {
           AllQAList.add(QAListItem.fromJson(item));
         });
-        debugPrint(item.toString());
+        // debugPrint(item.toString());
       }
-      debugPrint(AllQAList.toString());
+      // debugPrint(AllQAList.toString());
     } catch (e) {
       debugPrint(e.toString());
       Fluttertoast.showToast(
@@ -181,7 +185,11 @@ class _QAListState extends State<QAList> {
     final _tapPages = <Widget>[
       Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: ListView.separated(
+          child: QAList.isEmpty
+              ? const Center(
+                child: Text("None", style: TextStyle(fontSize: 30)),
+              )
+              :ListView.separated(
             itemCount: QAList.length,
             padding: const EdgeInsets.all(10.0),
             itemBuilder: (context, index) {

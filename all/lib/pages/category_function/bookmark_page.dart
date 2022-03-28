@@ -71,13 +71,17 @@ class _BookMarkPageState extends State<BookMarkPage> {
     try {
       var res = await http.post(Uri.parse(url), body: data);
       var jsonData = convert.jsonDecode(res.body);
-      for(var item in jsonData) {
-        setState(() {
-          bookmarkList.add(Bookmark.fromJson(item));
-        });
-        debugPrint(item.toString());
+      if(jsonData != "empty") {
+        for(var item in jsonData) {
+          setState(() {
+            bookmarkList.add(Bookmark.fromJson(item));
+          });
+          // debugPrint(item.toString());
+        }
+      } else {
+        // debugPrint("List is empty.");
       }
-      debugPrint(bookmarkList.toString());
+      // debugPrint(bookmarkList.toString());
     } catch (e) {
       debugPrint(e.toString());
       Fluttertoast.showToast(
@@ -285,7 +289,12 @@ class _BookMarkPageState extends State<BookMarkPage> {
       title: const Text('BookMark'),
       centerTitle: true,
     ),
-    body: ListView.separated(
+    body: bookmarkList.isEmpty
+        ? const Center(
+            child: Text("None", style: TextStyle(fontSize: 30)),
+        )
+        :
+        ListView.separated(
         itemCount: bookmarkList.length,
         padding: const EdgeInsets.all(10.0),
         itemBuilder: (context, index){
