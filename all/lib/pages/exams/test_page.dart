@@ -1,3 +1,4 @@
+import 'package:all/pages/exams/record_page.dart';
 import 'package:flutter/material.dart';
 import 'package:all/pages/exams/primary_test.dart';
 import 'package:all/pages/exams/middle_test.dart';
@@ -61,6 +62,18 @@ class TestPage extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => const AdvancedTest())),
                         child: const Text('Advanced',
-                            style: TextStyle(fontSize: 20)))))
-          ]));
+                            style: TextStyle(fontSize: 20))))),
+                Container(
+                    margin: const EdgeInsets.only(top: 20, bottom: 20),
+                    child: SizedBox(
+                        width: 250,
+                        height: 75,
+                        child: ElevatedButton(
+                            onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => RecordPage())),
+                            child: const Text('Record',
+                                style: TextStyle(fontSize: 20))))),
+              ]));
 }

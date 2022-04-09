@@ -37,7 +37,7 @@ class _SignState extends State<SignInUp> {
     );
 
     var url =
-        "https://project-ccu-2021.000webhostapp.com/phpformobile/login.php";
+        serverDomain + "/phpformobile/login.php";
     var data = {
       "email": inEmailController.text,
       "password": inPassController.text
