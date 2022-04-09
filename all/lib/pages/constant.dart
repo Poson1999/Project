@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 // 一些畫面的參數設定，最好統一放這邊
 
+const String serverDomain = "https://project-ccu-2021.000webhostapp.com";
+
+
 // auth-page
 const Color signInBg = Color(0xFF00C470);
 const Color signUpBg = Color(0xFF000A54);

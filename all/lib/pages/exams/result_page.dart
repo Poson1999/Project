@@ -25,7 +25,7 @@ class _ResultPageState extends State<ResultPage> {
 
   void computeData(List<EQuestion> L1, List<BarData> L2) {
     for(var q in L1){
-      if(q.selectedAnswer != q.correctAnswer){
+      if(q.selectedAnswer == q.correctAnswer){
         for(var c in L2){
           if(q.category == c.category){
             setState(() {
