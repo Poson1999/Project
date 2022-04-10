@@ -38,6 +38,18 @@ const TextStyle textStyle = TextStyle(
   height: 1.35,
 );
 
+// score
+const TextStyle pass = TextStyle(
+  color: Color(0xFF4EB857),
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle fail = TextStyle(
+  color: Color(0xB6E74141),
+  fontWeight: FontWeight.bold,
+);
+
+// exam button
 ButtonStyle option = ElevatedButton.styleFrom(
   primary: Colors.white,
 );

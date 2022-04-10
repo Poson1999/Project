@@ -62,7 +62,7 @@ class _PrimaryTestState extends State<PrimaryTest> {
     super.initState();
   }
 
-  // 測試抓取現在時間
+  // 抓取現在時間
   void getTime() {
     final now = DateTime.now();
     debugPrint(now.toString());

@@ -3,6 +3,11 @@ import 'package:all/pages/exams/BarData.dart';
 import 'package:all/pages/exams/exam_question.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+import 'package:intl/intl.dart';
 
 class ResultPage extends StatefulWidget {
   const ResultPage({Key? key , required this.score, required this.examResultList,required this.chartData}) : super(key: key);
@@ -19,6 +24,7 @@ class _ResultPageState extends State<ResultPage> {
   @override
   void initState() {
     computeData(widget.examResultList, widget.chartData);
+    updateRecord(widget.examResultList);
     // TODO: implement initState
     super.initState();
   }
@@ -35,6 +41,74 @@ class _ResultPageState extends State<ResultPage> {
         }
       }
     }
+  }
+
+  void updateRecord(List<EQuestion> L) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0;
+
+    for(var q in L){
+      if(q.selectedAnswer == q.correctAnswer){
+        switch(q.category){
+          case "Selection of Bamboo":
+            c1 += 1;
+            break;
+          case "Plantation":
+            c2 += 1;
+            break;
+          case "Post Harvesting":
+            c3 += 1;
+            break;
+          case "Construction Sequence":
+            c4 += 1;
+            break;
+          case "Joinery":
+            c5 += 1;
+            break;
+          case "Tools":
+            c6 += 1;
+            break;
+          case "Value Chain":
+            c7 += 1;
+            break;
+        }
+      }
+    }
+
+    var url = serverDomain + "/phpformobile/addPrimaryRecord.php";
+    var data = {
+      "userId": prefs.getString("UserId"),
+      "c1": c1.toString(),
+      "c2": c2.toString(),
+      "c3": c3.toString(),
+      "c4": c4.toString(),
+      "c5": c5.toString(),
+      "c6": c6.toString(),
+      "c7": c7.toString(),
+      "score": widget.score.toString(),
+      "date": getTime(),
+    };
+
+    try {
+      var res = await http.post(Uri.parse(url), body: data);
+      var jsonData = convert.jsonDecode(res.body);
+      debugPrint(jsonData);
+      Fluttertoast.showToast(
+        msg: jsonData.toString(),
+      );
+    } catch (e) {
+      debugPrint(e.toString());
+      Fluttertoast.showToast(
+        msg: "Error: " + e.toString(),
+      );
+    }
+  }
+
+  // 抓取現在時間
+  String getTime() {
+    final now = DateTime.now();
+    debugPrint(DateFormat("yyyy-MM-dd HH:mm:ss").format(now).toString());
+    return DateFormat("yyyy-MM-dd HH:mm:ss").format(now).toString();
   }
 
 
