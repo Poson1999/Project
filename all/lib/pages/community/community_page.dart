@@ -40,15 +40,15 @@ class _CommunityPageState extends State<CommunityPage> {
         setState(() {
           postList.add(Post.fromJson(item));
         });
-        debugPrint(item.toString());
+        // debugPrint(item.toString());
       }
       posts = postList;
-      debugPrint(postList.toString());
+      // debugPrint(postList.toString());
     } catch (e) {
       debugPrint(e.toString());
-      Fluttertoast.showToast(
-        msg: "Error: " + e.toString(),
-      );
+      // Fluttertoast.showToast(
+      //   msg: "Error: " + e.toString(),
+      // );
     }
   }
 
