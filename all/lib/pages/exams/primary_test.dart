@@ -17,6 +17,7 @@ class PrimaryTest extends StatefulWidget {
 class _PrimaryTestState extends State<PrimaryTest> {
   List<EQuestion> EQList = <EQuestion> [];
 
+  //下一個頁面要用的圖表數據
   List<BarData> ChartData = [
     BarData(
       id: 1,

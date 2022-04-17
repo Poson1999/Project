@@ -1,5 +1,6 @@
 import 'dart:convert' as convert;
 import 'package:all/pages/constant.dart';
+import 'package:all/pages/exams/record_detail_page.dart';
 import 'package:flutter_radar_chart/flutter_radar_chart.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
@@ -17,12 +18,64 @@ class RecordPage extends StatefulWidget {
 class _RecordPageState extends State<RecordPage> {
 
   List<Record> recordList = <Record>[];
+  List<Record> allRecordList = <Record>[];
+  bool showAverage = false;
   int numOfQuestion = 0;
+  int numOfAllQuestion = 0;
 
   @override
   void initState() {
     getRecordList();
+    getAllRecordList();
     super.initState();
+  }
+
+  // 取得所有使用者的考試資料
+  void getAllRecordList() async {
+    var url = serverDomain + "/phpformobile/getAllRecordList.php";
+
+    setState(() {
+      allRecordList.clear();
+      numOfAllQuestion = 0;
+    });
+
+    try {
+      var res = await http.post(Uri.parse(url));
+      var jsonData = convert.jsonDecode(res.body);
+      for(var item in jsonData) {
+        setState(() {
+          allRecordList.add(Record.fromJson(item));
+        });
+        // debugPrint(item.toString());
+      }
+
+      //計算各類共有多少題
+      for(Record r in allRecordList){
+        switch(r.level){
+          case "primary":
+            setState(() {
+              numOfAllQuestion++;
+            });
+            break;
+          case "middle":
+            setState(() {
+              numOfAllQuestion += 2;
+            });
+            break;
+          case "advanced":
+            setState(() {
+              numOfAllQuestion += 3;
+            });
+            break;
+        }
+      }
+      // debugPrint(allRecordList.toString());
+    } catch (e) {
+      debugPrint(e.toString());
+      Fluttertoast.showToast(
+        msg: "Error: " + e.toString(),
+      );
+    }
   }
 
   // 取得該使用者的考試資料
@@ -84,11 +137,11 @@ class _RecordPageState extends State<RecordPage> {
     }
   }
 
-  List<int> getChartData(List<Record> rList){
+  List<int> getChartData(List<Record> rList, int noq){
     //每個category的答對數量
     int c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0;
 
-    for(Record r in recordList){
+    for(Record r in rList){
       c1 += int.parse(r.category1);
       c2 += int.parse(r.category2);
       c3 += int.parse(r.category3);
@@ -100,15 +153,16 @@ class _RecordPageState extends State<RecordPage> {
 
     // 回傳答對率
     return [
-      (c1 * 100 / numOfQuestion).round(),
-      (c2 * 100 / numOfQuestion).round(),
-      (c3 * 100 / numOfQuestion).round(),
-      (c4 * 100 / numOfQuestion).round(),
-      (c5 * 100 / numOfQuestion).round(),
-      (c6 * 100 / numOfQuestion).round(),
-      (c7 * 100 / numOfQuestion).round(),
+      (c1 * 100 / noq).round(),
+      (c2 * 100 / noq).round(),
+      (c3 * 100 / noq).round(),
+      (c4 * 100 / noq).round(),
+      (c5 * 100 / noq).round(),
+      (c6 * 100 / noq).round(),
+      (c7 * 100 / noq).round(),
     ];
   }
+
 
 
   @override
@@ -120,7 +174,7 @@ class _RecordPageState extends State<RecordPage> {
         ),
         body: recordList.isEmpty
             ? const Center(
-                child: Text("None", style: TextStyle(fontSize: 30)),
+                child: Text("No Record Yet", style: TextStyle(fontSize: 30)),
               )
             : Column(
                 children: [
@@ -130,9 +184,17 @@ class _RecordPageState extends State<RecordPage> {
                         child: RadarChart(
                           features: const ["Selection of Bamboo", "Plantation", "Post Harvesting", "Construction Sequence", "Joinery", "Tools", "Value Chain"],
                           ticks: const [20, 40, 60, 80, 100],
-                          data: [getChartData(recordList)],
+                          data: showAverage
+                              ? [getChartData(recordList, numOfQuestion), getChartData(allRecordList, numOfAllQuestion)]
+                              : [getChartData(recordList, numOfQuestion)],
                         ),
                       )
+                  ),
+                  ElevatedButton(
+                    child: showAverage ? Text("Show only my average") : Text("Show all user's average"),
+                    onPressed: () => setState(() {
+                      showAverage = !showAverage;
+                    }),
                   ),
                   Expanded(
                       child: ListView.separated(
@@ -147,7 +209,10 @@ class _RecordPageState extends State<RecordPage> {
                             subtitle: Text(recordList[index].date),
                             trailing: Text(recordList[index].score,
                                 style: int.parse(recordList[index].score) >= 60 ? pass : fail),
-                            onTap: () {} ,
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => RecordDetailPage(record: recordList[index]))),
                           );
                         }, separatorBuilder: (BuildContext context, int index) => const Divider(),
                       )
