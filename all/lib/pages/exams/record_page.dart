@@ -16,7 +16,6 @@ class RecordPage extends StatefulWidget {
 }
 
 class _RecordPageState extends State<RecordPage> {
-
   List<Record> recordList = <Record>[];
   List<Record> allRecordList = <Record>[];
   bool showAverage = false;
@@ -42,7 +41,7 @@ class _RecordPageState extends State<RecordPage> {
     try {
       var res = await http.post(Uri.parse(url));
       var jsonData = convert.jsonDecode(res.body);
-      for(var item in jsonData) {
+      for (var item in jsonData) {
         setState(() {
           allRecordList.add(Record.fromJson(item));
         });
@@ -50,8 +49,8 @@ class _RecordPageState extends State<RecordPage> {
       }
 
       //計算各類共有多少題
-      for(Record r in allRecordList){
-        switch(r.level){
+      for (Record r in allRecordList) {
+        switch (r.level) {
           case "primary":
             setState(() {
               numOfAllQuestion++;
@@ -83,9 +82,7 @@ class _RecordPageState extends State<RecordPage> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     var url = serverDomain + "/phpformobile/getRecordList.php";
-    var data = {
-      "userId": prefs.getString("UserId")
-    };
+    var data = {"userId": prefs.getString("UserId")};
 
     setState(() {
       recordList.clear();
@@ -95,8 +92,8 @@ class _RecordPageState extends State<RecordPage> {
     try {
       var res = await http.post(Uri.parse(url), body: data);
       var jsonData = convert.jsonDecode(res.body);
-      if(jsonData != "empty") {
-        for(var item in jsonData) {
+      if (jsonData != "empty") {
+        for (var item in jsonData) {
           setState(() {
             recordList.add(Record.fromJson(item));
           });
@@ -104,8 +101,8 @@ class _RecordPageState extends State<RecordPage> {
         }
 
         //計算各類共有多少題
-        for(Record r in recordList){
-          switch(r.level){
+        for (Record r in recordList) {
+          switch (r.level) {
             case "primary":
               setState(() {
                 numOfQuestion++;
@@ -123,8 +120,6 @@ class _RecordPageState extends State<RecordPage> {
               break;
           }
         }
-
-
       } else {
         // debugPrint("List is empty.");
       }
@@ -137,11 +132,11 @@ class _RecordPageState extends State<RecordPage> {
     }
   }
 
-  List<int> getChartData(List<Record> rList, int noq){
+  List<int> getChartData(List<Record> rList, int noq) {
     //每個category的答對數量
     int c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0;
 
-    for(Record r in rList){
+    for (Record r in rList) {
       c1 += int.parse(r.category1);
       c2 += int.parse(r.category2);
       c3 += int.parse(r.category3);
@@ -159,14 +154,12 @@ class _RecordPageState extends State<RecordPage> {
       (c4 * 100 / noq).round(),
       (c5 * 100 / noq).round(),
       (c6 * 100 / noq).round(),
-      (c7 * 100 / noq).round(),
+      (c7 * 100 / noq).round()
     ];
   }
 
-
-
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Exam Record'),
@@ -180,46 +173,65 @@ class _RecordPageState extends State<RecordPage> {
                 children: [
                   Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.all(30),
-                        child: RadarChart(
-                          features: const ["Selection of Bamboo", "Plantation", "Post Harvesting", "Construction Sequence", "Joinery", "Tools", "Value Chain"],
-                          ticks: const [20, 40, 60, 80, 100],
-                          data: showAverage
-                              ? [getChartData(recordList, numOfQuestion), getChartData(allRecordList, numOfAllQuestion)]
-                              : [getChartData(recordList, numOfQuestion)],
-                        ),
-                      )
-                  ),
+                          padding: const EdgeInsets.all(30),
+                          child: RadarChart(
+                              features: const [
+                                "Selection of Bamboo",
+                                "Plantation",
+                                "Post\nHarvesting",
+                                "Construction\nSequence",
+                                "Joinery",
+                                "Tools",
+                                "Value Chain"
+                              ],
+                              ticks: const [
+                                20,
+                                40,
+                                60,
+                                80,
+                                100
+                              ],
+                              data: showAverage
+                                  ? [
+                                      getChartData(recordList, numOfQuestion),
+                                      getChartData(
+                                          allRecordList, numOfAllQuestion)
+                                    ]
+                                  : [
+                                      getChartData(recordList, numOfQuestion)
+                                    ]))),
                   ElevatedButton(
-                    child: showAverage ? Text("Show only my average") : Text("Show all user's average"),
+                    child: showAverage
+                        ? const Text("Show only my average")
+                        : const Text("Show all user's average"),
                     onPressed: () => setState(() {
                       showAverage = !showAverage;
                     }),
                   ),
                   Expanded(
                       child: ListView.separated(
-                        itemCount: recordList.length,
-                        padding: const EdgeInsets.all(10.0),
-                        itemBuilder: (context, index){
-                          return ListTile(
-                            leading: CircleAvatar(
-                              child: Text((index + 1).toString()),
-                            ),
-                            title: Text(recordList[index].level),
-                            subtitle: Text(recordList[index].date),
-                            trailing: Text(recordList[index].score,
-                                style: int.parse(recordList[index].score) >= 60 ? pass : fail),
-                            onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => RecordDetailPage(record: recordList[index]))),
-                          );
-                        }, separatorBuilder: (BuildContext context, int index) => const Divider(),
-                      )
-                  )
+                    itemCount: recordList.length,
+                    padding: const EdgeInsets.all(10.0),
+                    itemBuilder: (context, index) => ListTile(
+                      leading: CircleAvatar(
+                        child: Text((index + 1).toString()),
+                      ),
+                      title: Text(recordList[index].level),
+                      subtitle: Text(recordList[index].date),
+                      trailing: Text(recordList[index].score,
+                          style: int.parse(recordList[index].score) >= 60
+                              ? pass
+                              : fail),
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  RecordDetailPage(record: recordList[index]))),
+                    ),
+                    separatorBuilder: (BuildContext context, int index) =>
+                        const Divider(),
+                  ))
                 ],
-              )
-
-    );
+              ));
   }
 }

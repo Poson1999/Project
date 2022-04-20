@@ -36,8 +36,7 @@ class _SignState extends State<SignInUp> {
       const SnackBar(content: Text('Loading...')),
     );
 
-    var url =
-        serverDomain + "/phpformobile/login.php";
+    var url = serverDomain + "/phpformobile/login.php";
     var data = {
       "email": inEmailController.text,
       "password": inPassController.text
@@ -89,7 +88,6 @@ class _SignState extends State<SignInUp> {
 
   //登入方法
   void signUp() async {
-
     var url =
         "https://project-ccu-2021.000webhostapp.com/phpformobile/signup.php";
     var data = {
@@ -102,10 +100,7 @@ class _SignState extends State<SignInUp> {
       var res = await http.post(Uri.parse(url), body: data);
       var jsonData = convert.jsonDecode(res.body);
       ScaffoldMessenger.of(context).removeCurrentSnackBar();
-      Fluttertoast.showToast(
-        msg: jsonData.toString()
-      );
-
+      Fluttertoast.showToast(msg: jsonData.toString());
     } catch (e) {
       ScaffoldMessenger.of(context).removeCurrentSnackBar();
       Fluttertoast.showToast(
@@ -130,8 +125,11 @@ class _SignState extends State<SignInUp> {
                     controller: inEmailController,
                     decoration: const InputDecoration(
                         filled: true,
-                        fillColor: Colors.white38,
+                        fillColor: Colors.white,
                         labelText: 'Email Address',
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
                         labelStyle: TextStyle(fontSize: 20))),
                 Padding(
                     padding:
@@ -141,84 +139,80 @@ class _SignState extends State<SignInUp> {
                         obscureText: true,
                         decoration: const InputDecoration(
                             filled: true,
-                            fillColor: Colors.white38,
+                            fillColor: Colors.white,
                             labelText: 'Password',
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
                             labelStyle: TextStyle(fontSize: 20)))),
                 Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      TextButton(
-                          onPressed: login,
-                          child: const Text(
-                              "Log in")) /*,
-                      TextButton(onPressed: () {}, child: const Text("獲取資料")),
-                      TextButton(
-                          onPressed: () => Navigator.of(context)
-                              .pushNamedAndRemoveUntil(
-                                  '/main', (Route<dynamic> route) => false),
-                          child: const Text("直接轉跳"))*/
+                      ElevatedButton(onPressed: login, child: const Text("Login", style: TextStyle(color: Colors.white)), style: ElevatedButton.styleFrom(
+                        primary: const Color(0xFF4EB857)))
                     ]),
                 const Spacer(flex: 1)
               ]))),
       //Sign up
       Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.13),
-          child: SingleChildScrollView(
-              padding: const EdgeInsets.only(top: 50),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextFormField(
-                        controller: nameController,
-                        decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white38,
-                            labelText: 'Name',
-                            labelStyle: TextStyle(fontSize: 20))),
-                    Padding(
-                        padding:
-                        const EdgeInsets.symmetric(vertical: defaultPadding),
-                        child: TextFormField(
-                            controller: emailController,
-                            decoration: const InputDecoration(
-                                filled: true,
-                                fillColor: Colors.white38,
-                                labelText: 'Email Address',
-                                labelStyle: TextStyle(fontSize: 20)))),
-                    TextFormField(
-                        controller: passController,
-                        decoration: const InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white38,
-                            labelText: 'Password',
-                            labelStyle: TextStyle(fontSize: 20))),
-                    Padding(
-                        padding:
-                        const EdgeInsets.symmetric(vertical: defaultPadding),
-                        child: TextFormField(
-                            controller: confirmPassController,
-                            decoration: const InputDecoration(
-                                filled: true,
-                                fillColor: Colors.white38,
-                                labelText: 'Confirm Password',
-                                labelStyle: TextStyle(fontSize: 20)))),
-                    TextButton(
-                        onPressed: () {
-                          if(passController.text == confirmPassController.text) {
-                              signUp();
-                          }
-                          else {
-                              Fluttertoast.showToast(
-                                  msg: "Passwords are not the same!"
-                              );
-                          }
-                        },
-                        child: const Text("Sign up",
-                            style: TextStyle(color: Colors.green))),
-                  ]
-              )
-          ),
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.13),
+        child: SingleChildScrollView(
+            padding: const EdgeInsets.only(top: 50),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              TextFormField(
+                  controller: nameController,
+                  decoration: const InputDecoration(
+                      filled: true,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                      fillColor: Colors.white,
+                      labelText: 'Name',
+                      labelStyle: TextStyle(fontSize: 20))),
+              Padding(
+                  padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+                  child: TextFormField(
+                      controller: emailController,
+                      decoration: const InputDecoration(
+                          filled: true,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          fillColor: Colors.white,
+                          labelText: 'Email Address',
+                          labelStyle: TextStyle(fontSize: 20)))),
+              TextFormField(
+                  controller: passController,
+                  decoration: const InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelText: 'Password',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                      labelStyle: TextStyle(fontSize: 20))),
+              Padding(
+                  padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+                  child: TextFormField(
+                      controller: confirmPassController,
+                      decoration: const InputDecoration(
+                          filled: true,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          fillColor: Colors.white,
+                          labelText: 'Confirm Password',
+                          labelStyle: TextStyle(fontSize: 20)))),
+                  ElevatedButton(onPressed: () {
+                    if (passController.text == confirmPassController.text) {
+                      signUp();
+                    } else {
+                      Fluttertoast.showToast(
+                          msg: "Passwords are not the same!");
+                    }
+                  }, child: const Text("Sign up", style: TextStyle(color: Colors.white)), style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFF4EB857)))
+            ])),
       )
     ];
     const _tabs = <Tab>[
@@ -229,6 +223,14 @@ class _SignState extends State<SignInUp> {
         length: _tabs.length,
         child: Scaffold(
             appBar: AppBar(title: const TabBar(tabs: _tabs)),
-            body: TabBarView(children: _tapPages)));
+            body: Container(
+              constraints: const BoxConstraints.expand(),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/bg.png"),
+                    fit: BoxFit.cover),
+              ),
+              child: TabBarView(children: _tapPages),
+            )));
   }
 }

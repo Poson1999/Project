@@ -161,18 +161,6 @@ class _BottomNavigationControllerState
                 MaterialPageRoute(
                     builder: (context) => const ReadingListPage()))),
         const Divider(),
-        /*ListTile(
-            title: const Text(dr5),
-            leading: const Icon(Icons.storefront, color: Colors.green),
-            onTap: () {}),
-        ListTile(
-            title: const Text(dr6),
-            leading: const Icon(Icons.thumb_up_off_alt, color: Colors.green),
-            onTap: () {}),
-        ListTile(
-            title: const Text(dr7),
-            leading: const Icon(Icons.school_outlined, color: Colors.green),
-            onTap: () {}),*/
         ListTile(
             title: const Text(dr8),
             leading: const Icon(Icons.edit_outlined, color: Colors.green),
