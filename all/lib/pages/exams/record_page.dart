@@ -182,7 +182,7 @@ class _RecordPageState extends State<RecordPage> {
                                 "Construction\nSequence",
                                 "Joinery",
                                 "Tools",
-                                "Value Chain"
+                                "Value\nChain"
                               ],
                               ticks: const [
                                 20,

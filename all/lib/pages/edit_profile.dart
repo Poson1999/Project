@@ -66,7 +66,7 @@ class EditProfile extends StatelessWidget {
                 leading: const Icon(Icons.photo, color: Colors.green),
                 onTap: () => uploadPic()),
             const Divider(color: Colors.green),
-            ListTile(
+            /*ListTile(
                 title: const Text('Change Password'),
                 leading: const Icon(Icons.password, color: Colors.green),
                 onTap: () {}),
@@ -75,7 +75,7 @@ class EditProfile extends StatelessWidget {
                 title: const Text('Delete Account'),
                 leading: const Icon(Icons.warning, color: Colors.red),
                 onTap: () {}),
-            const Divider(color: Colors.green),
+            const Divider(color: Colors.green),*/
           ],
         ),
       );
