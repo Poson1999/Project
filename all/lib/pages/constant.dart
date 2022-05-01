@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // 一些畫面的參數設定，最好統一放這邊
 
+// 伺服器的網域，換地方的時候改這一行就好，後面目錄路徑不用動
 const String serverDomain = "https://project-ccu-2021.000webhostapp.com";
 
 

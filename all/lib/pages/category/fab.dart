@@ -1,3 +1,4 @@
+import 'package:all/pages/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -98,7 +99,7 @@ class _FABState extends State<FAB> {
   void addBookMark(String pageName) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    var url = "https://project-ccu-2021.000webhostapp.com/phpformobile/addBookMark.php";
+    var url = serverDomain + "/phpformobile/addBookMark.php";
     var data = {
       "userId": prefs.getString("UserId"),
       "pageName": pageName,
@@ -122,7 +123,7 @@ class _FABState extends State<FAB> {
   void addReadingList(String pageName, String content) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    var url = "https://project-ccu-2021.000webhostapp.com/phpformobile/addReadingList.php";
+    var url = serverDomain + "/phpformobile/addReadingList.php";
     var data = {
       "userId": prefs.getString("UserId"),
       "pageName": pageName,
@@ -147,7 +148,7 @@ class _FABState extends State<FAB> {
   void addQA(String question) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    var url = "https://project-ccu-2021.000webhostapp.com/phpformobile/addQA.php";
+    var url = serverDomain +  "/phpformobile/addQA.php";
     var data = {
       "userId": prefs.getString("UserId"),
       "question": question,

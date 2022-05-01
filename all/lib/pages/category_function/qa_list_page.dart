@@ -1,6 +1,7 @@
 import 'dart:convert' as convert;
 import 'package:all/class/qa_list_item.dart';
 import 'package:all/pages/category_function/question_page.dart';
+import 'package:all/pages/constant.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -31,7 +32,7 @@ class _QAListState extends State<QAList> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     var url =
-        "https://project-ccu-2021.000webhostapp.com/phpformobile/getQAList.php";
+        serverDomain + "/phpformobile/getQAList.php";
     var data = {"userId": prefs.getString("UserId")};
 
     setState(() {
@@ -62,7 +63,7 @@ class _QAListState extends State<QAList> {
 
   void getAllQAList() async {
     var url =
-        "https://project-ccu-2021.000webhostapp.com/phpformobile/getAllQAList.php";
+        serverDomain + "/phpformobile/getAllQAList.php";
 
     setState(() {
       AllQAList.clear();
@@ -88,7 +89,7 @@ class _QAListState extends State<QAList> {
 
   void deleteQA(String qaId) async {
     var url =
-        "https://project-ccu-2021.000webhostapp.com/phpformobile/deleteQA.php";
+        serverDomain + "/phpformobile/deleteQA.php";
     var data = {"id": qaId};
 
     try {
@@ -134,7 +135,7 @@ class _QAListState extends State<QAList> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     var url =
-        "https://project-ccu-2021.000webhostapp.com/phpformobile/answerQA.php";
+        serverDomain +  "/phpformobile/answerQA.php";
     var data = {
       "id": qaId,
       "answerer_id": prefs.getString("UserId"),

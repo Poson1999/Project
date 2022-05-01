@@ -1,5 +1,6 @@
 import 'dart:convert' as convert;
 import 'package:all/class/reading_list_item.dart';
+import 'package:all/pages/constant.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -27,7 +28,7 @@ class _ReadingListPageState extends State<ReadingListPage> {
   void getReadingList() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    var url = "https://project-ccu-2021.000webhostapp.com/phpformobile/getReadingList.php";
+    var url = serverDomain + "/phpformobile/getReadingList.php";
     var data = {
       "userId": prefs.getString("UserId")
     };
@@ -62,7 +63,7 @@ class _ReadingListPageState extends State<ReadingListPage> {
 
   // 刪除選中的書籤
   void deleteReadingList(String readingListId) async {
-    var url = "https://project-ccu-2021.000webhostapp.com/phpformobile/deleteReadingList.php";
+    var url = serverDomain + "/phpformobile/deleteReadingList.php";
     var data = {
       "id": readingListId
     };

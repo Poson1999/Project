@@ -89,7 +89,7 @@ class _SignState extends State<SignInUp> {
   //登入方法
   void signUp() async {
     var url =
-        "https://project-ccu-2021.000webhostapp.com/phpformobile/signup.php";
+        serverDomain + "/phpformobile/signup.php";
     var data = {
       "name": nameController.text,
       "email": emailController.text,

@@ -149,7 +149,7 @@ class _BottomNavigationControllerState
         const Divider(),
         ListTile(
             title: const Text(dr3),
-            leading: const Icon(Icons.bookmark_outline, color: Colors.green),
+            leading: const Icon(Icons.bookmarks_outlined, color: Colors.green),
             onTap: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const BookMarkPage()))),
         const Divider(),
