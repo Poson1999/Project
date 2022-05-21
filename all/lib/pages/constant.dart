@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 // 伺服器的網域，換地方的時候改這一行就好，後面目錄路徑不用動
 const String serverDomain = "https://project-ccu-2021.000webhostapp.com";
-
+// const String serverDomain = "https://97.74.92.33/bamtech";
 
 // auth-page
 const Color signInBg = Color(0xFF00C470);

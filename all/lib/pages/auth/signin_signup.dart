@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:all/class/user.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -80,6 +78,7 @@ class _SignState extends State<SignInUp> {
       }
     } catch (e) {
       ScaffoldMessenger.of(context).removeCurrentSnackBar();
+      debugPrint(e.toString());
       Fluttertoast.showToast(
         msg: "Error: " + e.toString(),
       );
@@ -149,7 +148,7 @@ class _SignState extends State<SignInUp> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ElevatedButton(onPressed: login, child: const Text("Login", style: TextStyle(color: Colors.white)), style: ElevatedButton.styleFrom(
-                        primary: const Color(0xFF4EB857)))
+                        primary: const Color(0xFF4EB857))),
                     ]),
                 const Spacer(flex: 1)
               ]))),

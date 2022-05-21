@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:all/pages/auth/signin_signup.dart';
 import 'package:all/pages/category/text.dart';
 import 'package:all/pages/category_function/bookmark_page.dart';
@@ -18,11 +19,25 @@ void main() async {
   // 在main用到async要加這行
   WidgetsFlutterBinding.ensureInitialized();
 
+
   SharedPreferences prefs = await SharedPreferences.getInstance();
   // 檢查isLoggedIn的值，若為null 則指定為false
   isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
 
+
+  //解決新主機連線問題(HandshakeException)
+  HttpOverrides.global = MyHttpOverrides();
+
   runApp(const MyApp());
+}
+
+//解決新主機連線問題(HandshakeException)
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext? context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+  }
 }
 
 class MyApp extends StatelessWidget {
