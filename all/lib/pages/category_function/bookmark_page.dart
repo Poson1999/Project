@@ -32,6 +32,7 @@ import 'package:all/pages/category/tools/machine_tools.dart';
 import 'package:all/pages/category/value/bamboo_distribution.dart';
 import 'package:all/pages/category/value/bamboo_value_chain.dart';
 import 'package:all/pages/category/value/bamboo_value_chain_process.dart';
+import 'package:all/pages/constant.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -59,7 +60,7 @@ class _BookMarkPageState extends State<BookMarkPage> {
   void getBookMark() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    var url = "https://project-ccu-2021.000webhostapp.com/phpformobile/getBookMark.php";
+    var url = serverDomain + "/phpformobile/getBookMark.php";
     var data = {
       "userId": prefs.getString("UserId")
     };
@@ -294,36 +295,37 @@ class _BookMarkPageState extends State<BookMarkPage> {
             child: Text("None", style: TextStyle(fontSize: 30)),
         )
         :
-        ListView.separated(
+        ListView.builder(
         itemCount: bookmarkList.length,
         padding: const EdgeInsets.all(10.0),
         itemBuilder: (context, index){
-          return ListTile(
-            leading: CircleAvatar(
-              child: Text((index + 1).toString()),
+          return Card(
+            elevation: 4,
+            child: ListTile(
+              leading: Icon(Icons.label, color: Colors.green),
+              title: Text(bookmarkList[index].pageName),
+              trailing: IconButton(
+                icon: const Icon(Icons.bookmark_remove_outlined),
+                onPressed: () async {
+                  var result = await _showDeleteDialog(context);
+
+                  if(result == 1) {
+                    deleteBookMark(bookmarkList[index].id);
+
+                    // 刪除資料後更新列表
+                    getBookMark();
+                  } else {
+                    Fluttertoast.showToast(
+                      msg: "cancel ",
+                    );
+                  }
+
+                },
+              ),
+              onTap: () => goToPage(bookmarkList[index].pageName),
             ),
-            title: Text(bookmarkList[index].pageName),
-            trailing: IconButton(
-              icon: const Icon(Icons.delete_forever),
-              onPressed: () async {
-                var result = await _showDeleteDialog(context);
-
-                if(result == 1) {
-                  deleteBookMark(bookmarkList[index].id);
-
-                  // 刪除資料後更新列表
-                  getBookMark();
-                } else {
-                  Fluttertoast.showToast(
-                    msg: "cancel ",
-                  );
-                }
-
-              },
-            ),
-            onTap: () => goToPage(bookmarkList[index].pageName),
           );
-        }, separatorBuilder: (BuildContext context, int index) => const Divider(),
+        }
       )
     );
 }

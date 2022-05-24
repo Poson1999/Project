@@ -71,7 +71,7 @@ class _PrimaryTestState extends State<PrimaryTest> {
 
   void getEQList() async {
     var url =
-        "https://project-ccu-2021.000webhostapp.com/phpformobile/getEQList.php";
+        serverDomain + "/phpformobile/getEQList.php";
 
     setState(() {
       EQList.clear();

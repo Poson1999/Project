@@ -1,5 +1,6 @@
 import 'package:all/pages/community/post.dart';
 import 'package:all/pages/community/posts.dart';
+import 'package:all/pages/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
@@ -26,7 +27,7 @@ class _CommunityPageState extends State<CommunityPage> {
 
   void getPostList() async {
     var url =
-        "https://project-ccu-2021.000webhostapp.com/phpformobile/getPost.php";
+        serverDomain + "/phpformobile/getPost.php";
 
     setState(() {
       postList.clear();
@@ -92,7 +93,7 @@ class _CommunityPageState extends State<CommunityPage> {
                                 padding: const EdgeInsets.all(10),
                                 child: SizedBox(
                                     width: double.infinity,
-                                    child: Image.network(posts[index].picture,
+                                    child: posts[index].picture == null ? Container() : Image.network(posts[index].picture!,
                                         fit: BoxFit.cover)
                                 )),
                             const Divider(height: 3, color: Colors.black)

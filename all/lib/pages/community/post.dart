@@ -1,5 +1,6 @@
 class Post {
-  String content, authorPic, authorName, picture, time;
+  String content, authorPic, authorName, time;
+  String? picture;
 
   Post(this.content, this.authorPic, this.authorName, this.picture, this.time);
 
