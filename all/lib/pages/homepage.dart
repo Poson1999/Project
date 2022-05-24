@@ -268,14 +268,13 @@ class HomePage extends StatelessWidget {
               child: const Text(home11,
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold))),
           Container(
-              margin: const EdgeInsets.only(
-                  left: 30, top: 10, right: 30, bottom: 10),
+              margin: const EdgeInsets.only(left: 30, top: 10, right: 30),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     SizedBox(
-                        width: 100,
-                        height: 100,
+                        width: 75,
+                        height: 75,
                         child: TextButton(
                             onPressed: () => launch(sponsorUrl),
                             child: const Image(
@@ -284,8 +283,8 @@ class HomePage extends StatelessWidget {
                                 fit: BoxFit.cover,
                                 width: double.infinity))),
                     SizedBox(
-                        width: 100,
-                        height: 100,
+                        width: 75,
+                        height: 75,
                         child: TextButton(
                             onPressed: () => launch(sponsorUrl1),
                             child: const Image(
@@ -294,8 +293,8 @@ class HomePage extends StatelessWidget {
                                 fit: BoxFit.cover,
                                 width: double.infinity))),
                     SizedBox(
-                        width: 100,
-                        height: 100,
+                        width: 75,
+                        height: 75,
                         child: TextButton(
                             onPressed: () => launch(sponsorUrl2),
                             child: const Image(
@@ -303,7 +302,7 @@ class HomePage extends StatelessWidget {
                                     'assets/images/homepage/ccu_logo.png'),
                                 fit: BoxFit.cover,
                                 width: double.infinity)))
-                  ])),
-        ]),
+                  ]))
+        ])
       ));
 }
